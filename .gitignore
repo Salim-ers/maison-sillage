@@ -6,3 +6,4 @@ next-env.d.ts
 .vercel
 .dev.pid
 .prod.pid
+__pycache__

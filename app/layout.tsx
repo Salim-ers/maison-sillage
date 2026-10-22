@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { cormorant, manrope } from "./fonts";
 import { SITE } from "@/lib/utils";
+import { AMBIANCE_SCRIPT, DEFAULT_AMBIANCE } from "@/lib/ambiance-script";
 import { Providers } from "@/components/layout/Providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -35,7 +36,17 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" className={`${cormorant.variable} ${manrope.variable}`}>
+    <html
+      lang="fr"
+      className={`${cormorant.variable} ${manrope.variable}`}
+      data-season={DEFAULT_AMBIANCE.season}
+      data-light={DEFAULT_AMBIANCE.light}
+      suppressHydrationWarning
+    >
+      <head>
+        {/* ambiance mémorisée appliquée avant le premier rendu : aucune couleur ne clignote */}
+        <script dangerouslySetInnerHTML={{ __html: AMBIANCE_SCRIPT }} />
+      </head>
       <body>
         <Providers>
           <Header />

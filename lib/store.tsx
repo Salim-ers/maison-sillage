@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 import { getProduct, purchasable } from "@/data/products";
 import type { Format, Product } from "@/lib/types";
 
@@ -81,12 +81,10 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [lastAdded, setLastAdded] = useState<StoreValue["lastAdded"]>(null);
-  const hydrated = useRef(false);
 
   useEffect(() => {
     setRaw(sanitize(read(CART_KEY, [])));
     setFavorites(read<string[]>(FAV_KEY, []).filter((s) => typeof s === "string" && !!getProduct(s)));
-    hydrated.current = true;
     setReady(true);
     const onStorage = (e: StorageEvent) => {
       if (e.key === CART_KEY) setRaw(sanitize(read(CART_KEY, [])));
@@ -96,12 +94,14 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     return () => window.removeEventListener("storage", onStorage);
   }, []);
 
+  // écriture seulement après le rendu qui suit la lecture (`ready`) : jamais de liste vide
+  // écrite par-dessus le stockage au montage (y compris en double montage du mode strict)
   useEffect(() => {
-    if (hydrated.current) write(CART_KEY, raw);
-  }, [raw]);
+    if (ready) write(CART_KEY, raw);
+  }, [raw, ready]);
   useEffect(() => {
-    if (hydrated.current) write(FAV_KEY, favorites);
-  }, [favorites]);
+    if (ready) write(FAV_KEY, favorites);
+  }, [favorites, ready]);
 
   const add = useCallback((slug: string, formatId: string, qty = 1) => {
     const p = getProduct(slug);

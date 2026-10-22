@@ -7,8 +7,8 @@ import { AnimatePresence, motion } from "motion/react";
 import { recipes } from "@/data/recipes";
 import { recipeCategoryLabels } from "@/data/collections";
 import { getProduct } from "@/data/products";
-import { recipeScenes } from "@/data/media";
-import { Scene } from "@/components/visuals/Scene";
+import { recipePhotos } from "@/data/images";
+import { Photo } from "@/components/ui/Photo";
 import type { RecipeCategory } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +23,7 @@ export function RecipeIndex({ initial }: { initial?: RecipeCategory }) {
 
   return (
     <div className="shell pb-28">
-      <div role="group" aria-label="Filtrer par type de boisson" className="flex flex-wrap gap-2 border-y border-espresso/10 py-4">
+      <div role="group" aria-label="Filtrer par type de boisson" className="flex flex-wrap gap-2 border-y border-line py-4">
         {[["toutes", "Toutes"] as const, ...cats].map(([id, label]) => {
           const n = id === "toutes" ? recipes.length : recipes.filter((r) => r.category === id).length;
           return (
@@ -32,14 +32,14 @@ export function RecipeIndex({ initial }: { initial?: RecipeCategory }) {
               type="button"
               aria-pressed={cat === id}
               onClick={() => setCat(id)}
-              className={cn("min-h-10 border px-3.5 py-2 text-sm transition", cat === id ? "border-espresso bg-espresso text-creme" : "border-espresso/25 hover:border-espresso/70")}
+              className={cn("min-h-10 border px-3.5 py-2 text-sm transition duration-300", cat === id ? "border-inverse bg-inverse text-on-inverse" : "border-line hover:border-ink/60")}
             >
               {label} <span className="opacity-60">({n})</span>
             </button>
           );
         })}
       </div>
-      <p className="mt-6 text-sm text-espresso/70" aria-live="polite">
+      <p className="mt-6 text-sm text-muted" aria-live="polite">
         {list.length} recette{list.length > 1 ? "s" : ""} · dosages proposés à titre de démonstration
       </p>
       <motion.ul layout={!reduce} className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
@@ -56,16 +56,17 @@ export function RecipeIndex({ initial }: { initial?: RecipeCategory }) {
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               >
                 <Link href={`/recettes/${r.slug}`} className="group block">
-                  <div className="aspect-[4/5] overflow-hidden">
-                    <div className="h-full transition-transform duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.04]">
-                      <Scene config={recipeScenes(r).card} className="h-full w-full" decorative />
-                    </div>
-                  </div>
-                  <p className="mt-4 text-[0.7rem] uppercase tracking-[0.16em] text-bronze-ink">
+                  <Photo
+                    photo={recipePhotos[r.slug].main}
+                    sizes="(min-width:1024px) 30vw, (min-width:640px) 45vw, 100vw"
+                    className="aspect-[4/5]"
+                    imgClassName="transition-transform duration-[1.3s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.05]"
+                  />
+                  <p className="mt-4 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-accent-ink">
                     {recipeCategoryLabels[r.category]} · {r.temps}
                   </p>
-                  <h2 className="mt-1 font-serif text-[1.7rem] leading-tight group-hover:text-espresso">{r.title}</h2>
-                  {p && <p className="mt-1 text-sm text-espresso/75">Avec {p.name}</p>}
+                  <h2 className="mt-1 font-serif text-[1.75rem] leading-tight transition-colors group-hover:text-accent-ink">{r.title}</h2>
+                  {p && <p className="mt-1 text-sm text-muted">Avec {p.name}</p>}
                 </Link>
               </motion.li>
             );

@@ -10,7 +10,7 @@ export function Accordion({ items, tone = "clair" }: { items: { q: string; a: st
   const base = useId();
   const reduce = useReducedMotion();
   return (
-    <div className={`divide-y border-y ${tone === "sombre" ? "divide-creme/15 border-creme/15" : "divide-espresso/15 border-espresso/15"}`}>
+    <div className={`divide-y border-y ${tone === "sombre" ? "divide-on-deep/15 border-on-deep/15" : "divide-line border-line"}`}>
       {items.map((it, i) => {
         const on = open === i;
         const id = `${base}-${i}`;

@@ -7,7 +7,7 @@ import { Check } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { formatPrice, cn } from "@/lib/utils";
 import { CartTotals, DemoNotice } from "./CartLines";
-import { ProductArt } from "@/components/products/ProductArt";
+import { ProductThumb } from "@/components/products/ProductArt";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 type Contact = { prenom: string; nom: string; email: string; ville: string };
@@ -21,22 +21,22 @@ export function Checkout() {
   const [errors, setErrors] = useState<Partial<Record<keyof Contact, string>>>({});
   const [done, setDone] = useState<{ ref: string; ttc: number; ht: number; n: number } | null>(null);
 
-  if (!ready) return <div className="shell min-h-[40vh] py-16 text-espresso/60">Chargement…</div>;
+  if (!ready) return <div className="shell min-h-[40vh] py-16 text-muted">Chargement…</div>;
 
   if (done)
     return (
       <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} className="shell max-w-3xl pb-32" role="status">
-        <span className="grid h-14 w-14 place-items-center rounded-full bg-espresso text-creme">
+        <span className="grid h-14 w-14 place-items-center rounded-full bg-inverse text-on-inverse">
           <Check className="h-6 w-6" />
         </span>
         <h2 className="mt-8 font-serif text-5xl leading-tight">Simulation terminée.</h2>
-        <p className="mt-5 text-lg text-espresso">
+        <p className="mt-5 text-lg text-ink-2">
           Référence de démonstration <strong className="font-semibold">{done.ref}</strong> · {done.n} article{done.n > 1 ? "s" : ""}
           {done.ttc > 0 && ` · ${formatPrice(done.ttc)} TTC`}
           {done.ht > 0 && ` · ${formatPrice(done.ht)} HT`}
         </p>
         <DemoNotice className="mt-8" />
-        <p className="mt-6 text-espresso/80">
+        <p className="mt-6 text-ink-2">
           Aucune commande n&apos;a été passée, aucun paiement n&apos;a été demandé et vos informations n&apos;ont été ni transmises ni conservées.
           Le panier a été vidé.
         </p>
@@ -73,7 +73,7 @@ export function Checkout() {
 
   const field = (k: keyof Contact, label: string, type = "text", auto?: string) => (
     <div>
-      <label htmlFor={`co-${k}`} className="mention block text-bronze-ink">
+      <label htmlFor={`co-${k}`} className="mention block text-accent-ink">
         {label}
       </label>
       <input
@@ -100,10 +100,10 @@ export function Checkout() {
   return (
     <div className="shell grid gap-14 pb-32 lg:grid-cols-12">
       <div className="lg:col-span-7">
-        <ol className="flex gap-6 border-b border-espresso/15 pb-4" aria-label="Étapes">
+        <ol className="flex gap-6 border-b border-line pb-4" aria-label="Étapes">
           {STEPS.map((s, i) => (
-            <li key={s} aria-current={i === step ? "step" : undefined} className={cn("flex items-center gap-2 text-sm", i === step ? "text-encre" : "text-espresso/50")}>
-              <span className={cn("grid h-7 w-7 place-items-center rounded-full border text-xs", i < step ? "border-espresso bg-espresso text-creme" : i === step ? "border-espresso" : "border-espresso/30")}>
+            <li key={s} aria-current={i === step ? "step" : undefined} className={cn("flex items-center gap-2 text-sm", i === step ? "text-ink" : "text-muted")}>
+              <span className={cn("grid h-7 w-7 place-items-center rounded-full border text-xs", i < step ? "border-inverse bg-inverse text-on-inverse" : i === step ? "border-ink" : "border-ink/30")}>
                 {i < step ? <Check className="h-3.5 w-3.5" /> : i + 1}
               </span>
               <span className="hidden sm:inline">{s}</span>
@@ -122,7 +122,7 @@ export function Checkout() {
                 }}
               >
                 <h2 className="font-serif text-3xl">Vos coordonnées</h2>
-                <p className="mt-2 text-sm text-espresso/75">Démonstration : vous pouvez saisir des informations fictives. Rien n&apos;est envoyé.</p>
+                <p className="mt-2 text-sm text-muted">Démonstration : vous pouvez saisir des informations fictives. Rien n&apos;est envoyé.</p>
                 <div className="mt-8 grid gap-7 sm:grid-cols-2">
                   {field("prenom", "Prénom", "text", "given-name")}
                   {field("nom", "Nom", "text", "family-name")}
@@ -140,7 +140,7 @@ export function Checkout() {
                 <fieldset className="mt-8 space-y-3" disabled>
                   <legend className="sr-only">Mode de livraison</legend>
                   {["Livraison à domicile", "Retrait en point relais", "Livraison professionnelle"].map((m) => (
-                    <label key={m} className="flex items-center justify-between border border-espresso/20 px-5 py-4 opacity-70">
+                    <label key={m} className="flex items-center justify-between border border-line px-5 py-4 opacity-70">
                       <span className="flex items-center gap-3">
                         <input type="radio" name="livraison" className="accent-[#4b3020]" />
                         {m}
@@ -149,7 +149,7 @@ export function Checkout() {
                     </label>
                   ))}
                 </fieldset>
-                <p className="mt-4 text-sm text-espresso/75">
+                <p className="mt-4 text-sm text-muted">
                   Les modes, délais et tarifs de livraison ne sont pas encore définis.{" "}
                   <Link href="/livraison-retours" className="lien">
                     En savoir plus
@@ -168,19 +168,19 @@ export function Checkout() {
             {step === 2 && (
               <div>
                 <h2 className="font-serif text-3xl">Vérification</h2>
-                <dl className="mt-8 divide-y divide-espresso/15 border-y border-espresso/15 text-sm">
+                <dl className="mt-8 divide-y divide-line border-y border-line text-sm">
                   <div className="grid grid-cols-3 gap-4 py-4">
-                    <dt className="text-espresso/70">Contact</dt>
+                    <dt className="text-muted">Contact</dt>
                     <dd className="col-span-2">
                       {c.prenom} {c.nom} · {c.email} · {c.ville}
                     </dd>
                   </div>
                   <div className="grid grid-cols-3 gap-4 py-4">
-                    <dt className="text-espresso/70">Livraison</dt>
+                    <dt className="text-muted">Livraison</dt>
                     <dd className="col-span-2">Non définie</dd>
                   </div>
                   <div className="grid grid-cols-3 gap-4 py-4">
-                    <dt className="text-espresso/70">Paiement</dt>
+                    <dt className="text-muted">Paiement</dt>
                     <dd className="col-span-2">Aucun : ce parcours ne demande ni ne traite aucune donnée bancaire.</dd>
                   </div>
                 </dl>
@@ -214,9 +214,7 @@ export function Checkout() {
           <ul className="mt-5 space-y-4">
             {lines.map((l) => (
               <li key={`${l.slug}-${l.formatId}`} className="flex items-center gap-3">
-                <span className="grid h-16 w-12 shrink-0 place-items-center bg-lin/70 p-1">
-                  <ProductArt product={l.product} className="h-full w-auto" />
-                </span>
+                <ProductThumb product={l.product} className="h-16 w-12 shrink-0" sizes="48px" />
                 <span className="min-w-0 flex-1 text-sm">
                   <span className="block truncate font-serif text-base">{l.product.name}</span>
                   {l.format.contenance} × {l.qty}
@@ -225,7 +223,7 @@ export function Checkout() {
               </li>
             ))}
           </ul>
-          <div className="mt-6 border-t border-espresso/15 pt-5">
+          <div className="mt-6 border-t border-line pt-5">
             <CartTotals />
           </div>
         </div>

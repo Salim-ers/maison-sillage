@@ -14,14 +14,14 @@ export default function Contact() {
       <div className="shell grid max-w-5xl gap-14 pb-28 md:grid-cols-2">
         <section>
           <h2 className="font-serif text-3xl">Vous êtes un établissement</h2>
-          <p className="mt-4 text-espresso/85">Le formulaire de l&apos;espace professionnels vous permet de décrire votre projet (démonstration, sans envoi pour l&apos;instant).</p>
+          <p className="mt-4 text-ink-2">Le formulaire de l&apos;espace professionnels vous permet de décrire votre projet (démonstration, sans envoi pour l&apos;instant).</p>
           <Link href="/professionnels#demande" className="btn btn-encre mt-8">
             Formulaire professionnel
           </Link>
         </section>
         <section>
           <h2 className="font-serif text-3xl">Suivre le projet</h2>
-          <p className="mt-4 text-espresso/85">Inscrivez-vous à la lettre de saison de démonstration.</p>
+          <p className="mt-4 text-ink-2">Inscrivez-vous à la lettre de saison de démonstration.</p>
           <div className="mt-6">
             <NewsletterForm id="lettre-contact" />
           </div>

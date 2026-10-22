@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { Check, X } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { getProduct } from "@/data/products";
-import { ProductArt } from "@/components/products/ProductArt";
+import { ProductThumb } from "@/components/products/ProductArt";
 import { EASE } from "@/components/animations";
 
 /** Confirmation instantanée sous l'icône panier */
@@ -38,15 +38,13 @@ export function AddedNotice() {
             role="status"
           >
             <div className="flex items-start gap-3.5">
-              <div className="grid h-20 w-14 shrink-0 place-items-center bg-lin/60 p-1.5">
-                <ProductArt product={product!} className="h-full w-auto" />
-              </div>
+              <ProductThumb product={product!} className="h-20 w-14 shrink-0" sizes="56px" />
               <div className="min-w-0 flex-1">
-                <p className="mention flex items-center gap-1.5 text-bronze-ink">
+                <p className="mention flex items-center gap-1.5 text-accent-ink">
                   <Check className="h-3.5 w-3.5" strokeWidth={2} /> Ajouté au panier
                 </p>
                 <p className="mt-1.5 font-serif text-lg leading-tight">{product!.name}</p>
-                <p className="text-xs text-espresso/75">
+                <p className="text-xs text-muted">
                   {format!.contenance} · quantité {lastAdded!.qty}
                 </p>
               </div>

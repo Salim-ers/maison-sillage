@@ -29,7 +29,7 @@ export function ProductBuyBox({ product }: { product: Product }) {
   if (upcoming) {
     return (
       <div className="mt-10 space-y-6">
-        <p className="border border-espresso/25 px-5 py-4 text-sm">
+        <p className="border border-ink/30 px-5 py-4 text-sm">
           <strong className="font-semibold">Édition à venir — création à l&apos;étude.</strong> Cette saveur n&apos;est ni disponible ni réservable.
         </p>
         <div>
@@ -46,7 +46,7 @@ export function ProductBuyBox({ product }: { product: Product }) {
   return (
     <div className="mt-10">
       <fieldset>
-        <legend className="mention mb-3 text-bronze-ink">Format</legend>
+        <legend className="mention mb-3 text-accent-ink">Format</legend>
         <div className="grid gap-2.5 sm:grid-cols-2">
           {product.formats.map((f) => {
             const on = f.id === formatId;
@@ -55,15 +55,15 @@ export function ProductBuyBox({ product }: { product: Product }) {
                 key={f.id}
                 className={cn(
                   "relative flex cursor-pointer flex-col border px-4 py-3.5 transition duration-300",
-                  on ? "border-espresso bg-creme" : "border-espresso/20 hover:border-espresso/60",
+                  on ? "border-ink bg-paper" : "border-line hover:border-ink/60",
                 )}
               >
                 <input type="radio" name="format" value={f.id} checked={on} onChange={() => setFormatId(f.id)} className="sr-only" />
                 <span className="font-serif text-lg leading-tight">{f.label}</span>
-                <span className="mt-1 text-sm text-espresso/75">
+                <span className="mt-1 text-sm text-muted">
                   {formatPrice(f.price)} {f.tax} · {f.public === "professionnel" ? "Professionnels" : "Particuliers"}
                 </span>
-                {on && <motion.span layoutId={`format-${product.slug}`} className="absolute inset-y-0 left-0 w-[3px] bg-espresso" />}
+                {on && <motion.span layoutId={`format-${product.slug}`} className="absolute inset-y-0 left-0 w-[3px] bg-inverse" />}
               </label>
             );
           })}
@@ -76,7 +76,7 @@ export function ProductBuyBox({ product }: { product: Product }) {
             {formatPrice(format.price * qty)}
           </motion.p>
         </AnimatePresence>
-        <p className="text-sm text-espresso/70">
+        <p className="text-sm text-muted">
           {format.tax} · prix indicatif{qty > 1 ? ` · ${qty} × ${formatPrice(format.price)}` : ""}
         </p>
       </div>
@@ -87,7 +87,7 @@ export function ProductBuyBox({ product }: { product: Product }) {
       </div>
       <div className="mt-5 flex flex-wrap items-center justify-between gap-4">
         <FavoriteButton slug={product.slug} name={product.name} withLabel />
-        <p className="text-xs text-espresso/70">Panier de démonstration : aucune commande n&apos;est transmise.</p>
+        <p className="text-xs text-muted">Panier de démonstration : aucune commande n&apos;est transmise.</p>
       </div>
 
       {/* barre d'achat mobile */}
@@ -98,12 +98,12 @@ export function ProductBuyBox({ product }: { product: Product }) {
             animate={{ y: 0 }}
             exit={{ y: "100%" }}
             transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-x-0 bottom-0 z-40 border-t border-espresso/15 bg-ivoire/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur lg:hidden"
+            className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-page/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur lg:hidden"
           >
             <div className="flex items-center gap-3">
               <div className="min-w-0 flex-1">
                 <p className="truncate font-serif text-lg leading-tight">{product.name}</p>
-                <p className="text-xs text-espresso/70">
+                <p className="text-xs text-muted">
                   {format.contenance} · {formatPrice(format.price)} {format.tax}
                 </p>
               </div>

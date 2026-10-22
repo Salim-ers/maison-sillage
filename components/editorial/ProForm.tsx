@@ -43,12 +43,12 @@ function validate(v: Values) {
 function Field({ id, label, error, children, hint }: { id: string; label: string; error?: string; children: React.ReactNode; hint?: string }) {
   return (
     <div>
-      <label htmlFor={id} className="mention block text-bronze-ink">
+      <label htmlFor={id} className="mention block text-accent-ink">
         {label}
       </label>
       {children}
       {(error || hint) && (
-        <p id={`${id}-msg`} className={cn("mt-1.5 text-xs", error ? "text-[#9b3b2a]" : "text-espresso/65")}>
+        <p id={`${id}-msg`} className={cn("mt-1.5 text-xs", error ? "text-[#9b3b2a]" : "text-muted")}>
           {error ?? hint}
         </p>
       )}
@@ -70,11 +70,11 @@ export function ProForm() {
     <AnimatePresence mode="wait" initial={false}>
       {sent ? (
         <motion.div key="ok" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="papier p-8 md:p-12" role="status">
-          <span className="grid h-12 w-12 place-items-center rounded-full bg-espresso text-creme">
+          <span className="grid h-12 w-12 place-items-center rounded-full bg-inverse text-on-inverse">
             <Check className="h-5 w-5" />
           </span>
           <h3 className="mt-6 font-serif text-3xl">Demande validée — mode démonstration.</h3>
-          <p className="mt-4 max-w-xl text-espresso/85">
+          <p className="mt-4 max-w-xl text-ink-2">
             Merci {v.nom.split(" ")[0]}. Le formulaire fonctionne, mais aucun service d&apos;envoi n&apos;est encore configuré : votre demande
             n&apos;a été ni transmise ni enregistrée. Une fois le projet lancé, ce formulaire sera relié à la Maison.
           </p>
@@ -130,12 +130,12 @@ export function ProForm() {
             <input id="ville" className="champ" value={v.ville} onChange={(e) => set("ville", e.target.value)} autoComplete="address-level2" {...inv("ville")} />
           </Field>
           <fieldset className="md:col-span-2" aria-describedby={errors.besoins ? "besoins-msg" : undefined}>
-            <legend className="mention text-bronze-ink">Sujets de la demande</legend>
+            <legend className="mention text-accent-ink">Sujets de la demande</legend>
             <div className="mt-3 flex flex-wrap gap-2">
               {NEEDS.map((n, i) => {
                 const on = v.besoins.includes(n);
                 return (
-                  <label key={n} className={cn("cursor-pointer border px-3.5 py-2 text-sm transition focus-within:outline focus-within:outline-1", on ? "border-espresso bg-espresso text-creme" : "border-espresso/25 hover:border-espresso/70")}>
+                  <label key={n} className={cn("cursor-pointer border px-3.5 py-2 text-sm transition focus-within:outline focus-within:outline-1", on ? "border-inverse bg-inverse text-on-inverse" : "border-ink/30 hover:border-ink/60")}>
                     <input
                       id={`besoins-${i}`}
                       type="checkbox"

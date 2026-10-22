@@ -1,5 +1,6 @@
 export type Category = "sirop" | "poudre" | "coffret";
 export type SeasonId = "printemps" | "ete" | "automne" | "hiver";
+export type Light = "jour" | "coucher" | "nuit";
 export type Profile = "fruite" | "floral" | "patissier" | "epice" | "cacaote" | "fruits-secs";
 export type Usage =
   | "latte"
@@ -12,22 +13,8 @@ export type Usage =
   | "milkshake"
   | "dessert";
 
-export type BotanicalId =
-  | "fraise"
-  | "madeleine"
-  | "peche"
-  | "fleur-oranger"
-  | "poire"
-  | "vanille"
-  | "datte"
-  | "pistache"
-  | "chai"
-  | "cacao"
-  | "biscuit"
-  | "cafe"
-  | "fleur-de-sel";
-
-export type PackKind = "bouteille" | "doypack-ivoire" | "doypack-brun" | "coffret";
+/** Les quatre saveurs signatures, déclinées en sirop et en poudre */
+export type Flavor = "fraise" | "peche" | "poire" | "datte";
 
 export interface Format {
   id: string;
@@ -41,7 +28,7 @@ export interface Format {
 export interface ProductPalette {
   /** couleur du sirop / de la poudre */
   liquid: string;
-  /** couleur d'accent liée à la saveur (bandeau d'étiquette, cachet) */
+  /** couleur d'accent liée à la saveur */
   accent: string;
   /** fond d'ambiance très clair */
   tint: string;
@@ -52,50 +39,29 @@ export interface ProductPalette {
 export interface Product {
   slug: string;
   name: string;
-  /** deux lignes d'étiquette, ex. ["Poire fondante", "Vanille Bourbon"] */
-  labelLines: [string, string];
+  /** nom court de la saveur, sans la gamme */
+  flavorName: string;
+  flavor: Flavor | null;
   category: Category;
   season: SeasonId | null;
   status: "prototype" | "a-venir";
   profiles: Profile[];
   notes: string[];
   tagline: string;
+  /** description sensorielle courte (cartes, sélecteurs) */
+  sensory: string;
   story: string[];
   usages: Usage[];
   usageIdeas: { title: string; text: string }[];
   formats: Format[];
   palette: ProductPalette;
-  botanicals: BotanicalId[];
-  pack: PackKind;
   contents?: string[];
   complements: string[];
   faq: { q: string; a: string }[];
   seo: string;
 }
 
-export type RecipeCategory =
-  | "cafe-chaud"
-  | "latte-glace"
-  | "chocolat"
-  | "mocktail"
-  | "milkshake"
-  | "frappe"
-  | "dessert";
-
-export type VesselKind = "tasse" | "verre-haut" | "mug-verre" | "tulipe" | "highball" | "coupe";
-
-export interface DrinkLook {
-  vessel: VesselKind;
-  layers: { color: string; height: number }[];
-  top?: "mousse" | "chantilly" | "glace" | "boule" | "aucun";
-  topColor?: string;
-  ice?: boolean;
-  bubbles?: boolean;
-  straw?: boolean;
-  steam?: boolean;
-  garnish?: BotanicalId;
-  dust?: string;
-}
+export type RecipeCategory = "latte" | "latte-glace" | "cafe" | "mocktail" | "chocolat" | "milkshake" | "dessert";
 
 export interface Recipe {
   slug: string;
@@ -109,8 +75,6 @@ export interface Recipe {
   steps: string[];
   final: string;
   conseil: string;
-  look: DrinkLook;
-  scene: { bg: string; surface: string };
 }
 
 export interface Season {
@@ -118,10 +82,12 @@ export interface Season {
   name: string;
   numeral: string;
   chapter: string;
+  /** création signature de la saison */
+  flavor: Flavor;
+  /** couleur d'accent de la saison (pastilles, filets) */
   accent: string;
-  bg: string;
-  ink: string;
-  paper: string;
+  /** ambiance photographique, en quelques mots */
+  mood: string[];
   intro: string;
   carnet: string;
   ambiance: string[];
@@ -134,5 +100,4 @@ export interface Article {
   lecture: string;
   chapo: string;
   body: ({ type: "p"; text: string } | { type: "h2"; text: string } | { type: "quote"; text: string })[];
-  visual: "carte" | "verre" | "saisons" | "comptoir" | "alambic";
 }

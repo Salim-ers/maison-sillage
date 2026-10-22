@@ -21,14 +21,14 @@ export function QtyStepper({
   const h = size === "sm" ? "h-9" : "h-[3.25rem]";
   const w = size === "sm" ? "w-9" : "w-11";
   return (
-    <div className={cn("inline-flex items-center border border-espresso/25", h)} role="group" aria-label={label}>
-      <button type="button" className={cn("grid h-full place-items-center transition hover:bg-espresso/5 disabled:opacity-35", w)} onClick={() => onChange(Math.max(min, value - 1))} disabled={value <= min} aria-label="Retirer un">
+    <div className={cn("inline-flex items-center border border-ink/30", h)} role="group" aria-label={label}>
+      <button type="button" className={cn("grid h-full place-items-center transition hover:bg-ink/5 disabled:opacity-35", w)} onClick={() => onChange(Math.max(min, value - 1))} disabled={value <= min} aria-label="Retirer un">
         <Minus className="h-3.5 w-3.5" strokeWidth={1.5} />
       </button>
       <output className={cn("grid h-full place-items-center tabular-nums", size === "sm" ? "w-7 text-sm" : "w-10")} aria-live="polite">
         {value}
       </output>
-      <button type="button" className={cn("grid h-full place-items-center transition hover:bg-espresso/5 disabled:opacity-35", w)} onClick={() => onChange(Math.min(max, value + 1))} disabled={value >= max} aria-label="Ajouter un">
+      <button type="button" className={cn("grid h-full place-items-center transition hover:bg-ink/5 disabled:opacity-35", w)} onClick={() => onChange(Math.min(max, value + 1))} disabled={value >= max} aria-label="Ajouter un">
         <Plus className="h-3.5 w-3.5" strokeWidth={1.5} />
       </button>
     </div>

@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/ui/PageIntro";
+import { Photo } from "@/components/ui/Photo";
+import { RevealNow } from "@/components/ui/RevealNow";
+import { pages } from "@/data/images";
 import { ShopCatalog, type ShopInitial } from "@/components/products/ShopCatalog";
 import { profileLabels } from "@/data/collections";
 import type { Profile } from "@/lib/types";
 
 export const metadata: Metadata = {
   title: "Boutique",
-  description: "Toutes les créations Maison Sillage : sirops signatures, préparations en poudre et Coffret Découverte. Boutique de démonstration, prix indicatifs.",
+  description: "Toutes les créations Maison Sillage : quatre sirops signatures, leurs préparations en poudre et le Coffret Découverte. Boutique de démonstration, prix indicatifs.",
   alternates: { canonical: "/boutique" },
 };
 
@@ -24,7 +27,15 @@ export default async function Boutique({ searchParams }: { searchParams: Promise
   };
   return (
     <>
-      <PageIntro kicker="La boutique" title="Toutes les créations de la Maison.">
+      <PageIntro
+        kicker="La boutique"
+        title="Toutes les créations de la Maison."
+        aside={
+          <RevealNow from="right" className="aspect-[4/3]">
+            <Photo photo={pages.boutique} sizes="(min-width:1024px) 40vw, 100vw" preload className="h-full w-full" />
+          </RevealNow>
+        }
+      >
         Sirops signatures, préparations en poudre et coffret : filtrez par saison ou par profil gustatif. Boutique de démonstration, prix
         indicatifs, aucune vente réelle.
       </PageIntro>

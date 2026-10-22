@@ -7,13 +7,13 @@ import { WakeStroke } from "@/components/animations";
 
 export function CartPage() {
   const { lines, ready, clear } = useStore();
-  if (!ready) return <div className="shell min-h-[40vh] py-20 text-espresso/60">Chargement du panier…</div>;
+  if (!ready) return <div className="shell min-h-[40vh] py-20 text-muted">Chargement du panier…</div>;
   if (lines.length === 0)
     return (
       <div className="shell flex flex-col items-start py-16 pb-32">
-        <WakeStroke className="w-48 text-bronze" />
+        <WakeStroke className="w-48 text-gold" />
         <p className="mt-6 font-serif text-4xl">Votre panier est vide.</p>
-        <p className="mt-3 max-w-md text-espresso/80">Ajoutez une création depuis la boutique pour essayer le parcours d&apos;achat de démonstration.</p>
+        <p className="mt-3 max-w-md text-ink-2">Ajoutez une création depuis la boutique pour essayer le parcours d&apos;achat de démonstration.</p>
         <Link href="/boutique" className="btn btn-encre mt-8">
           Parcourir la boutique
         </Link>
@@ -22,10 +22,10 @@ export function CartPage() {
   return (
     <div className="shell grid gap-14 pb-32 lg:grid-cols-12">
       <div className="lg:col-span-7">
-        <div className="border-t border-espresso/15">
+        <div className="border-t border-line">
           <CartLines large />
         </div>
-        <button type="button" onClick={clear} className="mt-6 text-sm text-espresso/75 underline-offset-4 hover:text-encre hover:underline">
+        <button type="button" onClick={clear} className="mt-6 text-sm text-muted underline-offset-4 hover:text-ink hover:underline">
           Vider le panier
         </button>
       </div>

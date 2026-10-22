@@ -2,11 +2,14 @@
 
 import { MotionConfig } from "motion/react";
 import { StoreProvider } from "@/lib/store";
+import { AmbianceProvider } from "@/lib/ambiance";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <MotionConfig reducedMotion="user">
-      <StoreProvider>{children}</StoreProvider>
+      <AmbianceProvider>
+        <StoreProvider>{children}</StoreProvider>
+      </AmbianceProvider>
     </MotionConfig>
   );
 }

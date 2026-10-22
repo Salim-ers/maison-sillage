@@ -15,7 +15,7 @@ export function NewsletterForm({ tone = "clair", id = "newsletter" }: { tone?: "
     <div>
       <AnimatePresence mode="wait" initial={false}>
         {state === "done" ? (
-          <motion.p key="ok" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className={cn("font-serif text-2xl italic", dark ? "text-or" : "text-espresso")} role="status">
+          <motion.p key="ok" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className={cn("font-serif text-2xl italic", dark ? "text-gold" : "text-ink-2")} role="status">
             Merci. Dans la version finale, vous recevriez ici la lettre de saison. Pour l&apos;instant, rien n&apos;a été enregistré.
           </motion.p>
         ) : (
@@ -26,10 +26,10 @@ export function NewsletterForm({ tone = "clair", id = "newsletter" }: { tone?: "
               e.preventDefault();
               setState(EMAIL.test(email.trim()) ? "done" : "error");
             }}
-            className="flex flex-col gap-3 sm:flex-row sm:items-end"
+            className={cn("flex flex-col gap-3", !dark && "sm:flex-row sm:items-end")}
           >
             <div className="flex-1">
-              <label htmlFor={id} className={cn("mention block", dark ? "text-or" : "text-bronze-ink")}>
+              <label htmlFor={id} className={cn("mention block", dark ? "text-gold" : "text-accent-ink")}>
                 Adresse e-mail
               </label>
               <input
@@ -43,7 +43,7 @@ export function NewsletterForm({ tone = "clair", id = "newsletter" }: { tone?: "
                   if (state === "error") setState("idle");
                 }}
                 placeholder="vous@exemple.fr"
-                className={cn("champ", dark && "border-creme/35 text-creme placeholder:text-creme/45 focus:border-creme")}
+                className={cn("champ", dark && "border-on-deep/35 text-on-deep placeholder:text-on-deep/45 focus:border-on-deep")}
                 aria-invalid={state === "error"}
                 aria-describedby={`${id}-aide`}
               />
@@ -54,7 +54,7 @@ export function NewsletterForm({ tone = "clair", id = "newsletter" }: { tone?: "
           </motion.form>
         )}
       </AnimatePresence>
-      <p id={`${id}-aide`} className={cn("mt-3 text-xs", state === "error" ? (dark ? "text-[#f0b39a]" : "text-[#9b3b2a]") : dark ? "text-creme/60" : "text-espresso/70")}>
+      <p id={`${id}-aide`} className={cn("mt-3 text-xs", state === "error" ? (dark ? "text-[#f0b39a]" : "text-[#b4482f]") : dark ? "text-on-deep-2" : "text-muted")}>
         {state === "error" ? "Cette adresse ne semble pas complète. Vérifiez le format, par exemple prenom@domaine.fr." : "Formulaire de démonstration : aucune adresse n'est collectée ni envoyée."}
       </p>
     </div>

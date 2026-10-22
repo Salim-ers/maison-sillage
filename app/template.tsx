@@ -23,7 +23,7 @@ export default function Template({ children }: { children: React.ReactNode }) {
       {play && (
         <motion.svg
           aria-hidden
-          className="pointer-events-none fixed inset-x-0 top-[40vh] z-[45] h-16 w-full text-bronze"
+          className="pointer-events-none fixed inset-x-0 top-[40vh] z-[45] h-16 w-full text-gold"
           viewBox="0 0 1440 64"
           preserveAspectRatio="none"
           initial={{ opacity: 1 }}

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles, getArticle } from "@/data/journal";
-import { articleScenes } from "@/data/media";
-import { Figure } from "@/components/ui/Figure";
+import { articlePhotos } from "@/data/images";
+import { Photo } from "@/components/ui/Photo";
 import { DemoBanner } from "@/components/ui/PageIntro";
+import { RevealNow } from "@/components/ui/RevealNow";
 import { RevealTitle, Rise, DrawRule } from "@/components/animations";
 
 export function generateStaticParams() {
@@ -27,31 +28,33 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
   return (
     <article>
       <header className="shell max-w-4xl pt-[calc(var(--header-h)+3.5rem)] text-center">
-        <p className="mention text-bronze-ink">
-          <Link href="/journal" className="hover:text-encre">
+        <p className="mention text-accent-ink">
+          <Link href="/journal" className="hover:text-ink">
             Le Journal
           </Link>{" "}
           · {a.rubrique} · Article d&apos;exemple
         </p>
-        <RevealTitle as="h1" text={a.title} immediate className="display mt-6 text-[clamp(2.6rem,5.6vw,5.4rem)]" />
+        <RevealTitle as="h1" text={a.title} immediate className="display mt-6 text-[clamp(2.6rem,5.6vw,5.4rem)] font-light" />
         <Rise delay={0.3}>
-          <p className="chapo mx-auto mt-7 text-espresso">{a.chapo}</p>
-          <p className="mt-5 text-sm text-espresso/70">Lecture {a.lecture}</p>
+          <p className="chapo mx-auto mt-7 text-ink-2">{a.chapo}</p>
+          <p className="mt-5 text-sm text-muted">Lecture {a.lecture}</p>
         </Rise>
       </header>
       <div className="shell mt-14 max-w-6xl">
-        <Figure scene={articleScenes[a.visual]} priority reveal="bottom" sizes="(min-width:1200px) 72rem, 100vw" />
+        <RevealNow from="bottom" className="aspect-[16/9]" delay={0.3}>
+          <Photo photo={articlePhotos[a.slug]} sizes="(min-width:1200px) 72rem, 100vw" preload className="h-full w-full" />
+        </RevealNow>
       </div>
       <div className="shell max-w-[44rem] py-16 md:py-24">
         <DemoBanner className="mb-12">Article d&apos;exemple rédigé pour la démonstration du site. Les faits historiques cités sont donnés à titre culturel.</DemoBanner>
-        <div className="space-y-6 font-serif text-[1.3rem] leading-[1.7] text-encre">
+        <div className="space-y-6 font-serif text-[1.3rem] leading-[1.7] text-ink">
           {a.body.map((b, i) =>
             b.type === "h2" ? (
               <h2 key={i} className="pt-8 font-serif text-[2rem] leading-tight">
                 {b.text}
               </h2>
             ) : b.type === "quote" ? (
-              <blockquote key={i} className="my-10 border-y border-bronze/50 py-8 text-center text-[1.9rem] italic leading-snug text-espresso">
+              <blockquote key={i} className="my-10 border-y border-gold/50 py-8 text-center text-[1.9rem] italic leading-snug text-ink-2">
                 « {b.text} »
               </blockquote>
             ) : (
@@ -63,8 +66,8 @@ export default async function Article({ params }: { params: Promise<{ slug: stri
         </div>
         <DrawRule className="mt-16" />
         <Link href={`/journal/${next.slug}`} className="group mt-10 block">
-          <span className="mention text-bronze-ink">Article suivant</span>
-          <span className="mt-2 block font-serif text-3xl group-hover:text-espresso">{next.title}</span>
+          <span className="mention text-accent-ink">Article suivant</span>
+          <span className="mt-2 block font-serif text-3xl group-hover:text-accent-ink">{next.title}</span>
         </Link>
       </div>
     </article>

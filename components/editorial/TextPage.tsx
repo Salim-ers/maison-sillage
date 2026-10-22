@@ -11,9 +11,9 @@ export function TextPage({ kicker, title, intro, notice, sections }: { kicker: s
         {notice && <DemoBanner className="mb-12">{notice}</DemoBanner>}
         <div className="space-y-12">
           {sections.map((s) => (
-            <section key={s.title} className="border-t border-espresso/15 pt-8">
+            <section key={s.title} className="border-t border-line pt-8">
               <h2 className="font-serif text-3xl">{s.title}</h2>
-              <div className="mt-4 space-y-4 leading-relaxed text-espresso">{s.body}</div>
+              <div className="mt-4 space-y-4 leading-relaxed text-ink-2">{s.body}</div>
             </section>
           ))}
         </div>

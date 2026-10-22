@@ -37,11 +37,26 @@ export function RevealTitle({
   const reduce = useReducedMotion();
   const show = immediate || inView;
   const words = text.split(" ");
+  // titres d'ouverture de page : animation CSS, visible dès le HTML sans attendre le JavaScript
+  if (immediate)
+    return (
+      <Tag id={id} className={className} aria-label={text}>
+        {words.map((w, i) => (
+          <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom">
+            <span className="hero-ligne !inline-block" style={{ ["--delay" as string]: `${(delay + i * stagger).toFixed(2)}s` }}>
+              {w}
+              {i < words.length - 1 ? " " : ""}
+            </span>
+          </span>
+        ))}
+      </Tag>
+    );
   return (
     <Tag ref={ref} id={id} className={className} aria-label={text}>
       {words.map((w, i) => (
         <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom">
           <motion.span
+            data-reveal=""
             className="inline-block will-change-transform"
             initial={reduce ? false : { y: "108%" }}
             animate={show ? { y: "0%" } : undefined}
@@ -77,6 +92,7 @@ export function Rise({
   const Comp = motion[as];
   return (
     <Comp
+      data-reveal=""
       className={className}
       variants={riseVariants}
       initial={reduce ? false : "hidden"}
@@ -110,6 +126,7 @@ export function MaskReveal({
   }[from];
   return (
     <motion.div
+      data-reveal=""
       className={cn("overflow-hidden", className)}
       initial={reduce ? false : { clipPath: start }}
       whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
@@ -117,6 +134,7 @@ export function MaskReveal({
       transition={{ duration: 1.25, ease: HOULE, delay }}
     >
       <motion.div
+        data-reveal=""
         className="h-full w-full"
         initial={reduce ? false : { scale: 1.08 }}
         whileInView={{ scale: 1 }}
@@ -133,7 +151,7 @@ export function MaskReveal({
 export function DrawRule({ className, delay = 0, ornament = true }: { className?: string; delay?: number; ornament?: boolean }) {
   const reduce = useReducedMotion();
   return (
-    <div className={cn("flex items-center gap-3 text-bronze", className)} aria-hidden>
+    <div className={cn("flex items-center gap-3 text-gold", className)} aria-hidden>
       <motion.span
         className="h-px flex-1 origin-right bg-current opacity-60"
         initial={reduce ? false : { scaleX: 0 }}
@@ -194,15 +212,19 @@ export function WakeStroke({ className, delay = 0, strokeWidth = 1.2 }: { classN
   );
 }
 
-/** Parallaxe verticale douce (images, gravures) */
-export function Parallax({ children, className, amount = 60 }: { children: ReactNode; className?: string; amount?: number }) {
+/** Parallaxe verticale douce. Avec `bleed`, le contenu déborde de `amount` px
+ *  en haut et en bas d'un cadre masqué : la photographie glisse sans laisser de vide. */
+export function Parallax({ children, className, amount = 60, bleed = false }: { children: ReactNode; className?: string; amount?: number; bleed?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [amount, -amount]);
+  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : bleed ? [amount * 0.9, -amount * 0.9] : [amount, -amount]);
   return (
-    <div ref={ref} className={className}>
-      <motion.div style={{ y }} className="h-full w-full will-change-transform">
+    <div ref={ref} className={cn(bleed && "relative h-full overflow-hidden", className)}>
+      <motion.div
+        style={bleed ? { y, position: "absolute", left: 0, right: 0, top: -amount, bottom: -amount } : { y }}
+        className={cn(!bleed && "h-full w-full", "will-change-transform")}
+      >
         {children}
       </motion.div>
     </div>
@@ -227,7 +249,7 @@ export function Stagger({ children, className, gap = 0.08 }: { children: ReactNo
 
 export function StaggerItem({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <motion.div className={className} variants={riseVariants} transition={{ duration: 0.85, ease: EASE }}>
+    <motion.div data-reveal="" className={className} variants={riseVariants} transition={{ duration: 0.85, ease: EASE }}>
       {children}
     </motion.div>
   );

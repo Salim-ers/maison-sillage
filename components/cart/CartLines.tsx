@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { useStore } from "@/lib/store";
 import { formatPrice } from "@/lib/utils";
-import { ProductArt } from "@/components/products/ProductArt";
+import { ProductThumb } from "@/components/products/ProductArt";
 import { QtyStepper } from "@/components/ui/QtyStepper";
 import { EASE } from "@/components/animations";
 
@@ -13,7 +13,7 @@ export function CartLines({ onNavigate, large = false }: { onNavigate?: () => vo
   const { lines, setQty, remove } = useStore();
   const reduce = useReducedMotion();
   return (
-    <ul className="divide-y divide-espresso/10">
+    <ul className="divide-y divide-line">
       <AnimatePresence initial={false}>
         {lines.map((l) => (
           <motion.li
@@ -25,8 +25,8 @@ export function CartLines({ onNavigate, large = false }: { onNavigate?: () => vo
             transition={{ duration: 0.5, ease: EASE }}
             className="flex gap-4 py-5"
           >
-            <Link href={`/produits/${l.slug}`} onClick={onNavigate} className={`grid shrink-0 place-items-center bg-lin/70 p-2 ${large ? "h-32 w-24" : "h-24 w-[4.5rem]"}`}>
-              <ProductArt product={l.product} className="h-full w-auto" format={l.format.contenance} />
+            <Link href={`/produits/${l.slug}`} onClick={onNavigate} className="shrink-0" aria-label={l.product.name}>
+              <ProductThumb product={l.product} className={large ? "h-32 w-24" : "h-24 w-[4.5rem]"} sizes={large ? "96px" : "72px"} />
             </Link>
             <div className="flex min-w-0 flex-1 flex-col">
               <div className="flex items-start justify-between gap-3">
@@ -34,7 +34,7 @@ export function CartLines({ onNavigate, large = false }: { onNavigate?: () => vo
                   <Link href={`/produits/${l.slug}`} onClick={onNavigate} className={`font-serif leading-tight hover:underline ${large ? "text-2xl" : "text-lg"}`}>
                     {l.product.name}
                   </Link>
-                  <p className="mt-0.5 text-[0.8rem] text-espresso/75">
+                  <p className="mt-0.5 text-[0.8rem] text-muted">
                     {l.format.label} · {formatPrice(l.format.price)} {l.format.tax}
                   </p>
                 </div>
@@ -42,7 +42,7 @@ export function CartLines({ onNavigate, large = false }: { onNavigate?: () => vo
               </div>
               <div className="mt-auto flex items-center justify-between pt-3">
                 <QtyStepper size="sm" value={l.qty} onChange={(n) => setQty(l.slug, l.formatId, n)} label={`Quantité de ${l.product.name}`} />
-                <button type="button" onClick={() => remove(l.slug, l.formatId)} className="text-[0.8rem] text-espresso/75 underline-offset-4 hover:text-encre hover:underline">
+                <button type="button" onClick={() => remove(l.slug, l.formatId)} className="text-[0.8rem] text-muted underline-offset-4 hover:text-ink hover:underline">
                   Retirer
                 </button>
               </div>
@@ -70,7 +70,7 @@ export function CartTotals() {
           <dd className="font-serif text-xl tabular-nums">{formatPrice(totals.HT)} HT</dd>
         </div>
       )}
-      <div className="flex items-baseline justify-between text-espresso/75">
+      <div className="flex items-baseline justify-between text-muted">
         <dt>Livraison</dt>
         <dd>Conditions non définies</dd>
       </div>
@@ -80,7 +80,7 @@ export function CartTotals() {
 
 export function DemoNotice({ className = "" }: { className?: string }) {
   return (
-    <p className={`border-l-2 border-bronze bg-parchemin/60 px-4 py-3 text-[0.82rem] leading-relaxed text-espresso ${className}`}>
+    <p className={`border-l-2 border-gold bg-tint px-4 py-3 text-[0.82rem] leading-relaxed text-ink-2 ${className}`}>
       <strong className="font-semibold">Démonstration — aucune commande réelle.</strong> Les prix sont indicatifs, aucun paiement n&apos;est demandé et rien n&apos;est transmis.
     </p>
   );

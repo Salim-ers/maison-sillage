@@ -4,12 +4,12 @@ import { notFound } from "next/navigation";
 import { recipes, getRecipe } from "@/data/recipes";
 import { getProduct } from "@/data/products";
 import { recipeCategoryLabels } from "@/data/collections";
-import { recipeScenes } from "@/data/media";
-import { Figure } from "@/components/ui/Figure";
-import { PourAnimation } from "@/components/editorial/PourAnimation";
+import { recipePhotos } from "@/data/images";
+import { Photo } from "@/components/ui/Photo";
 import { ProductMini } from "@/components/products/ProductMini";
-import { RevealTitle, Rise, DrawRule } from "@/components/animations";
+import { RevealTitle, Rise, DrawRule, MaskReveal, Parallax } from "@/components/animations";
 import { DemoBanner } from "@/components/ui/PageIntro";
+import { RevealNow } from "@/components/ui/RevealNow";
 
 export function generateStaticParams() {
   return recipes.map((r) => ({ slug: r.slug }));
@@ -27,47 +27,52 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
   const r = getRecipe(slug);
   if (!r) notFound();
   const linked = r.products.map(getProduct).filter((x): x is NonNullable<typeof x> => !!x);
-  const main = linked[0];
   const others = recipes.filter((x) => x.slug !== r.slug && (x.category === r.category || x.products.some((p) => r.products.includes(p)))).slice(0, 3);
+  const ph = recipePhotos[r.slug];
 
   return (
     <article>
-      <header className="shell grid gap-12 pb-16 pt-[calc(var(--header-h)+2.5rem)] lg:grid-cols-12 lg:gap-14">
-        <div className="lg:col-span-6 lg:pt-10">
-          <nav aria-label="Fil d'Ariane" className="text-[0.8rem] text-espresso/70">
-            <Link href="/recettes" className="hover:text-encre">
+      <header className="shell grid gap-12 pb-16 pt-[calc(var(--header-h)+2.5rem)] lg:grid-cols-12 lg:items-center lg:gap-14">
+        <div className="lg:col-span-6">
+          <nav aria-label="Fil d'Ariane" className="text-[0.8rem] text-muted">
+            <Link href="/recettes" className="hover:text-ink">
               Recettes
             </Link>{" "}
-            / <Link href={`/recettes?usage=${r.category}`} className="hover:text-encre">{recipeCategoryLabels[r.category]}</Link>
+            /{" "}
+            <Link href={`/recettes?usage=${r.category}`} className="hover:text-ink">
+              {recipeCategoryLabels[r.category]}
+            </Link>
           </nav>
-          <RevealTitle as="h1" text={r.title} immediate className="display mt-6 text-[clamp(2.6rem,5.4vw,5.4rem)]" />
+          <RevealTitle as="h1" text={r.title} immediate className="display mt-6 text-[clamp(2.6rem,5.4vw,5.4rem)] font-light" />
           <Rise delay={0.3}>
-            <p className="chapo mt-6 text-espresso">{r.intro}</p>
+            <p className="chapo mt-6 text-ink-2">{r.intro}</p>
           </Rise>
-          <dl className="mt-10 grid grid-cols-3 gap-4 border-y border-espresso/15 py-5 text-sm">
+          <dl className="mt-10 grid grid-cols-3 gap-4 border-y border-line py-5 text-sm">
             <div>
-              <dt className="text-espresso/70">Préparation</dt>
+              <dt className="text-muted">Préparation</dt>
               <dd className="mt-1 font-serif text-xl">{r.temps}</dd>
             </div>
             <div>
-              <dt className="text-espresso/70">Service</dt>
+              <dt className="text-muted">Service</dt>
               <dd className="mt-1 font-serif text-xl">{r.service}</dd>
             </div>
             <div>
-              <dt className="text-espresso/70">Type</dt>
+              <dt className="text-muted">Type</dt>
               <dd className="mt-1 font-serif text-xl">{recipeCategoryLabels[r.category]}</dd>
             </div>
           </dl>
         </div>
         <div className="lg:col-span-6">
-          <Figure scene={recipeScenes(r).page} priority reveal="right" sizes="(min-width:1024px) 48vw, 100vw" />
+          <RevealNow from="right" className="aspect-[4/5]">
+            <Photo photo={ph.main} sizes="(min-width:1024px) 48vw, 100vw" preload className="h-full w-full" quality={85} />
+          </RevealNow>
         </div>
       </header>
 
       <section className="shell grid gap-14 pb-24 lg:grid-cols-12" aria-label="Préparation">
         <div className="lg:col-span-4">
           <h2 className="sous-titre">Ingrédients</h2>
-          <ul className="mt-6 divide-y divide-espresso/15 border-y border-espresso/15">
+          <ul className="mt-6 divide-y divide-line border-y border-line">
             {r.ingredients.map((i) => (
               <li key={i.item} className="flex gap-4 py-3.5">
                 <span className="w-24 shrink-0 font-serif text-lg tabular-nums">{i.qty}</span>
@@ -91,31 +96,33 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
           <ol className="mt-6 space-y-7">
             {r.steps.map((s, n) => (
               <Rise as="li" key={n} delay={n * 0.05} className="grid grid-cols-[3rem_1fr] gap-4">
-                <span className="font-serif text-4xl leading-none text-bronze-ink">{n + 1}</span>
+                <span className="font-serif text-4xl leading-none text-accent-ink">{n + 1}</span>
                 <p className="pt-1 text-[1.05rem] leading-relaxed">{s}</p>
               </Rise>
             ))}
           </ol>
-          <div className="mt-12">
-            {main && <PourAnimation product={main} look={r.look} bg={r.scene.bg} />}
-          </div>
         </div>
       </section>
 
-      <section className="bg-parchemin/55 py-20" aria-labelledby="final-titre">
-        <div className="shell grid gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-6">
-            <p className="mention text-bronze-ink">La boisson finale</p>
+      <section className="bg-tint py-20" aria-labelledby="final-titre">
+        <div className="shell grid gap-12 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-5">
+            <MaskReveal from="left" className="aspect-[4/3]">
+              <Parallax amount={40} bleed>
+                <Photo photo={ph.second} sizes="(min-width:1024px) 40vw, 100vw" className="h-full w-full" />
+              </Parallax>
+            </MaskReveal>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <p className="mention text-accent-ink">La boisson finale</p>
             <h2 id="final-titre" className="mt-4 font-serif text-[2rem] italic leading-snug md:text-[2.4rem]">
               {r.final}
             </h2>
-            <p className="mt-6 text-espresso/85">
+            <p className="mt-6 text-ink-2">
               <strong className="font-semibold">Le conseil de la Maison :</strong> {r.conseil}
             </p>
-          </div>
-          <div className="lg:col-span-5 lg:col-start-8">
-            <h3 className="mention text-bronze-ink">{linked.length > 1 ? "Les créations utilisées" : "La création utilisée"}</h3>
-            <div className="mt-4 space-y-3">
+            <h3 className="mention mt-10 text-accent-ink">{linked.length > 1 ? "Les créations utilisées" : "La création utilisée"}</h3>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
               {linked.map((p) => (
                 <ProductMini key={p.slug} product={p} />
               ))}
@@ -128,12 +135,14 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
         <section className="shell py-20">
           <DrawRule />
           <h2 className="sous-titre mt-10">À essayer ensuite</h2>
-          <ul className="mt-6 divide-y divide-espresso/15 border-y border-espresso/15">
+          <ul className="mt-6 divide-y divide-line border-y border-line">
             {others.map((o) => (
               <li key={o.slug}>
-                <Link href={`/recettes/${o.slug}`} className="flex items-baseline justify-between gap-4 py-4 font-serif text-2xl hover:text-espresso">
+                <Link href={`/recettes/${o.slug}`} className="flex items-baseline justify-between gap-4 py-4 font-serif text-2xl transition-colors hover:text-accent-ink">
                   {o.title}
-                  <span className="font-sans text-xs text-espresso/70">{recipeCategoryLabels[o.category]} · {o.temps}</span>
+                  <span className="font-sans text-xs text-muted">
+                    {recipeCategoryLabels[o.category]} · {o.temps}
+                  </span>
                 </Link>
               </li>
             ))}

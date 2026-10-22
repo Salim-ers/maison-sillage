@@ -10,14 +10,14 @@ import { WakeStroke } from "@/components/animations";
 
 export function FavoritesList() {
   const { favorites, ready } = useStore();
-  if (!ready) return <div className="shell min-h-[30vh] text-espresso/60">Chargement…</div>;
+  if (!ready) return <div className="shell min-h-[30vh] text-muted">Chargement…</div>;
   const list = favorites.map(getProduct).filter((p): p is NonNullable<typeof p> => !!p);
   if (!list.length)
     return (
       <div className="shell pb-32">
-        <WakeStroke className="w-48 text-bronze" />
+        <WakeStroke className="w-48 text-gold" />
         <p className="mt-6 font-serif text-4xl">Aucun favori pour l&apos;instant.</p>
-        <p className="mt-3 max-w-md text-espresso/80">Touchez le cœur d&apos;une création pour la retrouver ici. Vos favoris restent enregistrés sur cet appareil.</p>
+        <p className="mt-3 max-w-md text-ink-2">Touchez le cœur d&apos;une création pour la retrouver ici. Vos favoris restent enregistrés sur cet appareil.</p>
         <Link href="/boutique" className="btn btn-encre mt-8">
           Parcourir la boutique
         </Link>
@@ -26,7 +26,7 @@ export function FavoritesList() {
   return (
     <ul className="shell grid gap-4 pb-32 md:grid-cols-2">
       {list.map((p) => (
-        <li key={p.slug} className="flex flex-col gap-3 bg-creme/40 p-3 sm:flex-row sm:items-center">
+        <li key={p.slug} className="flex flex-col gap-3 bg-paper/40 p-3 sm:flex-row sm:items-center">
           <div className="flex-1">
             <ProductMini product={p} />
           </div>

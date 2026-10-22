@@ -7,10 +7,10 @@ export const metadata: Metadata = { title: "Page introuvable", robots: { index: 
 export default function NotFound() {
   return (
     <section className="shell flex min-h-[80vh] flex-col items-start justify-center pt-[var(--header-h)]">
-      <WakeStroke className="w-56 text-bronze" />
-      <p className="mention mt-8 text-bronze-ink">Page introuvable</p>
+      <WakeStroke className="w-56 text-gold" />
+      <p className="mention mt-8 text-accent-ink">Page introuvable</p>
       <h1 className="display mt-4 text-[clamp(2.8rem,6vw,5.6rem)]">Ce cap ne mène nulle part.</h1>
-      <p className="chapo mt-6 text-espresso">La page que vous cherchez a peut-être changé d&apos;adresse, ou n&apos;a jamais existé. Reprenons la route.</p>
+      <p className="chapo mt-6 text-ink-2">La page que vous cherchez a peut-être changé d&apos;adresse, ou n&apos;a jamais existé. Reprenons la route.</p>
       <div className="mt-10 flex flex-wrap gap-3">
         <Link href="/" className="btn btn-encre">
           Revenir à l&apos;accueil

@@ -36,7 +36,7 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
       onClick={onClick}
       className={cn(
         "min-h-10 border px-3.5 py-2 text-sm transition duration-300",
-        on ? "border-espresso bg-espresso text-creme" : "border-espresso/25 hover:border-espresso/70",
+        on ? "border-inverse bg-inverse text-on-inverse" : "border-line hover:border-ink/60",
       )}
     >
       {children}
@@ -89,7 +89,7 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
     <div className="space-y-8">
       {!lockedCategory && (
         <fieldset>
-          <legend className="mention mb-3 text-bronze-ink">Gamme</legend>
+          <legend className="mention mb-3 text-accent-ink">Gamme</legend>
           <div className="flex flex-wrap gap-2">
             {CATS.map((c) => (
               <Chip key={c.id} on={cat === c.id} onClick={() => setCat(c.id)}>
@@ -100,7 +100,7 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
         </fieldset>
       )}
       <fieldset>
-        <legend className="mention mb-3 text-bronze-ink">Saison</legend>
+        <legend className="mention mb-3 text-accent-ink">Saison</legend>
         <div className="flex flex-wrap gap-2">
           <Chip on={season === "toutes"} onClick={() => setSeason("toutes")}>
             Toutes
@@ -116,7 +116,7 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
         </div>
       </fieldset>
       <fieldset>
-        <legend className="mention mb-3 text-bronze-ink">Profil gustatif</legend>
+        <legend className="mention mb-3 text-accent-ink">Profil gustatif</legend>
         <div className="flex flex-wrap gap-2">
           {(Object.entries(profileLabels) as [Profile, string][]).map(([id, label]) => (
             <Chip key={id} on={profils.includes(id)} onClick={() => setProfils((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]))}>
@@ -131,11 +131,11 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
   return (
     <div className="shell pb-28">
       {/* barre d'outils */}
-      <div className="sticky top-[var(--header-h)] z-30 -mx-[var(--gutter)] border-y border-espresso/10 bg-ivoire/95 px-[var(--gutter)] py-3 backdrop-blur">
+      <div className="sticky top-[var(--header-h)] z-30 -mx-[var(--gutter)] border-y border-line bg-[var(--a-header)] px-[var(--gutter)] py-3 backdrop-blur-xl">
         <div className="flex flex-wrap items-center gap-3">
-          <label className="relative flex min-w-0 flex-1 items-center sm:max-w-sm">
+          <label className="relative flex min-w-0 basis-full items-center sm:max-w-sm sm:flex-1 sm:basis-auto">
             <span className="sr-only">Rechercher dans la boutique</span>
-            <Search className="pointer-events-none absolute left-0 h-4 w-4 text-espresso/60" strokeWidth={1.5} />
+            <Search className="pointer-events-none absolute left-0 h-4 w-4 text-muted" strokeWidth={1.5} />
             <input
               type="search"
               value={q}
@@ -144,13 +144,13 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
               className="champ py-2 pl-7"
             />
           </label>
-          <button type="button" onClick={() => setPanel((v) => !v)} aria-expanded={panel} aria-controls="filtres" className="inline-flex min-h-10 items-center gap-2 border border-espresso/25 px-3.5 text-sm hover:border-espresso">
+          <button type="button" onClick={() => setPanel((v) => !v)} aria-expanded={panel} aria-controls="filtres" className="inline-flex min-h-10 items-center gap-2 border border-line px-3.5 text-sm hover:border-ink/60">
             <SlidersHorizontal className="h-4 w-4" strokeWidth={1.5} />
             Filtres{active ? ` (${active})` : ""}
           </button>
-          <label className="ml-auto flex items-center gap-2 text-sm">
-            <span className="hidden text-espresso/70 md:inline">Trier</span>
-            <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="min-h-10 border border-espresso/25 bg-transparent px-3 text-sm">
+          <label className="ml-auto flex min-w-0 items-center gap-2 text-sm">
+            <span className="hidden text-muted md:inline">Trier</span>
+            <select value={sort} onChange={(e) => setSort(e.target.value as Sort)} className="min-h-10 border border-line bg-page px-3 text-sm text-ink">
               {SORTS.map((s) => (
                 <option key={s.id} value={s.id}>
                   {s.label}
@@ -176,7 +176,7 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
       </div>
 
       <div className="mt-8 flex flex-wrap items-center justify-between gap-3">
-        <p className="text-sm text-espresso/75" aria-live="polite">
+        <p className="text-sm text-muted" aria-live="polite">
           {list.length} création{list.length > 1 ? "s" : ""}
           {active > 0 && " correspondant à vos filtres"}
         </p>
@@ -190,13 +190,13 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
       {list.length === 0 ? (
         <div className="mt-16 max-w-lg">
           <p className="font-serif text-3xl">Aucune création ne correspond à cette recherche.</p>
-          <p className="mt-3 text-espresso/80">Essayez une saison, un fruit ou une épice, ou effacez les filtres pour revoir toute la collection.</p>
+          <p className="mt-3 text-ink-2">Essayez une saison, un fruit ou une épice, ou effacez les filtres pour revoir toute la collection.</p>
           <button type="button" onClick={reset} className="btn btn-encre mt-8">
             Voir toute la collection
           </button>
         </div>
       ) : (
-        <motion.ul layout={!reduce} className="mt-8 grid grid-cols-1 gap-x-6 gap-y-14 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <motion.ul layout={!reduce} className="mt-8 grid grid-cols-1 gap-x-6 gap-y-16 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           <AnimatePresence mode="popLayout" initial={false}>
             {list.map((p) => (
               <motion.li
@@ -208,7 +208,7 @@ export function ShopCatalog({ initial, lockedCategory }: { initial: ShopInitial;
                 transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 className="flex"
               >
-                <ProductCard product={p} className="w-full" variant={lockedCategory ? "gamme" : "carte"} />
+                <ProductCard product={p} className="w-full" />
               </motion.li>
             ))}
           </AnimatePresence>

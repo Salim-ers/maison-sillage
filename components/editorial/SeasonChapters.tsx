@@ -1,26 +1,20 @@
 "use client";
 
-import { useReducedMotion } from "@/lib/useReduced";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { useEffect, useState } from "react";
 import { seasons } from "@/data/collections";
 import { productsBySeason } from "@/data/products";
 import { recipes } from "@/data/recipes";
-import { seasonChapter } from "@/data/media";
-import { Figure } from "@/components/ui/Figure";
+import { seasonImages } from "@/data/images";
+import { Photo } from "@/components/ui/Photo";
 import { ProductMini } from "@/components/products/ProductMini";
-import { RevealTitle, Rise } from "@/components/animations";
+import { SeasonIcon } from "@/components/ambiance/icons";
+import { MaskReveal, Parallax, RevealTitle, Rise } from "@/components/animations";
 import type { SeasonId } from "@/lib/types";
+import { cn } from "@/lib/utils";
 
-/* Les quatre chapitres : le fond de page glisse d'une saison à l'autre au fil du défilement */
+/* Les quatre chapitres : chacun son paysage, sa scène de collection, ses matières */
 export function SeasonChapters() {
-  const ref = useRef<HTMLDivElement>(null);
-  const reduce = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.5", "end 0.5"] });
-  const stops = seasons.map((_, i) => i / (seasons.length - 1));
-  const bg = useTransform(scrollYProgress, stops, seasons.map((s) => s.bg));
-  const ink = useTransform(scrollYProgress, stops, seasons.map((s) => s.ink));
   const [current, setCurrent] = useState<SeasonId>("printemps");
 
   useEffect(() => {
@@ -38,74 +32,96 @@ export function SeasonChapters() {
   }, []);
 
   return (
-    <motion.div ref={ref} style={reduce ? undefined : { backgroundColor: bg, color: ink }} className="relative">
-      {/* sommaire collant */}
-      <motion.nav aria-label="Chapitres" style={reduce ? { backgroundColor: "#f3e8d4" } : { backgroundColor: bg }} className="sticky top-[var(--header-h)] z-20 border-b border-current/15">
+    <div className="relative">
+      <nav aria-label="Chapitres" className="sticky top-[var(--header-h)] z-20 border-y border-line bg-[var(--a-header)] backdrop-blur-xl">
         <ul className="shell no-scrollbar flex gap-1 overflow-x-auto py-2">
           {seasons.map((s) => (
             <li key={s.id}>
               <a
                 href={`#${s.id}`}
                 aria-current={current === s.id ? "true" : undefined}
-                className={`flex items-baseline gap-2 whitespace-nowrap px-3 py-2 transition-opacity ${current === s.id ? "opacity-100" : "opacity-55 hover:opacity-90"}`}
+                className={cn("flex items-center gap-2 whitespace-nowrap px-3 py-2 transition-opacity duration-500", current === s.id ? "opacity-100" : "opacity-50 hover:opacity-90")}
               >
+                <SeasonIcon season={s.id} className="h-4 w-4" />
                 <span className="font-serif text-sm italic">{s.numeral}</span>
                 <span className="font-serif text-lg">{s.name}</span>
               </a>
             </li>
           ))}
         </ul>
-      </motion.nav>
+      </nav>
 
       {seasons.map((s, idx) => {
         const items = productsBySeason(s.id);
         const recs = recipes.filter((r) => r.products.some((slug) => items.some((p) => p.slug === slug)));
+        const img = seasonImages[s.id];
         const flip = idx % 2 === 1;
         return (
-          <section key={s.id} id={s.id} className="scroll-mt-32 py-20 md:py-28" aria-labelledby={`titre-${s.id}`} style={reduce ? { backgroundColor: s.bg, color: s.ink } : undefined}>
+          <section key={s.id} id={s.id} className={cn("chapitre scroll-mt-32 py-20 md:py-28", idx % 2 ? "bg-tint" : "bg-page")} aria-labelledby={`titre-${s.id}`}>
             <div className="shell">
-              <div className={`grid gap-10 lg:grid-cols-12 lg:items-end ${flip ? "lg:text-right" : ""}`}>
-                <div className={`lg:col-span-8 ${flip ? "lg:col-start-5" : ""}`}>
-                  <p className="font-serif text-[clamp(4rem,10vw,9rem)] italic leading-none opacity-25" aria-hidden>
-                    {s.numeral}
+              <div className={cn("flex flex-col gap-4 md:flex-row md:items-end md:gap-10", flip && "md:flex-row-reverse md:text-right")}>
+                <p className="font-serif text-[clamp(5rem,12vw,11rem)] font-light italic leading-[0.8]" style={{ color: s.accent }} aria-hidden>
+                  {s.numeral}
+                </p>
+                <div>
+                  <p className="mention text-accent-ink">
+                    Chapitre {s.numeral} · {s.name}
                   </p>
-                  <p className="mention mt-2 opacity-80">Chapitre {s.numeral} · {s.name}</p>
                   <RevealTitle id={`titre-${s.id}`} text={s.chapter} className="titre mt-3" />
                 </div>
               </div>
 
-              <div className="mt-12">
-                <Figure scene={seasonChapter[s.id]} parallax reveal={flip ? "right" : "left"} sizes="100vw" />
-              </div>
+              <MaskReveal from={flip ? "right" : "left"} className="mt-12 aspect-[4/3] md:aspect-[21/9]">
+                <Parallax amount={60} bleed>
+                  <Photo photo={img.paysage} sizes="100vw" className="h-full w-full" />
+                </Parallax>
+              </MaskReveal>
 
-              <div className="mt-12 grid gap-12 lg:grid-cols-12">
-                <div className="lg:col-span-5">
+              <div className="mt-14 grid gap-14 lg:grid-cols-12">
+                <div className={cn("lg:col-span-5", flip && "lg:order-2 lg:col-start-8")}>
                   <Rise>
-                    <p className="text-[1.08rem] leading-relaxed">{s.intro}</p>
+                    <p className="text-[1.08rem] leading-relaxed text-ink-2">{s.intro}</p>
                   </Rise>
                   <Rise delay={0.1}>
                     <blockquote className="mt-8 border-l-2 pl-5 font-serif text-2xl italic leading-snug" style={{ borderColor: s.accent }}>
                       « {s.carnet} »
                     </blockquote>
                   </Rise>
-                  <p className="mt-6 text-sm opacity-75">Ambiance : {s.ambiance.join(", ")}.</p>
+                  <ul className="mt-7 flex flex-wrap gap-2" aria-label="Ambiance">
+                    {s.mood.map((m) => (
+                      <li key={m} className="rounded-full border border-line px-3 py-1 text-sm">
+                        {m}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-10 grid grid-cols-2 gap-3">
+                    {img.matieres.map((m) => (
+                      <figure key={m.src}>
+                        <Photo photo={m} sizes="(min-width:1024px) 18vw, 45vw" className="aspect-square" />
+                        <figcaption className="mt-2 text-xs text-muted">{m.alt}</figcaption>
+                      </figure>
+                    ))}
+                  </div>
                 </div>
-                <div className="lg:col-span-6 lg:col-start-7">
-                  <h3 className="mention opacity-80">Les créations du chapitre</h3>
-                  <div className="mt-4 grid gap-3">
+                <div className={cn("lg:col-span-6", flip ? "lg:order-1 lg:col-start-1" : "lg:col-start-7")}>
+                  <MaskReveal from="bottom" className="aspect-[16/10]">
+                    <Photo photo={img.scene} sizes="(min-width:1024px) 48vw, 100vw" className="h-full w-full" />
+                  </MaskReveal>
+                  <h3 className="mention mt-10 text-accent-ink">Les créations du chapitre</h3>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {items.map((p) => (
                       <ProductMini key={p.slug} product={p} />
                     ))}
                   </div>
                   {recs.length > 0 && (
                     <>
-                      <h3 className="mention mt-10 opacity-80">Recettes recommandées</h3>
-                      <ul className="mt-3 divide-y divide-current/15 border-y border-current/15">
+                      <h3 className="mention mt-10 text-accent-ink">Recettes du chapitre</h3>
+                      <ul className="mt-3 divide-y divide-line border-y border-line">
                         {recs.map((r) => (
                           <li key={r.slug}>
-                            <Link href={`/recettes/${r.slug}`} className="flex items-baseline justify-between gap-4 py-3.5 font-serif text-xl hover:opacity-75">
+                            <Link href={`/recettes/${r.slug}`} className="group flex items-baseline justify-between gap-4 py-3.5 font-serif text-xl transition-colors hover:text-accent-ink">
                               {r.title}
-                              <span className="font-sans text-xs opacity-70">{r.temps}</span>
+                              <span className="font-sans text-xs text-muted">{r.temps}</span>
                             </Link>
                           </li>
                         ))}
@@ -118,6 +134,6 @@ export function SeasonChapters() {
           </section>
         );
       })}
-    </motion.div>
+    </div>
   );
 }

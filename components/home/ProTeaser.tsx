@@ -1,40 +1,47 @@
 import Link from "next/link";
-import { scenes } from "@/data/media";
-import { Figure } from "@/components/ui/Figure";
-import { RevealTitle, Rise } from "@/components/animations";
+import { home } from "@/data/images";
+import { Photo } from "@/components/ui/Photo";
+import { Parallax, RevealTitle, Rise } from "@/components/animations";
 
-const ARGS = [
-  ["Des créations originales", "pour donner une signature à votre carte"],
-  ["Des formats professionnels", "700 ml pour les sirops, 1 kg pour les poudres"],
-  ["Des recettes signatures", "pensées pour le service, faciles à reproduire"],
-  ["Des usages multiples", "une même référence pour plusieurs boissons"],
-];
+const LIEUX = ["Coffee shops", "Restaurants", "Hôtels", "Salons de thé", "Bars à mocktails", "Établissements gourmands"];
 
-/* Chapitre 9 — l'offre professionnelle */
+/* Section 9 — les professionnels : un comptoir face au port, une offre en préparation */
 export function ProTeaser() {
   return (
-    <section className="bg-espresso py-24 text-creme md:py-32" aria-labelledby="pro-titre">
-      <div className="shell grid gap-14 lg:grid-cols-12 lg:gap-12">
-        <div className="lg:order-2 lg:col-span-7">
-          <Figure scene={scenes.professionnels} reveal="left" sizes="(min-width:1024px) 58vw, 100vw" />
-        </div>
-        <div className="lg:order-1 lg:col-span-5">
-          <p className="mention text-or">Espace professionnels</p>
-          <RevealTitle id="pro-titre" text="Pour les cartes qui veulent laisser un souvenir." className="titre mt-4" />
+    <section className="relative z-10 isolate overflow-hidden bg-deep text-creme" aria-labelledby="pro-titre">
+      <div className="relative h-[52svh] min-h-[340px] md:absolute md:inset-0 md:h-auto">
+        <Parallax amount={70} bleed className="h-full">
+          <Photo photo={home.pro} sizes="100vw" className="h-full w-full" position="30% 55%" />
+        </Parallax>
+        <div className="absolute inset-0 bg-gradient-to-t from-deep via-transparent to-transparent md:bg-[linear-gradient(90deg,transparent_25%,rgb(var(--a-veil)/.82)_58%,rgb(var(--a-veil)/.94)_100%)]" aria-hidden />
+      </div>
+      <div className="shell relative py-16 md:flex md:min-h-[92svh] md:items-center md:justify-end md:py-28">
+        <div className="md:w-[46%] lg:w-[40%]">
           <Rise>
-            <p className="mt-6 text-creme/80">Coffee shops, salons de thé, hôtels, restaurants, glaciers : nous préparons une offre dédiée aux établissements.</p>
+            <p className="mention text-or">Espace professionnels</p>
           </Rise>
-          <dl className="mt-10 divide-y divide-creme/15 border-y border-creme/15">
-            {ARGS.map(([t, d]) => (
-              <Rise key={t} className="py-4">
-                <dt className="font-serif text-xl">{t}</dt>
-                <dd className="mt-0.5 text-sm text-creme/70">{d}</dd>
-              </Rise>
-            ))}
-          </dl>
-          <Link href="/professionnels#demande" className="btn btn-clair mt-10">
-            Demander des informations
-          </Link>
+          <RevealTitle id="pro-titre" text="Des créations pensées pour vos établissements." className="titre mt-5" />
+          <Rise delay={0.1}>
+            <p className="mt-7 text-[1.05rem] leading-relaxed text-creme/85">
+              « Enrichissez votre carte avec des associations gourmandes originales et des préparations imaginées pour inspirer de nouvelles boissons. »
+            </p>
+          </Rise>
+          <Rise delay={0.18}>
+            <ul className="mt-8 flex flex-wrap gap-x-4 gap-y-2 font-serif text-[1.2rem] italic text-creme/90" aria-label="Pour qui">
+              {LIEUX.map((l, i) => (
+                <li key={l} className="flex items-center gap-4">
+                  {l}
+                  {i < LIEUX.length - 1 && <span className="h-1 w-1 rounded-full bg-or/70" aria-hidden />}
+                </li>
+              ))}
+            </ul>
+          </Rise>
+          <Rise delay={0.25}>
+            <p className="mt-8 text-sm text-creme/65">Offre en préparation : formats, conditions et délais restent à définir.</p>
+            <Link href="/professionnels" className="btn btn-clair mt-8">
+              Découvrir l&apos;espace professionnel
+            </Link>
+          </Rise>
         </div>
       </div>
     </section>

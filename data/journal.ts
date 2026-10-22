@@ -8,7 +8,6 @@ export const articles: Article[] = [
     title: "Petite histoire du sirop",
     rubrique: "Histoire",
     lecture: "5 min",
-    visual: "alambic",
     chapo:
       "Avant d'être versé dans un latte, le sirop a longtemps vécu dans les officines. Retour sur un mot venu de loin et sur une préparation qui a beaucoup voyagé.",
     body: [
@@ -27,7 +26,6 @@ export const articles: Article[] = [
     title: "L'art du latte, sans machine de bar",
     rubrique: "Technique",
     lecture: "6 min",
-    visual: "verre",
     chapo:
       "Un bon latte tient en trois gestes : un café juste, un lait bien texturé, et une saveur dosée avec retenue. Quelques principes pour y parvenir à la maison.",
     body: [
@@ -46,7 +44,6 @@ export const articles: Article[] = [
     title: "Quatre saisons, quatre façons de boire",
     rubrique: "Saisons",
     lecture: "4 min",
-    visual: "saisons",
     chapo:
       "Pourquoi une collection saisonnière ? Parce que nos envies changent avec la lumière, et qu'une boisson réussie est d'abord une boisson qui tombe au bon moment.",
     body: [
@@ -62,7 +59,6 @@ export const articles: Article[] = [
     title: "Comment imaginer une carte de boissons originale",
     rubrique: "Professionnels",
     lecture: "7 min",
-    visual: "comptoir",
     chapo:
       "Pour un coffee shop, un salon de thé ou un hôtel, la carte des boissons est souvent la première chose qu'on lit. Quelques pistes pour la rendre singulière sans la compliquer.",
     body: [
@@ -80,7 +76,6 @@ export const articles: Article[] = [
     title: "Sur la trace des anciennes routes maritimes",
     rubrique: "Inspirations",
     lecture: "6 min",
-    visual: "carte",
     chapo:
       "Vanille, cannelle, cacao, fleur d'oranger : beaucoup des saveurs qui nous sont familières ont d'abord traversé des océans. Une promenade dans l'imaginaire qui a donné son nom à la Maison.",
     body: [

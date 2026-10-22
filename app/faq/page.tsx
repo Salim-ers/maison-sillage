@@ -10,7 +10,7 @@ const GROUPS = [
     items: [
       { q: "Maison Sillage existe-t-elle déjà ?", a: "Maison Sillage est un projet en phase de conception. Ce site est une démonstration précommerciale : il présente l'univers de la marque et des produits à l'état de prototypes." },
       { q: "Depuis quand la Maison existe-t-elle ?", a: "Le projet est récent. L'esthétique du XIXe siècle est un choix de style : nous ne revendiquons aucune date de fondation historique ni aucun héritage." },
-      { q: "Les visuels sont-ils des photographies des produits ?", a: "Non. Les visuels sont des illustrations de démonstration qui présentent le futur système de packaging. Ils seront remplacés par de vraies prises de vue." },
+      { q: "Les visuels sont-ils des photographies des produits ?", a: "Non. Ce sont des visuels de démonstration, créés pour présenter l'univers de la Maison et le futur système de flacons et de sachets. Ils ne représentent ni des produits commercialisés ni des lieux réels, et seront remplacés par de véritables prises de vue." },
     ],
   },
   {
@@ -38,7 +38,7 @@ export default function Faq() {
       <div className="shell max-w-4xl space-y-16 pb-28">
         {GROUPS.map((g) => (
           <section key={g.title}>
-            <h2 className="mention text-bronze-ink">{g.title}</h2>
+            <h2 className="mention text-accent-ink">{g.title}</h2>
             <div className="mt-4">
               <Accordion items={g.items} />
             </div>
