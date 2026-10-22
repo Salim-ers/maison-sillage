@@ -19,10 +19,10 @@ const UNIVERS: { n: string; title: string; text: string; href: string; cta: stri
     href: "/sirops",
     cta: "Découvrir les sirops",
     photo: home.monde.sirops,
-    aspect: "aspect-[4/5]",
-    col: "md:col-span-7 lg:col-span-5",
+    aspect: "aspect-[4/3]",
+    col: "md:col-span-7 lg:col-span-6",
     depth: 50,
-    sizes: "(min-width:1024px) 38vw, (min-width:768px) 56vw, 100vw",
+    sizes: "(min-width:1024px) 46vw, (min-width:768px) 56vw, 100vw",
   },
   {
     n: "II",
@@ -32,9 +32,9 @@ const UNIVERS: { n: string; title: string; text: string; href: string; cta: stri
     cta: "Découvrir les poudres",
     photo: home.monde.poudres,
     aspect: "aspect-[3/4]",
-    col: "md:col-span-5 md:mt-48 lg:col-span-4 lg:mt-56",
+    col: "md:col-span-5 md:mt-48 lg:col-span-3 lg:mt-56",
     depth: 90,
-    sizes: "(min-width:1024px) 30vw, (min-width:768px) 40vw, 100vw",
+    sizes: "(min-width:1024px) 23vw, (min-width:768px) 40vw, 100vw",
   },
   {
     n: "III",
@@ -46,7 +46,7 @@ const UNIVERS: { n: string; title: string; text: string; href: string; cta: stri
     aspect: "aspect-[4/5] lg:aspect-[3/4.4]",
     col: "md:col-span-8 md:col-start-3 lg:col-span-3 lg:col-start-auto lg:mt-20",
     depth: 30,
-    sizes: "(min-width:1024px) 24vw, (min-width:768px) 64vw, 100vw",
+    sizes: "(min-width:1024px) 23vw, (min-width:768px) 64vw, 100vw",
   },
 ];
 

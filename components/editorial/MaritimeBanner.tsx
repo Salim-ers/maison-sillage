@@ -4,19 +4,19 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { useAmbiance, useAmbianceAssets } from "@/lib/ambiance";
 import { useReducedMotion } from "@/lib/useReduced";
-import { heroPhoto } from "@/data/images";
+import { storyPhoto } from "@/data/images";
 import { AmbientImage } from "@/components/ambiance/AmbientImage";
-import { Atmosphere } from "@/components/ambiance/Atmosphere";
+import { SeasonDrift } from "@/components/ambiance/Atmosphere";
 
-const SIZES = "(max-aspect-ratio: 16/9) 178vh, 100vw";
+const SIZES = "100vw";
 
 /** Ouverture photographique des pages éditoriales : le voilier de la saison, dans la lumière choisie */
 export function MaritimeBanner({ kicker, title, children }: { kicker: string; title: string; children?: React.ReactNode }) {
   const amb = useAmbiance();
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
-  const photo = heroPhoto(amb.season, amb.light);
-  useAmbianceAssets((a) => [{ photo: heroPhoto(a.season, a.light), sizes: SIZES }]);
+  const photo = storyPhoto(amb.season, amb.light);
+  useAmbianceAssets((a) => [{ photo: storyPhoto(a.season, a.light), sizes: SIZES }]);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["0%", "18%"]);
   const o = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
@@ -24,12 +24,8 @@ export function MaritimeBanner({ kicker, title, children }: { kicker: string; ti
   return (
     <section ref={ref} className="relative isolate h-[78svh] min-h-[520px] overflow-hidden bg-[rgb(var(--a-veil))] text-creme" aria-labelledby="banniere-titre">
       <motion.div className="absolute inset-0" style={{ y }}>
-        <div className="cover-frame">
-          <div className="cover-stage" style={{ ["--cx" as string]: photo.scene.ship.x, ["--cy" as string]: photo.scene.ship.y }}>
-            <AmbientImage photo={photo} sizes={SIZES} preload layerClassName="hero-intro-photo" />
-            <Atmosphere scene={photo.scene} season={amb.season} paused={reduce} />
-          </div>
-        </div>
+        <AmbientImage photo={photo} sizes={SIZES} preload layerClassName="hero-intro-photo" />
+        {!reduce && <SeasonDrift season={amb.season} count={10} />}
       </motion.div>
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,rgb(var(--a-veil)/.85),rgb(var(--a-veil)/.2)_55%,rgb(var(--a-veil)/.45))]" aria-hidden />
       <motion.div style={{ opacity: o }} className="shell relative flex h-full flex-col justify-end pb-16 md:pb-20">

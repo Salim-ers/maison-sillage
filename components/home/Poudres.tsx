@@ -22,10 +22,10 @@ export function Poudres() {
         <div className="relative lg:col-span-6">
           <MaskReveal from="bottom" className="aspect-[5/4]">
             <Parallax amount={60} bleed>
-              <Photo photo={home.poudres.matiere} sizes="(min-width:1024px) 48vw, 100vw" className="h-full w-full" />
+              <Photo photo={home.poudres} sizes="(min-width:1024px) 48vw, 100vw" className="h-full w-full" />
             </Parallax>
           </MaskReveal>
-          <p className="mt-3 font-serif text-[0.95rem] italic text-on-deep-2">Cacao, chocolat noir : la matière d&apos;une préparation gourmande.</p>
+          <p className="mt-3 font-serif text-[0.95rem] italic text-on-deep-2">Les quatre préparations de saison, et leurs matières.</p>
         </div>
         <div className="lg:col-span-5 lg:col-start-8">
           <Rise>

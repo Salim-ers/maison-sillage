@@ -7,7 +7,7 @@ import { useAmbiance } from "@/lib/ambiance";
 import { useReducedMotion } from "@/lib/useReduced";
 import { FLAVORS, poudreOf, siropOf, startingPrice } from "@/data/products";
 import { seasons } from "@/data/collections";
-import { quai } from "@/data/images";
+import { duoPhoto } from "@/data/images";
 import { formatPrice, cn } from "@/lib/utils";
 import { Photo } from "@/components/ui/Photo";
 import { SeasonIcon } from "@/components/ambiance/icons";
@@ -190,7 +190,7 @@ export function Creations() {
           const s = seasons.find((x) => x.id === SEASON_OF[f])!;
           const ps = startingPrice(sirop);
           const pp = startingPrice(poudre);
-          const img = quai(f);
+          const img = duoPhoto(f);
           return (
             <article
               key={f}
@@ -200,35 +200,21 @@ export function Creations() {
               className={cn("group relative grid w-[86vw] shrink-0 snap-center gap-8 md:w-[74vw] md:grid-cols-[1.05fr_1fr] md:items-center md:gap-[4vw] lg:max-w-[1180px]", index !== i && "md:opacity-60")}
               style={{ transition: "opacity .8s cubic-bezier(.22,1,.36,1)" }}
             >
-              {/* composition photographique : flacon et sachet, au même coucher de soleil */}
-              <div className="relative mx-auto aspect-[1/1.02] w-full max-w-[34rem] select-none">
-                <div
-                  className="absolute inset-[8%] rounded-full opacity-70 blur-3xl transition-opacity duration-700 group-hover:opacity-100"
-                  style={{ background: `radial-gradient(circle, ${sirop.palette.accent}66, transparent 65%)` }}
-                  aria-hidden
-                />
-                <div className="absolute left-[4%] top-0 w-[46%] [transform:translateX(calc(var(--off,0)*-38px))] transition-transform duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)]">
+              {/* le sirop et la poudre, ensemble, en clair-obscur */}
+              <Link href={`/produits/${sirop.slug}`} className="relative mx-auto block w-full max-w-[34rem] select-none" tabIndex={-1} aria-hidden draggable={false}>
+                <div className="overflow-hidden shadow-[0_50px_90px_-40px_rgba(0,0,0,.85)]">
                   <Photo
-                    photo={img.flacon}
-                    sizes="(min-width:768px) 17vw, 40vw"
-                    className="aspect-[351/828] shadow-[0_40px_80px_-30px_rgba(0,0,0,.7)] transition-transform duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:-translate-y-2"
-                    imgClassName="transition-transform duration-[1.6s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.04]"
+                    photo={img}
+                    sizes="(min-width:768px) 36vw, 86vw"
+                    className="aspect-[4/5]"
+                    imgClassName="transition-transform duration-[1.6s] ease-[cubic-bezier(.22,1,.36,1)] [transform:scale(1.06)_translateX(calc(var(--off,0)*-18px))] group-hover:[transform:scale(1.1)_translateX(calc(var(--off,0)*-18px))]"
                     night={false}
                   />
                 </div>
-                <div className="absolute bottom-0 right-[3%] w-[44%] [transform:translateX(calc(var(--off,0)*-90px))] transition-transform duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)]">
-                  <Photo
-                    photo={img.sachet}
-                    sizes="(min-width:768px) 16vw, 38vw"
-                    className="aspect-[368/753] shadow-[0_40px_80px_-30px_rgba(0,0,0,.75)] ring-1 ring-on-deep/10 transition-transform duration-[1.2s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:translate-y-1.5"
-                    imgClassName="transition-transform duration-[1.6s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.04]"
-                    night={false}
-                  />
-                </div>
-                <span className="absolute -left-1 bottom-[8%] font-serif text-[clamp(4rem,9vw,8rem)] italic leading-none text-on-deep/10" aria-hidden>
+                <span className="absolute -left-3 bottom-[6%] font-serif text-[clamp(4rem,9vw,8rem)] italic leading-none text-creme/25 md:-left-10" aria-hidden>
                   {s.numeral}
                 </span>
-              </div>
+              </Link>
 
               <div className="pb-2 [transform:translateX(calc(var(--off,0)*40px))]">
                 <p className="mention flex items-center gap-2.5" style={{ color: sirop.palette.accent }}>

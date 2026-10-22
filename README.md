@@ -42,15 +42,15 @@ data/                      products.ts, collections.ts, recipes.ts, journal.ts, 
 lib/ambiance*.ts(x)        système d'ambiances (état partagé, préchargement, transitions, script anti-flash)
 lib/                       panier & favoris (localStorage), recherche, utilitaires
 public/brand/              logo officiel détouré (clair / sombre), emblème
-public/images/             hero/ story/ products/ seasons/ recipes/ lifestyle/ — masters WebP générés
-assets/originals/          photographies transmises, haute résolution, non modifiées (voir assets/README.md)
-scripts/images/            chaîne de production des images (recadrages, étalonnages jour / nuit / saisons)
+public/images/             hero/ story/ products/ seasons/ recipes/ lifestyle/ — masters WebP
+assets/originals/          emballages de référence transmis (non modifiés)
+scripts/images/            plan de prise de vue, génération (API OpenAI Images), conversion WebP
 scripts/qa/                audit des routes et parcours utilisateurs (Playwright)
 ```
 
 ## L'accueil
 
-1. **Hero maritime** plein écran : un grand voilier par saison, entrée cinématographique en CSS (photographie, titre ligne par ligne, sous-titre, boutons, indicateur de défilement), profondeur au défilement, puis la section suivante recouvre le hero sous une houle et un sillage doré. Composition verticale dédiée sur mobile.
+1. **Hero maritime** plein écran : un grand voilier au large et, au premier plan, la création de la saison (sirop, poudre, boisson), entrée cinématographique en CSS (photographie, titre ligne par ligne, sous-titre, boutons, indicateur de défilement), profondeur au défilement, puis la section suivante recouvre le hero sous une houle et un sillage doré. Composition verticale dédiée sur mobile.
 2. **Le monde Maison Sillage** : trois univers en mise en page asymétrique, masques et parallaxe.
 3. **Créations signatures** : carrousel horizontal (glisser à la souris, tactile, clavier) — flacon et sachet de chaque création.
 4. **Quatre saisons** : le sélecteur pilote l'ambiance du site entier (photographie, couleurs, création, récit), geste de balayage sur mobile.
@@ -61,16 +61,16 @@ scripts/qa/                audit des routes et parcours utilisateurs (Playwright
 Boussole dans l'en-tête : deux réglages indépendants — **lumière** (jour, coucher de soleil, nuit) et **saison** — et un mode **automatique** (date et heure locales, appliqué à chaque visite, jamais pendant la navigation). Par défaut : été au coucher du soleil.
 
 - Les couleurs sont des variables CSS pilotées par `data-light` / `data-season` sur `<html>` ; un script inline dans `<head>` applique la préférence mémorisée avant le premier rendu (aucun flash), sur toutes les pages.
-- Les photographies changent réellement : chaque saison a sa propre prise de vue, et chaque lumière une version étalonnée hors ligne (`scripts/images/grading.py`). Avant chaque bascule, seules les images de la prochaine ambiance, déclarées par les composants affichés, sont préchargées.
-- Transition ≈ 1,1 s : dévoilement circulaire depuis la boussole (View Transitions API) sur ordinateur, fondu sur mobile, bascule immédiate si `prefers-reduced-motion`. La nuit, étoiles, fenêtres du village, lanternes et feu de poupe s'allument ; pétales au printemps, reflets en été, feuilles en automne, neige en hiver.
+- Les photographies changent réellement : chaque saison a sa propre scène, et chaque lumière sa propre image (jour, coucher de soleil, nuit), en version bureau et mobile. Avant chaque bascule, seules les images de la prochaine ambiance, déclarées par les composants affichés, sont préchargées.
+- Transition ≈ 1,1 s : dévoilement circulaire depuis la boussole (View Transitions API) sur ordinateur, fondu sur mobile, bascule immédiate si `prefers-reduced-motion`. La nuit, la photographie montre la lune, les étoiles, les fenêtres du village et les lanternes allumées ; en surimpression, pétales au printemps, lueurs dorées en été, feuilles en automne, neige en hiver.
 
 ## Photographies
 
-Voir `assets/README.md` : inventaire, attribution, ambiances, **visuels manquants**. Pour régénérer les images après un ajout ou un remplacement :
-
-```bash
-npm run images     # python -I scripts/images/build.py  (Pillow + NumPy)
-```
+Toutes les photographies du site sont produites par une chaîne reproductible (voir `assets/README.md`) :
+plan de prise de vue (`scripts/images/shots.py`), génération haute définition avec l'API OpenAI Images
+(`scripts/images/generate.py`, clé lue dans `OPENAI_API_KEY`), puis conversion en masters WebP (`npm run images`).
+Les emballages de référence garantissent des étiquettes identiques d'une image à l'autre ; les variantes jour / nuit
+sont de vraies images de la même scène, pas des filtres.
 
 ## Contenus fictifs et garde-fous
 

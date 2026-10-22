@@ -13,10 +13,10 @@ const DETAIL_SIZES = "(min-width:1024px) 18vw, 40vw";
 export function Histoire() {
   const amb = useAmbiance();
   const main = storyPhoto(amb.season, amb.light);
-  const detail = storyDetail(amb.season, amb.light);
+  const detail = storyDetail(amb.season);
   useAmbianceAssets((a) => [
     { photo: storyPhoto(a.season, a.light), sizes: MAIN_SIZES },
-    { photo: storyDetail(a.season, a.light), sizes: DETAIL_SIZES },
+    { photo: storyDetail(a.season), sizes: DETAIL_SIZES },
   ]);
 
   return (
@@ -37,7 +37,7 @@ export function Histoire() {
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <AmbientImage photo={detail} sizes={DETAIL_SIZES} />
                 </div>
-                <figcaption className="px-1 pb-1 pt-2 font-serif text-[0.85rem] italic text-muted">Carnet de bord, sur le quai</figcaption>
+                <figcaption className="px-1 pb-1 pt-2 font-serif text-[0.85rem] italic text-muted">Carnet de bord</figcaption>
               </figure>
             </Rise>
           </Parallax>

@@ -7,3 +7,5 @@ next-env.d.ts
 .dev.pid
 .prod.pid
 __pycache__
+assets/generated/
+assets/generated-archive/

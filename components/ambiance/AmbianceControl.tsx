@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
 import { useAmbiance } from "@/lib/ambiance";
 import { useReducedMotion } from "@/lib/useReduced";
-import { heroPhoto } from "@/data/images";
+import { heroPhotos } from "@/data/images";
 import { lights, seasons } from "@/data/collections";
 import { cn } from "@/lib/utils";
 import { CompassIcon, LightIcon, SeasonIcon } from "./icons";
@@ -103,7 +103,7 @@ export function AmbianceControl({ tone }: { tone: "photo" | "page" }) {
               <div className="grid grid-cols-3 gap-2">
                 {lights.map((l) => {
                   const on = target.light === l.id;
-                  const p = heroPhoto(target.season, l.id);
+                  const p = heroPhotos(target.season, l.id).desktop;
                   return (
                     <label key={l.id} className={cn("group/opt relative block cursor-pointer overflow-hidden rounded-[2px] border transition", on ? "border-ink" : "border-line hover:border-ink/40")}>
                       <input
@@ -115,7 +115,7 @@ export function AmbianceControl({ tone }: { tone: "photo" | "page" }) {
                         className="peer sr-only"
                       />
                       <span className="relative block aspect-[4/3] overflow-hidden">
-                        <Image src={p.src} alt="" fill sizes="130px" quality={70} className="object-cover transition duration-700 group-hover/opt:scale-105" style={{ objectPosition: `${p.scene.ship.x * 100}% 50%` }} />
+                        <Image src={p.src} alt="" fill sizes="130px" quality={70} className="object-cover transition duration-700 group-hover/opt:scale-105" style={{ objectPosition: "42% 50%" }} />
                         <span className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
                         <LightIcon light={l.id} className="absolute bottom-1.5 left-1.5 h-5 w-5 text-creme" />
                       </span>
@@ -132,7 +132,7 @@ export function AmbianceControl({ tone }: { tone: "photo" | "page" }) {
               <div className="grid grid-cols-4 gap-2">
                 {seasons.map((s) => {
                   const on = target.season === s.id;
-                  const p = heroPhoto(s.id, target.light);
+                  const p = heroPhotos(s.id, target.light).desktop;
                   return (
                     <label key={s.id} className={cn("group/opt relative block cursor-pointer overflow-hidden rounded-[2px] border transition", on ? "border-ink" : "border-line hover:border-ink/40")}>
                       <input
@@ -144,7 +144,7 @@ export function AmbianceControl({ tone }: { tone: "photo" | "page" }) {
                         className="peer sr-only"
                       />
                       <span className="relative block aspect-square overflow-hidden">
-                        <Image src={p.src} alt="" fill sizes="96px" quality={70} className="object-cover transition duration-700 group-hover/opt:scale-105" style={{ objectPosition: `${p.scene.ship.x * 100}% 50%` }} />
+                        <Image src={p.src} alt="" fill sizes="96px" quality={70} className="object-cover transition duration-700 group-hover/opt:scale-105" style={{ objectPosition: "42% 50%" }} />
                         <span className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                         <SeasonIcon season={s.id} className="absolute bottom-1.5 left-1.5 h-[18px] w-[18px] text-creme" />
                       </span>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useReducedMotion } from "@/lib/useReduced";
-import { useRef, type ElementType, type ReactNode } from "react";
+import { Fragment, useRef, type ElementType, type ReactNode } from "react";
 import { motion, useInView, useScroll, useTransform, type Variants } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -42,12 +42,15 @@ export function RevealTitle({
     return (
       <Tag id={id} className={className} aria-label={text}>
         {words.map((w, i) => (
-          <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom">
-            <span className="hero-ligne !inline-block" style={{ ["--delay" as string]: `${(delay + i * stagger).toFixed(2)}s` }}>
-              {w}
-              {i < words.length - 1 ? " " : ""}
+          <Fragment key={i}>
+            <span aria-hidden className="inline-block overflow-hidden pb-[0.12em] -mb-[0.12em] align-bottom">
+              <span className="hero-ligne" style={{ ["--delay" as string]: `${(delay + i * stagger).toFixed(2)}s` }}>
+                {w}
+              </span>
             </span>
-          </span>
+            {/* l'espace reste hors des blocs animés : sinon il serait absorbé en fin de bloc */}
+            {i < words.length - 1 ? " " : null}
+          </Fragment>
         ))}
       </Tag>
     );

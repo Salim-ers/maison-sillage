@@ -343,22 +343,6 @@ html[data-light="nuit"] { color-scheme: dark; }
 .font-serif, h1, h2, h3, h4, .display, .titre, .sous-titre { font-feature-settings: "lnum" 1; }
 .tabular-nums { font-feature-settings: "lnum" 1, "tnum" 1; }
 
-/* ─────────────── Cadrage « cover » pilotable (hero) ───────────────
-   L'image et ses calques d'atmosphère partagent la même scène : un
-   repère (--cx, --cy) reste au centre de l'écran quel que soit le
-   format (le navire sur mobile). */
-.cover-frame { position: absolute; inset: 0; overflow: hidden; container-type: size; }
-.cover-stage {
-  --ar: 1.7768;
-  --w: max(100cqw, calc(100cqh * var(--ar)));
-  --h: max(100cqh, calc(100cqw / var(--ar)));
-  position: absolute;
-  width: var(--w);
-  height: var(--h);
-  left: clamp(calc(100cqw - var(--w)), calc(50cqw - var(--cx, 0.5) * var(--w)), 0px);
-  top: clamp(calc(100cqh - var(--h)), calc(50cqh - var(--cy, 0.5) * var(--h)), 0px);
-}
-
 /* ─────────────── Transitions d'ambiance ─────────────── */
 html.amb-doux body,
 html.amb-doux body *:not(img):not(.amb-layer):not(.atmo *) {
@@ -405,57 +389,6 @@ html[data-vt="fondu"]::view-transition-new(root) { animation: amb-fondu 0.75s ea
 .atmo { position: absolute; inset: 0; pointer-events: none; }
 .atmo[data-paused] *, .atmo[data-paused] *::before, .atmo[data-paused] *::after { animation-play-state: paused !important; }
 
-/* soleil (jour / coucher) et lune (nuit), à la position de l'astre */
-.atmo-astre {
-  position: absolute;
-  width: 46%;
-  aspect-ratio: 1;
-  translate: -50% -50%;
-  border-radius: 50%;
-  opacity: 0;
-  transition: opacity 1.4s var(--ease-sillage), background 1.4s;
-}
-[data-light="coucher"] .atmo-astre { opacity: 0.55; background: radial-gradient(circle, rgb(255 214 150 / 0.55), rgb(255 170 90 / 0.18) 32%, transparent 62%); animation: astre 9s ease-in-out infinite; }
-[data-light="jour"] .atmo-astre { opacity: 0.5; background: radial-gradient(circle, rgb(255 255 245 / 0.6), rgb(255 250 230 / 0.15) 30%, transparent 60%); }
-[data-light="nuit"] .atmo-astre { opacity: 0.9; width: 30%; background: radial-gradient(circle, rgb(220 232 255 / 0.5), rgb(160 185 230 / 0.14) 26%, transparent 60%); animation: astre 12s ease-in-out infinite; }
-@keyframes astre { 50% { scale: 1.08; } }
-
-.atmo-etoiles { position: absolute; opacity: 0; transition: opacity 2.2s 0.5s var(--ease-sillage); }
-[data-light="nuit"] .atmo-etoiles { opacity: 1; }
-.etoile {
-  position: absolute;
-  width: var(--s, 2px);
-  height: var(--s, 2px);
-  border-radius: 50%;
-  background: #fffaf0;
-  box-shadow: 0 0 6px 1px rgb(220 230 255 / 0.55);
-}
-[data-light="nuit"] .etoile { animation: scintille var(--d, 4s) ease-in-out var(--delay, 0s) infinite; }
-@keyframes scintille { 0%, 100% { opacity: 0.25; scale: 0.7; } 50% { opacity: 1; scale: 1; } }
-
-.atmo-feu {
-  position: absolute;
-  translate: -50% -50%;
-  border-radius: 50%;
-  opacity: 0;
-  background: radial-gradient(circle, rgb(255 214 140 / 0.95), rgb(255 170 80 / 0.38) 22%, rgb(255 150 60 / 0.08) 55%, transparent 70%);
-  transition: opacity 1.4s var(--ease-sillage) var(--wd, 0.6s);
-}
-[data-light="nuit"] .atmo-feu { opacity: 1; animation: vacille 3.2s ease-in-out var(--wd, 0s) infinite; }
-.atmo-fenetre {
-  position: absolute;
-  width: 0.55%;
-  aspect-ratio: 0.8;
-  translate: -50% -50%;
-  border-radius: 1px;
-  background: #ffcf7a;
-  box-shadow: 0 0 10px 3px rgb(255 190 90 / 0.55), 0 0 26px 8px rgb(255 160 60 / 0.18);
-  opacity: 0;
-  transition: opacity 0.9s ease var(--wd, 0.8s);
-}
-[data-light="nuit"] .atmo-fenetre { opacity: 0.92; }
-@keyframes vacille { 0%, 100% { opacity: 0.92; scale: 1; } 40% { opacity: 0.78; scale: 0.96; } 70% { opacity: 1; scale: 1.03; } }
-
 /* particules saisonnières */
 .particule {
   position: absolute;
@@ -476,20 +409,9 @@ html[data-vt="fondu"]::view-transition-new(root) { animation: amb-fondu 0.75s ea
 .particule-petale { border-radius: 80% 0 80% 0; background: linear-gradient(135deg, #f7d4da, #e9a3b0); box-shadow: 0 1px 2px rgb(120 40 60 / 0.15); }
 .particule-feuille { border-radius: 0 80% 0 80%; background: linear-gradient(135deg, #e0a04a, #a8551f); box-shadow: 0 1px 2px rgb(80 30 10 / 0.25); }
 .particule-lueur { border-radius: 50%; background: radial-gradient(circle, rgb(255 226 160 / 0.9), rgb(255 200 120 / 0.2) 55%, transparent 70%); filter: blur(0.5px); }
-.reflet {
-  position: absolute;
-  width: var(--s);
-  height: calc(var(--s) * 0.35);
-  translate: -50% -50%;
-  border-radius: 50%;
-  background: radial-gradient(ellipse, rgb(255 246 220 / 0.95), transparent 70%);
-  animation: miroite var(--d) ease-in-out var(--delay) infinite;
-}
-[data-light="nuit"] .reflet { background: radial-gradient(ellipse, rgb(225 235 255 / 0.85), transparent 70%); }
-@keyframes miroite { 0%, 100% { opacity: 0; scale: 0.6 1; } 50% { opacity: 1; scale: 1.2 1; } }
 
 @media (max-width: 767px) {
-  .particule:nth-child(n + 15), .etoile:nth-child(n + 40), .reflet:nth-child(n + 8) { display: none; }
+  .particule:nth-child(n + 15) { display: none; }
 }
 
 /* ─────────────── Pied de page : éclairage d'ambiance ─────────────── */
@@ -531,6 +453,7 @@ html[data-vt="fondu"]::view-transition-new(root) { animation: amb-fondu 0.75s ea
   transition: opacity 1.4s var(--ease-sillage) 0.4s;
 }
 [data-light="nuit"] .pied-lanterne { opacity: 1; animation: vacille 5s ease-in-out infinite; }
+@keyframes vacille { 0%, 100% { opacity: 0.92; scale: 1; } 40% { opacity: 0.78; scale: 0.96; } 70% { opacity: 1; scale: 1.03; } }
 .pied-marque {
   font-size: clamp(5rem, 21vw, 21rem);
   background: linear-gradient(180deg, color-mix(in oklab, var(--a-gold) 55%, transparent), transparent 92%);
@@ -575,7 +498,7 @@ html[data-amb-custom] .hero-ssr { opacity: 0 !important; }
     transition-delay: 0s !important;
     scroll-behavior: auto !important;
   }
-  .particule, .reflet { display: none; }
+  .particule { display: none; }
   /* contenus révélés au défilement : visibles d'emblée, sans attendre le JavaScript */
   [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
 }
