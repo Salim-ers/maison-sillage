@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────────────────────
+   MAISON SILLAGE — design tokens
+   Palette de la charte + accents saisonniers
+   ────────────────────────────────────────────────────────────── */
+@theme {
+  --color-ivoire: #f3e8d4;
+  --color-parchemin: #e6d5b8;
+  --color-encre: #24180f;
+  --color-espresso: #4b3020;
+  --color-bronze: #a47b43;
+  --color-bronze-ink: #7a5528; /* bronze lisible pour petits textes (AA sur ivoire) */
+  --color-or: #c5a36c;
+  --color-creme: #fff9ef;
+  --color-lin: #ece0c9;
+
+  --color-printemps: #b98a88;
+  --color-ete: #d8936a;
+  --color-automne: #a9692f;
+  --color-hiver: #5e3b2a;
+
+  --font-serif: var(--font-cormorant), "Cormorant Garamond", Garamond, "Times New Roman", serif;
+  --font-sans: var(--font-manrope), "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --ease-sillage: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-houle: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --breakpoint-xs: 26rem;
+}
+
+:root {
+  --gutter: clamp(1.25rem, 4.2vw, 4.5rem);
+  --header-h: 5.25rem;
+  --season: var(--color-automne);
+  color-scheme: light;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+  body {
+    background-color: var(--color-ivoire);
+    color: var(--color-encre);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+    /* grain de papier très discret, rastérisé une seule fois */
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .29  0 0 0 0 .19  0 0 0 0 .12  0 0 0 .06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  ::selection { background: var(--color-or); color: var(--color-encre); }
+  :focus-visible {
+    outline: 1.5px solid var(--color-bronze-ink);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+  img, svg { display: block; max-width: 100%; }
+  button { cursor: pointer; }
+}
+
+@layer components {
+  .shell {
+    width: 100%;
+    max-width: 92rem;
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  /* Mentions en capitales espacées — héritage des casses d'imprimerie */
+  .mention {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+  .display {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(2.9rem, 7.4vw, 7.6rem);
+    line-height: 0.94;
+    letter-spacing: -0.022em;
+  }
+  .titre {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(2.3rem, 4.6vw, 4.4rem);
+    line-height: 1;
+    letter-spacing: -0.015em;
+  }
+  .sous-titre {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-size: clamp(1.55rem, 2.2vw, 2.1rem);
+    line-height: 1.12;
+  }
+  .citation {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-weight: 400;
+  }
+  .chapo {
+    font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+    line-height: 1.7;
+    max-width: 38rem;
+  }
+  .lettrine::first-letter {
+    font-family: var(--font-serif);
+    float: left;
+    font-size: 4.6em;
+    line-height: 0.82;
+    padding: 0.08em 0.1em 0 0;
+    color: var(--color-espresso);
+  }
+
+  /* Boutons */
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    min-height: 3.25rem;
+    padding: 0.9rem 1.75rem;
+    font-size: 0.74rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    border-radius: 1px;
+    overflow: hidden;
+    isolation: isolate;
+    transition: color 0.45s var(--ease-sillage), border-color 0.45s var(--ease-sillage), background-color 0.45s var(--ease-sillage);
+  }
+  .btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.6s var(--ease-sillage);
+  }
+  .btn:hover::before { transform: scaleX(1); transform-origin: left; }
+  .btn:disabled { opacity: 0.55; cursor: not-allowed; }
+  .btn:disabled::before { display: none; }
+
+  .btn-encre { background: var(--color-espresso); color: var(--color-creme); }
+  .btn-encre::before { background: var(--color-encre); }
+  .btn-trait { border-color: color-mix(in oklab, currentColor 45%, transparent); color: inherit; }
+  .btn-trait::before { background: color-mix(in oklab, currentColor 9%, transparent); }
+  .btn-clair { background: var(--color-creme); color: var(--color-encre); }
+  .btn-clair::before { background: var(--color-or); }
+
+  .lien {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+    transition: background-size 0.5s var(--ease-sillage);
+  }
+  .lien:hover { background-size: 0% 1px; background-position: 100% 100%; }
+  .lien-revele {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 2px;
+    transition: background-size 0.5s var(--ease-sillage);
+  }
+  .lien-revele:hover, .lien-revele[aria-current="page"] { background-size: 100% 1px; background-position: 0 100%; }
+
+  /* Filet typographique façon étiquette */
+  .filet {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--color-bronze) 70%, transparent) 12%, color-mix(in oklab, var(--color-bronze) 70%, transparent) 88%, transparent);
+  }
+  .double-filet {
+    border-top: 1px solid color-mix(in oklab, var(--color-bronze) 55%, transparent);
+    border-bottom: 1px solid color-mix(in oklab, var(--color-bronze) 55%, transparent);
+    padding-block: 3px;
+  }
+
+  .champ {
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid color-mix(in oklab, var(--color-espresso) 40%, transparent);
+    padding: 0.85rem 0 0.6rem;
+    font-size: 1rem;
+    color: inherit;
+    border-radius: 0;
+    transition: border-color 0.3s;
+  }
+  .champ:focus { outline: none; border-color: var(--color-encre); }
+  .champ[aria-invalid="true"] { border-color: #9b3b2a; }
+  .champ::placeholder { color: color-mix(in oklab, currentColor 45%, transparent); }
+
+  .papier {
+    background-color: var(--color-creme);
+    box-shadow: 0 1px 0 rgba(75, 48, 32, 0.06), 0 18px 40px -28px rgba(36, 24, 15, 0.35);
+  }
+
+  .no-scrollbar { scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Micro-animations décoratives (désactivées par prefers-reduced-motion) */
+@keyframes defile { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
+.defile { animation: defile 2.6s var(--ease-houle) infinite; }
+@keyframes bulle { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: .8; } 100% { transform: translateY(-120px); opacity: 0; } }
+.bulle { animation: bulle 3.2s ease-in infinite; transform-box: fill-box; }
+@keyframes vapeur { 0% { opacity: 0; transform: translateY(8px); } 40% { opacity: .75; } 100% { opacity: 0; transform: translateY(-18px); } }
+.vapeur { animation: vapeur 3.6s ease-in-out infinite; transform-box: fill-box; }
+.vapeur-2 { animation-delay: 1.4s; }
+
+/* Chiffres alignés pour les prix et dates en serif (Cormorant utilise des chiffres elzéviriens par défaut) */
+.font-serif, h1, h2, h3, h4, .display, .titre, .sous-titre { font-feature-settings: "lnum" 1; }
+.tabular-nums { font-feature-settings: "lnum" 1, "tnum" 1; }
+@keyframes trait { 0% { stroke-dashoffset: 260; } 100% { stroke-dashoffset: -260; } }
+.defile-trait { stroke-dasharray: 130 130; animation: trait 1.8s var(--ease-houle) infinite; }
