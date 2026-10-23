@@ -33,7 +33,7 @@ export function SeasonChapters() {
 
   return (
     <div className="relative">
-      <nav aria-label="Chapitres" className="sticky top-[var(--header-h)] z-20 border-y border-line bg-[var(--a-header)] backdrop-blur-xl">
+      <nav aria-label="Chapitres" className="sticky top-[var(--header-h)] z-20 border-y border-line bg-page/95 lg:bg-[var(--a-header)] lg:backdrop-blur-md">
         <ul className="shell no-scrollbar flex gap-1 overflow-x-auto py-2">
           {seasons.map((s) => (
             <li key={s.id}>

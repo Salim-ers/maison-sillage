@@ -121,16 +121,16 @@ export function Saisons() {
                   tabIndex={on ? 0 : -1}
                   onClick={() => choose(x.id)}
                   onKeyDown={(e) => onKey(e, i)}
-                  className={cn("group relative shrink-0 px-4 pb-3.5 pt-2 text-left transition-opacity duration-500 first:pl-0 md:px-5 md:first:pl-0", on ? "opacity-100" : "opacity-55 hover:opacity-90")}
+                  className={cn("group relative shrink-0 px-3 pb-3.5 pt-2 text-left transition-opacity duration-500 first:pl-0 sm:px-4 md:px-5 md:first:pl-0", on ? "opacity-100" : "opacity-55 hover:opacity-90")}
                 >
-                  <span className="flex items-center gap-2.5 font-serif text-[1.65rem] leading-none md:text-[1.9rem]">
-                    <SeasonIcon season={x.id} className="h-[18px] w-[18px] shrink-0 opacity-80" />
+                  <span className="flex items-center gap-2.5 font-serif text-[1.45rem] leading-none sm:text-[1.65rem] md:text-[1.9rem]">
+                    <SeasonIcon season={x.id} className="hidden h-[18px] w-[18px] shrink-0 opacity-80 sm:block" />
                     {x.name}
                   </span>
                   {on && (
                     <motion.span
                       layoutId="saison-trait"
-                      className="absolute bottom-0 left-4 right-4 h-[2px] group-first:left-0 md:left-5 md:right-5 md:group-first:left-0"
+                      className="absolute bottom-0 left-3 right-3 h-[2px] group-first:left-0 sm:left-4 sm:right-4 md:left-5 md:right-5 sm:group-first:left-0"
                       style={{ background: ACCENT_ON_PHOTO[x.id] }}
                       transition={{ duration: 0.7, ease: EASE }}
                     />
@@ -156,7 +156,7 @@ export function Saisons() {
                   </p>,
                   <ul key="m" className="mt-6 flex flex-wrap gap-2" aria-label="Ambiance">
                     {s.mood.map((m) => (
-                      <li key={m} className="rounded-full border border-creme/25 bg-black/10 px-3 py-1 text-[0.8rem] backdrop-blur-sm">
+                      <li key={m} className="rounded-full border border-creme/25 bg-black/25 px-3 py-1 text-[0.8rem]">
                         {m}
                       </li>
                     ))}

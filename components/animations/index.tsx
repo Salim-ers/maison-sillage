@@ -1,7 +1,7 @@
 "use client";
 
 import { useReducedMotion } from "@/lib/useReduced";
-import { Fragment, useRef, type ElementType, type ReactNode } from "react";
+import { Fragment, useEffect, useRef, useState, type ElementType, type ReactNode } from "react";
 import { motion, useInView, useScroll, useTransform, type Variants } from "motion/react";
 import { cn } from "@/lib/utils";
 
@@ -12,6 +12,19 @@ import { cn } from "@/lib/utils";
    ────────────────────────────────────────────────────────────── */
 
 export const EASE = [0.22, 1, 0.36, 1] as const;
+
+/** Grand écran piloté à la souris : la parallaxe n'y coûte rien ; ailleurs elle est coupée */
+function useDesktopPointer() {
+  const [ok, setOk] = useState(false);
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px) and (hover: hover) and (pointer: fine)");
+    const set = () => setOk(mq.matches);
+    set();
+    mq.addEventListener("change", set);
+    return () => mq.removeEventListener("change", set);
+  }, []);
+  return ok;
+}
 export const HOULE = [0.65, 0, 0.35, 1] as const;
 
 /** Titre dévoilé mot à mot derrière un masque, comme une ligne qui sort de l'encre */
@@ -108,7 +121,8 @@ export function Rise({
   );
 }
 
-/** Image révélée par un masque qui s'ouvre (clip-path) */
+/** Image révélée par glissement dans son cadre : uniquement des transformations, que la carte
+ *  graphique compose sans repeindre l'image (pas de clip-path animé pendant le défilement). */
 export function MaskReveal({
   children,
   className,
@@ -121,32 +135,20 @@ export function MaskReveal({
   delay?: number;
 }) {
   const reduce = useReducedMotion();
-  const start = {
-    bottom: "inset(100% 0% 0% 0%)",
-    top: "inset(0% 0% 100% 0%)",
-    left: "inset(0% 100% 0% 0%)",
-    right: "inset(0% 0% 0% 100%)",
-  }[from];
+  const start = { bottom: { y: "101%" }, top: { y: "-101%" }, left: { x: "-101%" }, right: { x: "101%" } }[from];
   return (
-    <motion.div
-      data-reveal=""
-      className={cn("overflow-hidden", className)}
-      initial={reduce ? false : { clipPath: start }}
-      whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-      viewport={{ once: true, margin: "0px 0px -8% 0px" }}
-      transition={{ duration: 1.25, ease: HOULE, delay }}
-    >
+    <div data-reveal="" className={cn("overflow-hidden", className)}>
       <motion.div
         data-reveal=""
         className="h-full w-full"
-        initial={reduce ? false : { scale: 1.08 }}
-        whileInView={{ scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1.6, ease: EASE, delay }}
+        initial={reduce ? false : { ...start, scale: 1.12 }}
+        whileInView={{ x: "0%", y: "0%", scale: 1 }}
+        viewport={{ once: true, margin: "0px 0px -6% 0px" }}
+        transition={{ x: { duration: 1.15, ease: HOULE, delay }, y: { duration: 1.15, ease: HOULE, delay }, scale: { duration: 1.6, ease: EASE, delay } }}
       >
         {children}
       </motion.div>
-    </motion.div>
+    </div>
   );
 }
 
@@ -220,8 +222,16 @@ export function WakeStroke({ className, delay = 0, strokeWidth = 1.2 }: { classN
 export function Parallax({ children, className, amount = 60, bleed = false }: { children: ReactNode; className?: string; amount?: number; bleed?: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
+  const desktop = useDesktopPointer();
+  const off = reduce || !desktop;
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : bleed ? [amount * 0.9, -amount * 0.9] : [amount, -amount]);
+  const y = useTransform(scrollYProgress, [0, 1], off ? [0, 0] : bleed ? [amount * 0.9, -amount * 0.9] : [amount, -amount]);
+  if (off)
+    return (
+      <div ref={ref} className={cn(bleed && "relative h-full overflow-hidden", !bleed && "h-full w-full", className)}>
+        {children}
+      </div>
+    );
   return (
     <div ref={ref} className={cn(bleed && "relative h-full overflow-hidden", className)}>
       <motion.div

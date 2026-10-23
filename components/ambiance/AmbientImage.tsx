@@ -9,7 +9,8 @@ import { cn } from "@/lib/utils";
 type Layer = { photo: Photo; mobile?: Photo; shown: boolean; ssr: boolean };
 const keyOf = (p: Photo, m?: Photo) => p.src + (m ? `|${m.src}` : "");
 
-/** Photographie à direction artistique : une source verticale sous 768 px, la source large au-delà.
+/** Photographie à direction artistique : la source large en grand écran tenu à l'horizontale,
+ *  la source verticale sur téléphone et tablette en portrait.
  *  Le navigateur ne télécharge que celle qui correspond à l'écran. */
 function ArtDirected({ desktop, mobile, sizes, mobileSizes, quality, eager, alt, onLoad, className }: {
   desktop: Photo;
@@ -27,7 +28,7 @@ function ArtDirected({ desktop, mobile, sizes, mobileSizes, quality, eager, alt,
   const { style, ...m } = getImageProps({ ...common, src: mobile.src, sizes: mobileSizes }).props;
   return (
     <picture>
-      <source media="(min-width: 768px)" srcSet={d.srcSet} sizes={d.sizes} />
+      <source media="(min-width: 1024px) and (orientation: landscape)" srcSet={d.srcSet} sizes={d.sizes} />
       {/* eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text */}
       <img
         {...m}
@@ -110,7 +111,12 @@ export function AmbientImage({
         const current = l === layers[layers.length - 1];
         const alt = current ? l.photo.alt : "";
         return (
-          <div key={k} className={cn("amb-layer absolute inset-0", l.ssr && "hero-ssr", l.ssr && layerClassName)} style={{ opacity: l.shown ? 1 : 0 }} aria-hidden={current ? undefined : true}>
+          <div
+            key={k}
+            className={cn("amb-layer absolute inset-0", l.ssr && "hero-ssr", l.ssr && layerClassName)}
+            style={{ opacity: l.shown ? 1 : 0, ...(l.ssr ? { backgroundImage: `url(${l.photo.blurDataURL})`, backgroundSize: "cover", backgroundPosition: "var(--focus, 50% 50%)" } : null) }}
+            aria-hidden={current ? undefined : true}
+          >
             {l.mobile ? (
               <ArtDirected
                 desktop={l.photo}
@@ -131,8 +137,6 @@ export function AmbientImage({
                 sizes={sizes}
                 quality={quality}
                 preload={preload && l.ssr}
-                placeholder={l.ssr ? "blur" : "empty"}
-                blurDataURL={l.photo.blurDataURL}
                 onLoad={() => reveal(k)}
                 className={cn("object-cover", imgClassName)}
                 style={{ objectPosition: l.photo.position ?? "50% 50%" }}

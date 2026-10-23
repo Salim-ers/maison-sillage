@@ -10,9 +10,9 @@ import { cn, formatPrice } from "@/lib/utils";
 const COFFRET = getProduct("coffret-decouverte")!;
 /* trois objets du comptoir, de tailles et de hauteurs différentes */
 const OBJETS = [
-  { slug: "mug-ceramique", className: "md:col-span-4 md:mt-24", aspect: "aspect-[4/5]" },
-  { slug: "verre-latte-glace", className: "md:col-span-3 md:mt-0", aspect: "aspect-[3/4]" },
-  { slug: "carnet-recettes", className: "md:col-span-4 md:col-start-9 md:-mt-10", aspect: "aspect-[4/5]" },
+  { slug: "mug-ceramique", className: "lg:col-span-4 lg:mt-24", aspect: "aspect-[4/5]" },
+  { slug: "verre-latte-glace", className: "lg:col-span-3", aspect: "aspect-[4/5] lg:aspect-[3/4]" },
+  { slug: "carnet-recettes", className: "lg:col-span-4 lg:col-start-9 lg:-mt-10", aspect: "aspect-[4/5]" },
 ].map((o) => ({ ...o, product: getProduct(o.slug)! }));
 
 function Price({ slug }: { slug: string }) {
@@ -65,7 +65,7 @@ export function Atelier() {
           </div>
         </div>
 
-        <ul className="mt-24 grid gap-12 md:grid-cols-12 md:gap-x-8">
+        <ul className="mt-20 grid grid-cols-2 gap-x-4 gap-y-10 md:grid-cols-3 md:gap-x-6 lg:mt-24 lg:grid-cols-12 lg:gap-x-8">
           {OBJETS.map((o, i) => (
             <li key={o.slug} className={cn("group", o.className)}>
               <Link href={`/produits/${o.slug}`} className="block">
@@ -78,11 +78,9 @@ export function Atelier() {
                     night={false}
                   />
                 </MaskReveal>
-                <span className="mt-4 flex items-baseline justify-between gap-4">
-                  <span className="font-serif text-[1.35rem] leading-tight transition-colors group-hover:text-gold">{o.product.name}</span>
-                  <span className="shrink-0 text-sm text-on-deep-2">
-                    <Price slug={o.slug} />
-                  </span>
+                <span className="mt-4 block font-serif text-[1.15rem] leading-tight transition-colors group-hover:text-gold sm:text-[1.35rem]">{o.product.name}</span>
+                <span className="mt-1 block text-sm text-on-deep-2">
+                  <Price slug={o.slug} />
                 </span>
                 <span className="mt-1 flex items-center gap-1.5 text-xs text-on-deep-2/80">
                   Objet en sélection

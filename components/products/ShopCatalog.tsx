@@ -2,7 +2,7 @@
 
 import { useReducedMotion } from "@/lib/useReduced";
 import Link from "next/link";
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { startTransition, useEffect, useId, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Check, Search, SlidersHorizontal, X } from "lucide-react";
 import { products, saveurLabels, startingPrice } from "@/data/products";
@@ -113,7 +113,8 @@ export function ShopCatalog({ initial, locked }: { initial: ShopInitial; locked?
   useEffect(() => {
     const el = sentinel.current;
     if (!el || shown >= list.length) return;
-    const io = new IntersectionObserver((e) => e[0].isIntersecting && setShown((n) => n + PAGE), { rootMargin: "600px 0px" });
+    // rendu en tâche de fond (transition React, découpée en tranches courtes) : le défilement n'attend jamais
+    const io = new IntersectionObserver((e) => e[0].isIntersecting && startTransition(() => setShown((n) => n + PAGE)), { rootMargin: "900px 0px" });
     io.observe(el);
     return () => io.disconnect();
   }, [shown, list.length]);
@@ -225,7 +226,7 @@ export function ShopCatalog({ initial, locked }: { initial: ShopInitial; locked?
       )}
 
       {/* barre d'outils */}
-      <div className="sticky top-[var(--header-h)] z-30 -mx-[var(--gutter)] border-y border-line bg-[var(--a-header)] px-[var(--gutter)] py-3 backdrop-blur-xl">
+      <div className="sticky top-[var(--header-h)] z-30 -mx-[var(--gutter)] border-y border-line bg-page/95 px-[var(--gutter)] py-3 lg:bg-[var(--a-header)] lg:backdrop-blur-md">
         <div className="flex flex-wrap items-center gap-3">
           <div className="relative min-w-0 basis-full sm:max-w-sm sm:flex-1 sm:basis-auto">
             <label className="relative flex items-center">
@@ -364,12 +365,11 @@ export function ShopCatalog({ initial, locked }: { initial: ShopInitial; locked?
         </div>
       ) : (
         <>
-          <motion.ul layout={!reduce} className="mt-8 grid grid-cols-1 gap-x-6 gap-y-14 xs:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <ul className="mt-8 grid grid-cols-2 gap-x-3 gap-y-10 sm:gap-x-5 md:grid-cols-3 md:gap-y-14 lg:gap-x-6 xl:grid-cols-4">
             <AnimatePresence mode="popLayout" initial={false}>
               {list.slice(0, shown).map((p, i) => (
                 <motion.li
                   key={p.slug}
-                  layout={!reduce}
                   initial={reduce ? false : { opacity: 0, y: 28 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.22 } }}
@@ -380,14 +380,14 @@ export function ShopCatalog({ initial, locked }: { initial: ShopInitial; locked?
                 </motion.li>
               ))}
             </AnimatePresence>
-          </motion.ul>
+          </ul>
           <div ref={sentinel} aria-hidden />
           {shown < list.length && (
             <div className="mt-16 flex flex-col items-center gap-3">
               <p className="text-sm text-muted">
                 {Math.min(shown, list.length)} sur {list.length}
               </p>
-              <button type="button" onClick={() => setShown((n) => n + PAGE)} className="btn btn-trait">
+              <button type="button" onClick={() => startTransition(() => setShown((n) => n + PAGE))} className="btn btn-trait">
                 Afficher plus de références
               </button>
             </div>

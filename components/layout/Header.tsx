@@ -63,7 +63,7 @@ export function Header() {
       <header
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color,backdrop-filter] duration-700 ease-[cubic-bezier(.22,1,.36,1)]",
-          overPhoto ? "bg-transparent text-creme" : "bg-[var(--a-header)] text-ink shadow-[0_1px_0_var(--a-line)] backdrop-blur-xl",
+          overPhoto ? "bg-transparent text-creme" : "bg-page/95 text-ink shadow-[0_1px_0_var(--a-line)] lg:bg-[var(--a-header)] lg:backdrop-blur-md",
         )}
       >
         <div className="shell relative flex h-[var(--header-h)] items-center justify-between">

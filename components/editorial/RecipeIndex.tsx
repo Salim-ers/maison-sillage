@@ -44,14 +44,13 @@ export function RecipeIndex({ initial }: { initial?: Drink }) {
       <p className="mt-6 text-sm text-muted" aria-live="polite">
         {list.length} recette{list.length > 1 ? "s" : ""} · dosages proposés à titre de démonstration
       </p>
-      <motion.ul layout={!reduce} className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="mt-8 grid gap-x-6 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
         <AnimatePresence mode="popLayout" initial={false}>
           {list.map((r) => {
             const p = getProduct(r.products[0]);
             return (
               <motion.li
                 key={r.slug}
-                layout={!reduce}
                 initial={reduce ? false : { opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.96, transition: { duration: 0.25 } }}
@@ -74,7 +73,7 @@ export function RecipeIndex({ initial }: { initial?: Drink }) {
             );
           })}
         </AnimatePresence>
-      </motion.ul>
+      </ul>
     </div>
   );
 }

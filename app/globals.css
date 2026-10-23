@@ -27,6 +27,10 @@
   --breakpoint-xs: 26rem;
 }
 
+/* composition « grand écran » : au moins 1024 px de large et tenu à l'horizontale ; une tablette en
+   portrait garde la composition empilée du téléphone (photographie verticale en tête, texte dessous) */
+@custom-variant paysage (@media (min-width: 1024px) and (orientation: landscape));
+
 @theme inline {
   --color-page: var(--a-page);
   --color-tint: var(--a-tint);
@@ -327,7 +331,7 @@ html[data-light="nuit"] { color-scheme: dark; }
   .no-scrollbar::-webkit-scrollbar { display: none; }
 
   /* voile nocturne sur les photographies de section */
-  .photo-nuit::after {
+  [data-light="nuit"] .photo-nuit::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -335,7 +339,6 @@ html[data-light="nuit"] { color-scheme: dark; }
     background: linear-gradient(180deg, rgb(8 14 30 / 0.55), rgb(8 12 24 / 0.4));
     mix-blend-mode: multiply;
     opacity: calc(var(--a-photo-dim) * 4);
-    transition: opacity 1s var(--ease-sillage);
   }
 }
 

@@ -35,7 +35,7 @@ export function FavoriteButton({ slug, name, className, withLabel = false }: { s
       className={cn(
         withLabel
           ? "inline-flex items-center gap-2 text-sm"
-          : "grid h-10 w-10 place-items-center rounded-full bg-creme/85 shadow-[0_4px_14px_-6px_rgba(20,12,6,.35)] backdrop-blur-sm transition-colors hover:bg-creme",
+          : "grid h-10 w-10 place-items-center rounded-full bg-creme/95 shadow-[0_4px_14px_-6px_rgba(20,12,6,.35)] transition-colors hover:bg-creme",
         className,
       )}
     >

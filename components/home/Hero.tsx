@@ -15,6 +15,8 @@ import { SeasonDrift } from "@/components/ambiance/Atmosphere";
 const SIZES = "(max-aspect-ratio: 16/9) 178vh, 100vw";
 const MOBILE_SIZES = "100vw";
 const LINES = ["Des saveurs", "qui traversent", "le temps."];
+/** composition grand écran (photographie 16:9) ; en dessous ou en portrait : photographie verticale */
+const WIDE = "(min-width: 1024px) and (orientation: landscape)";
 
 /**
  * Hero cinématographique : un grand voilier au large et, au premier plan,
@@ -32,7 +34,7 @@ export function Hero() {
   const focus = HERO_FOCUS;
   useAmbianceAssets((a) => {
     const p = heroPhotos(a.light);
-    const small = typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
+    const small = typeof window !== "undefined" && !window.matchMedia(WIDE).matches;
     return [small && p.mobile ? { photo: p.mobile, sizes: MOBILE_SIZES, quality: 85 } : { photo: p.desktop, sizes: SIZES, quality: 85 }];
   });
 
@@ -60,7 +62,7 @@ export function Hero() {
   return (
     <section ref={ref} className="sticky top-0 isolate h-[100svh] min-h-[600px] overflow-hidden bg-[rgb(var(--a-veil))] text-creme" aria-labelledby="hero-titre">
       <motion.div
-        className="absolute inset-x-0 top-0 h-[47svh] origin-top will-change-transform [--focus:50%_44%] md:h-auto md:bottom-0 md:origin-center md:[--focus:var(--focus-d)]"
+        className="absolute inset-x-0 top-0 h-[47svh] origin-top will-change-transform [--focus:50%_44%] paysage:h-auto paysage:bottom-0 paysage:origin-center paysage:[--focus:var(--focus-d)]"
         style={{ scale: stageScale, y: stageY, ["--focus-d" as string]: `${focus.x * 100}% ${focus.y * 100}%` }}
       >
         <AmbientImage photo={desktop} mobile={mobile} sizes={SIZES} mobileSizes={MOBILE_SIZES} preload quality={85} layerClassName="hero-intro-photo" />
@@ -70,22 +72,22 @@ export function Hero() {
       {/* voiles de lisibilité : en-tête, côté du texte (bureau), bas de l'image (mobile) */}
       <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div className="absolute inset-x-0 top-0 h-[24%] bg-[linear-gradient(180deg,rgb(var(--a-veil)/.62),transparent)]" />
-        <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_58%_64%_at_0%_100%,rgb(var(--a-veil)/.86)_0%,rgb(var(--a-veil)/.62)_45%,transparent_80%)] md:block" />
-        <div className="absolute inset-x-0 bottom-0 hidden h-[34%] bg-[linear-gradient(0deg,rgb(var(--a-veil)/.55),transparent)] md:block" />
-        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgb(var(--a-veil))_0%,rgb(var(--a-veil))_53.5%,rgb(var(--a-veil)/.6)_56%,transparent_62%)] md:hidden" />
+        <div className="absolute inset-0 hidden bg-[radial-gradient(ellipse_58%_64%_at_0%_100%,rgb(var(--a-veil)/.86)_0%,rgb(var(--a-veil)/.62)_45%,transparent_80%)] paysage:block" />
+        <div className="absolute inset-x-0 bottom-0 hidden h-[34%] bg-[linear-gradient(0deg,rgb(var(--a-veil)/.55),transparent)] paysage:block" />
+        <div className="absolute inset-0 bg-[linear-gradient(0deg,rgb(var(--a-veil))_0%,rgb(var(--a-veil))_53.5%,rgb(var(--a-veil)/.6)_56%,transparent_62%)] paysage:hidden" />
       </div>
       <motion.div className="pointer-events-none absolute inset-0 bg-[rgb(var(--a-veil))]" style={{ opacity: shade }} aria-hidden />
 
-      <motion.div style={{ y: textY, opacity: textO }} className="relative z-10 flex h-full flex-col justify-end pb-[5.5rem] md:pb-[8.5svh]">
+      <motion.div style={{ y: textY, opacity: textO }} className="relative z-10 flex h-full flex-col justify-end pb-[5.5rem] paysage:pb-[8.5svh]">
         <div className="shell">
-          <div className="md:w-[50%] lg:w-[43%] xl:w-[40%]">
+          <div className="max-w-[40rem] paysage:w-[48%] xl:w-[42%] 2xl:w-[38%]">
             <p className="mention hero-monte flex items-center gap-3 text-creme/90" style={{ ["--delay" as string]: "0.35s" }}>
               <svg viewBox="0 0 40 10" className="h-2.5 w-9 shrink-0 text-or" aria-hidden>
                 <path d="M0 5 C6 1 10 9 16 5 S28 1 40 5" fill="none" stroke="currentColor" strokeWidth="1.2" />
               </svg>
               Maison Sillage — Sirops, poudres &amp; créations gourmandes
             </p>
-            <h1 id="hero-titre" className="mt-3 font-serif text-[clamp(2.55rem,4.3vw,5.6rem)] font-light leading-[0.92] tracking-[-0.025em] [text-shadow:0_2px_30px_rgb(0_0_0/0.3)] md:mt-5">
+            <h1 id="hero-titre" className="mt-3 font-serif text-[clamp(2.55rem,7vw,4.6rem)] font-light paysage:text-[clamp(2.8rem,4.6vw,5.6rem)] leading-[0.92] tracking-[-0.025em] [text-shadow:0_2px_30px_rgb(0_0_0/0.3)] paysage:mt-5">
               {/* le titre n'existe qu'une fois : chaque ligne porte son espace final, rien n'est dupliqué */}
               {LINES.map((l, i) => (
                 <span key={l} className="block overflow-hidden pb-[0.08em]">
@@ -96,14 +98,14 @@ export function Hero() {
                 </span>
               ))}
             </h1>
-            <p className="hero-monte mt-3.5 max-w-[31rem] text-[0.95rem] leading-relaxed text-creme/90 md:mt-5 md:text-[1.04rem]" style={{ ["--delay" as string]: "1.05s" }}>
+            <p className="hero-monte mt-3.5 max-w-[31rem] text-[0.95rem] leading-relaxed text-creme/90 paysage:mt-5 paysage:text-[1.04rem]" style={{ ["--delay" as string]: "1.05s" }}>
               « Inspirée par les grands voyages, Maison Sillage imagine des créations gourmandes pour sublimer cafés, lattes et boissons d&apos;exception. »
             </p>
-            <div className="hero-monte mt-5 flex flex-col gap-2.5 xs:flex-row md:mt-7 md:gap-3 [&>a]:whitespace-nowrap" style={{ ["--delay" as string]: "1.25s" }}>
+            <div className="hero-monte mt-5 flex flex-col gap-2.5 xs:flex-row xs:flex-wrap paysage:mt-7 paysage:gap-3 [&>a]:whitespace-nowrap" style={{ ["--delay" as string]: "1.25s" }}>
               <Link href="/boutique" className="btn btn-clair">
                 Découvrir la boutique
               </Link>
-              <Link href="/maison" className="btn btn-verre min-h-11 md:min-h-[3.25rem]">
+              <Link href="/maison" className="btn btn-verre min-h-11 paysage:min-h-[3.25rem]">
                 Découvrir notre histoire
               </Link>
             </div>
@@ -113,17 +115,17 @@ export function Hero() {
 
       {/* la création à l'image, et l'invitation à défiler */}
       <motion.div style={{ opacity: textO }} className="pointer-events-none absolute inset-x-0 bottom-0 z-10">
-        <div className="shell flex items-end justify-between pb-4 md:pb-6">
-          <span className="hidden w-48 md:block" aria-hidden />
-          <div className="hero-monte mx-auto flex flex-col items-center gap-3 md:absolute md:left-1/2 md:-translate-x-1/2" style={{ ["--delay" as string]: "1.7s" }}>
+        <div className="shell flex items-end justify-between pb-4 paysage:pb-6">
+          <span className="hidden w-48 paysage:block" aria-hidden />
+          <div className="hero-monte mx-auto hidden flex-col items-center gap-3 sm:flex paysage:absolute paysage:left-1/2 paysage:-translate-x-1/2 paysage:hidden 2xl:paysage:flex" style={{ ["--delay" as string]: "1.7s" }}>
             <span className="mention text-[0.62rem] text-creme/80">Défiler pour explorer</span>
-            <span className="relative block h-8 w-px overflow-hidden bg-creme/20 md:h-12" aria-hidden>
+            <span className="relative block h-8 w-px overflow-hidden bg-creme/20 paysage:h-12" aria-hidden>
               <span className="defile absolute inset-0 bg-creme" />
             </span>
           </div>
           <Link
             href={`/produits/${product.slug}`}
-            className="hero-monte pointer-events-auto hidden text-right text-creme [text-shadow:0_1px_12px_rgb(0_0_0/0.45)] md:block"
+            className="hero-monte pointer-events-auto hidden text-right text-creme [text-shadow:0_1px_12px_rgb(0_0_0/0.45)] paysage:block"
             style={{ ["--delay" as string]: "1.6s" }}
             aria-live="polite"
           >
