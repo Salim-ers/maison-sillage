@@ -70,10 +70,19 @@ export function AmbientImage({
   /** classe ajoutée au tout premier calque (rendu serveur), ex. animation d'entrée */
   layerClassName?: string;
 }) {
-  const { transitioning } = useAmbiance();
+  const { transitioning, ready } = useAmbiance();
   const [layers, setLayers] = useState<Layer[]>([{ photo, mobile, shown: true, ssr: true }]);
   const key = keyOf(photo, mobile);
   const top = layers[layers.length - 1];
+
+  // ambiance mémorisée ≠ ambiance par défaut : le calque serveur est masqué en CSS (data-amb-custom)
+  // en attendant la bonne photographie. Si c'est déjà la bonne (le hero ne change qu'avec la lumière),
+  // aucun calque ne viendra la remplacer : elle redevient visible.
+  useEffect(() => {
+    if (!ready || !document.documentElement.hasAttribute("data-amb-custom")) return;
+    setLayers((ls) => ls.map((l) => (l.ssr && keyOf(l.photo, l.mobile) === key ? { ...l, ssr: false } : l)));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready]);
 
   // nouvelle photographie : calque ajouté pendant le rendu même (et non dans un effet),
   // pour qu'il figure dans l'instantané pris par la View Transition

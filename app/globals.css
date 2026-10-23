@@ -502,3 +502,44 @@ html[data-amb-custom] .hero-ssr { opacity: 0 !important; }
   /* contenus révélés au défilement : visibles d'emblée, sans attendre le JavaScript */
   [data-reveal] { opacity: 1 !important; transform: none !important; clip-path: none !important; }
 }
+
+/* ──────────────────────────────────────────────────────────────
+   Écran d'ouverture : le logo se dévoile, un sillage doré se trace,
+   puis le rideau se lève sur la page (premier chargement du document).
+   Piloté par data-intro sur <html> : "on" → "done" (rideau) → "off".
+   Sans JavaScript, il se retire seul ; en mouvement réduit, il n'apparaît pas.
+   ────────────────────────────────────────────────────────────── */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse 70% 60% at 50% 45%, #2a1b10 0%, #160e08 62%, #0e0905 100%);
+  clip-path: inset(0 0 0 0);
+  transition: clip-path 1.05s var(--ease-houle);
+  animation: intro-secours 0.7s ease 5s forwards;
+}
+html[data-intro="off"] #intro { display: none; }
+html[data-intro="done"] #intro { clip-path: inset(0 0 100% 0); pointer-events: none; }
+#intro .intro-contenu { display: flex; flex-direction: column; align-items: center; transition: transform 0.9s var(--ease-houle), opacity 0.6s ease; }
+html[data-intro="done"] #intro .intro-contenu { transform: translateY(-14vh); opacity: 0; }
+#intro .intro-logo { width: min(52vw, 230px); height: auto; clip-path: inset(100% 0 0 0); animation: intro-logo 1.4s var(--ease-sillage) 0.15s forwards; filter: drop-shadow(0 0 28px rgb(214 170 104 / 0.18)); }
+html[data-intro-court] #intro .intro-logo { animation-duration: 0.8s; animation-delay: 0s; }
+#intro .intro-sillage { width: min(64vw, 260px); height: 22px; margin-top: 22px; color: #c9a466; }
+#intro .intro-sillage path { stroke-dasharray: 300; stroke-dashoffset: 300; animation: intro-trait 1.7s var(--ease-houle) 0.55s forwards; }
+html[data-intro-court] #intro .intro-sillage path { animation-duration: 0.9s; animation-delay: 0.1s; }
+#intro .intro-halo { position: absolute; width: 46vmin; height: 46vmin; border-radius: 50%; background: radial-gradient(circle, rgb(214 170 104 / 0.14), transparent 65%); animation: intro-halo 2.6s ease-in-out infinite alternate; }
+@keyframes intro-logo { to { clip-path: inset(0 0 0 0); } }
+@keyframes intro-trait { to { stroke-dashoffset: 0; } }
+@keyframes intro-halo { from { transform: scale(0.92); opacity: 0.6; } to { transform: scale(1.06); opacity: 1; } }
+@keyframes intro-secours { to { opacity: 0; visibility: hidden; } }
+/* les animations d'entrée du hero attendent le lever du rideau */
+@media (prefers-reduced-motion: no-preference) {
+  html[data-intro="on"] .hero-ligne,
+  html[data-intro="on"] .hero-monte,
+  html[data-intro="on"] .hero-intro-photo { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #intro { display: none; }
+}

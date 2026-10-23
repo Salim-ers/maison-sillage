@@ -41,3 +41,8 @@ var h=n.getHours()+n.getMinutes()/60,ss=${JSON.stringify(SUNSET)}[season],sr=${J
 light=h>=sr+.5&&h<ss-1.25?"jour":(h>=ss-1.25&&h<ss+.75)||(h>=sr-.75&&h<sr+.5)?"coucher":"nuit"}
 d.setAttribute("data-season",season);d.setAttribute("data-light",light);d.setAttribute("data-auto",auto?"1":"0");
 if(season!=="${DEFAULT_AMBIANCE.season}"||light!=="${DEFAULT_AMBIANCE.light}")d.setAttribute("data-amb-custom","1")}catch(e){}})();`;
+
+/** Écran d'ouverture : affiché à chaque chargement du document, en version courte après la première visite
+ *  de la session ; jamais en mouvement réduit. Posé avant le premier rendu (aucun flash de la page dessous). */
+export const INTRO_SCRIPT = `(function(){var d=document.documentElement;try{if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){d.setAttribute("data-intro","off");return}
+d.setAttribute("data-intro","on");var k="maison-sillage:ouverture";if(sessionStorage.getItem(k))d.setAttribute("data-intro-court","");sessionStorage.setItem(k,"1")}catch(e){d.setAttribute("data-intro","on")}})();`;

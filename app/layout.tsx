@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
+import Image from "next/image";
 import "./globals.css";
 import { cormorant, manrope } from "./fonts";
 import { SITE } from "@/lib/utils";
-import { AMBIANCE_SCRIPT, DEFAULT_AMBIANCE } from "@/lib/ambiance-script";
+import { AMBIANCE_SCRIPT, DEFAULT_AMBIANCE, INTRO_SCRIPT } from "@/lib/ambiance-script";
+import { IntroCurtain } from "@/components/layout/Intro";
 import { Providers } from "@/components/layout/Providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -46,8 +48,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* ambiance mémorisée appliquée avant le premier rendu : aucune couleur ne clignote */}
         <script dangerouslySetInnerHTML={{ __html: AMBIANCE_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: INTRO_SCRIPT }} />
       </head>
       <body>
+        {/* écran d'ouverture : présent dès le HTML, le rideau se lève quand la page est prête */}
+        <div id="intro" aria-hidden>
+          <span className="intro-halo" />
+          <div className="intro-contenu">
+            <Image src="/brand/logo-dark.png" alt="" width={1124} height={1203} sizes="230px" quality={90} preload className="intro-logo" draggable={false} />
+            <svg className="intro-sillage" viewBox="0 0 260 22" aria-hidden>
+              <path d="M2 12 C 40 2, 72 2, 104 11 S 170 22, 206 11 S 246 3, 258 8" fill="none" stroke="currentColor" strokeWidth="1.1" />
+            </svg>
+          </div>
+        </div>
+        <IntroCurtain />
         <Providers>
           <Header />
           <main id="contenu">{children}</main>
