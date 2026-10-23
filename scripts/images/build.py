@@ -2,12 +2,19 @@
 
     python -I scripts/images/build.py      # ou : npm run images
 
-Lit les photographies haute définition de `assets/generated/` (produites par
-`scripts/images/generate.py`, voir `scripts/images/shots.py`) et écrit dans
-`public/images/` des masters WebP prêts pour `next/image`, qui en dérive les
-tailles AVIF/WebP responsives. Produit aussi `data/images.generated.json`
-(dimensions + mini-aperçu flou de chaque image) et l'image de partage.
+Avant : `python -I scripts/images/stock.py` (photographies Unsplash), `node scripts/images/labels.mjs`
+(étiquettes), `python -I scripts/images/packshots.py`, `mockups.py` et `relabel.py` (visuels composés).
 
+Sources publiées :
+  - assets/composed/   packshots (pack-*), gammes (gamme-*), objets de L'Atelier (acc-*),
+                       scènes du hero ré-étiquetées (hero-*)
+  - assets/stock/      photographies sous licence Unsplash (boissons, ingrédients, comptoir)
+  - assets/generated/  scènes sans emballage : paysages, vues maritimes, matières
+Aucune image générée montrant un emballage n'est publiée telle quelle : ses étiquettes
+(texte et logo inventés) ont été remplacées par relabel.py, ou elle est écartée.
+
+Écrit dans public/images/ des masters WebP (next/image en dérive les tailles AVIF/WebP),
+data/images.generated.json (dimensions, aperçu flou, crédit) et l'image de partage.
 Aucune image n'est agrandie : chaque master garde au plus la définition de sa source.
 """
 
@@ -24,34 +31,82 @@ from PIL import Image, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[2]
 GEN = ROOT / "assets" / "generated"
+COMPOSED = ROOT / "assets" / "composed"
+STOCK = ROOT / "assets" / "stock"
 OUT = ROOT / "public" / "images"
 MANIFEST = ROOT / "data" / "images.generated.json"
+STOCK_META = json.loads((ROOT / "scripts" / "images" / "stock.json").read_text(encoding="utf-8"))
 
 SEASONS = ["printemps", "ete", "automne", "hiver"]
 LIGHTS = ["jour", "coucher", "nuit"]
-FLAVORS = ["fraise", "peche", "poire", "datte"]
 
-# source (assets/generated/<nom>.png) → (chemin publié, largeur max, qualité)
-PLAN: list[tuple[str, str, int, int]] = []
-for s in SEASONS:
+# photographies Unsplash qui ne sont pas publiées telles quelles
+STOCK_SKIP = {
+    "barista-2",  # inscriptions de la machine visibles
+    "boisson-iced-latte-3",  # même photographie que la base du verre de L'Atelier
+    "univers-pistache-2",  # journal imprimé dans le cadre
+}
+# objets de L'Atelier : photographie de base de chaque visuel retouché (crédit)
+MOCKUP_BASE = {
+    "acc-mug-ceramique": "acc-mug",
+    "acc-tasse-espresso-gres": "acc-espresso",
+    "acc-verre-latte-glace": "acc-verre",
+    "acc-cafetiere-italienne": "acc-moka",
+    "acc-cuillere-doseuse": "acc-cuillere",
+    "acc-carafe-sirop": "acc-carafe-2",
+    "acc-coffret-decouverte": "acc-coffret",
+    "acc-carnet-recettes": "acc-carnet",
+}
+# fonds réels utilisés pour les packshots et les étiquettes
+STUDIO = ["fond-mur", "fond-pierre-2", "fond-papier"]
+
+
+def credit_of(stock_key: str, note: str | None = None) -> dict:
+    m = STOCK_META[stock_key]
+    c = {"name": m["photographer"], "url": m["page"], "source": "Unsplash"}
+    if note:
+        c["note"] = note
+    return c
+
+
+def plan() -> list[dict]:
+    """clé logique → source, chemin publié, largeur max, qualité, crédit"""
+    P: list[dict] = []
+    gen_note = {"name": "Maison Sillage", "source": "Image générée (gpt-image-2)"}
     for l in LIGHTS:
-        PLAN.append((f"hero-{s}-{l}", f"hero/{s}-{l}.webp", 3840, 84))
-        PLAN.append((f"hero-mobile-{s}-{l}", f"hero/mobile-{s}-{l}.webp", 1536, 84))
-        PLAN.append((f"story-{s}-{l}", f"story/{s}-{l}.webp", 2560, 84))
-    PLAN.append((f"detail-{s}", f"story/detail-{s}.webp", 1024, 86))
-    PLAN.append((f"scene-{s}", f"seasons/scene-{s}.webp", 3072, 84))
-    PLAN.append((f"paysage-{s}", f"seasons/paysage-{s}.webp", 3072, 84))
-for f in FLAVORS:
-    PLAN.append((f"packshot-sirop-{f}", f"products/sirop-{f}.webp", 1024, 88))
-    PLAN.append((f"packshot-poudre-{f}", f"products/poudre-{f}.webp", 1024, 88))
-    PLAN.append((f"duo-{f}", f"products/duo-{f}.webp", 1536, 86))
-for name in ["gamme-sirops", "gamme-poudres", "coffret-decouverte"]:
-    PLAN.append((name, f"products/{name}.webp", 3072, 86))
-for name in ["printemps-fraises", "printemps-fleurs", "ete-peches", "ete-fleurs-oranger", "automne-poires", "automne-epices", "hiver-dattes", "hiver-chocolat", "poudre"]:
-    PLAN.append((f"matiere-{name}", f"seasons/matiere-{name}.webp", 2048, 84))
-for name in ["latte-datte", "iced-latte-poire", "mocktail-peche", "milkshake-fraise", "chocolat-chaud", "creme-brulee", "cafe-terrasse", "latte-poire"]:
-    PLAN.append((f"boisson-{name}", f"recipes/{name}.webp", 1024, 88))
-PLAN.append(("comptoir-professionnel", "lifestyle/comptoir-professionnel.webp", 3072, 86))
+        relab = {**gen_note, "note": "étiquettes remplacées par l'étiquette de la gamme"}
+        P.append({"key": f"hero-ete-{l}", "src": COMPOSED / f"hero-ete-{l}.png", "rel": f"hero/ete-{l}.webp", "max": 3840, "q": 82, "credit": relab})
+        P.append({"key": f"hero-mobile-ete-{l}", "src": COMPOSED / f"hero-mobile-ete-{l}.png", "rel": f"hero/mobile-ete-{l}.webp", "max": 1536, "q": 84, "credit": relab})
+    for s in SEASONS:
+        P.append({"key": f"story-{s}", "src": GEN / f"story-{s}-coucher.png", "rel": f"story/{s}.webp", "max": 2560, "q": 84, "credit": gen_note})
+        P.append({"key": f"detail-{s}", "src": GEN / f"detail-{s}.png", "rel": f"story/detail-{s}.webp", "max": 1024, "q": 86, "credit": gen_note})
+        P.append({"key": f"paysage-{s}", "src": GEN / f"paysage-{s}.png", "rel": f"seasons/paysage-{s}.webp", "max": 3072, "q": 84, "credit": gen_note})
+    for key, src in {
+        "matiere-fraises": "matiere-printemps-fraises",
+        "matiere-cerisier": "matiere-printemps-fleurs",
+        "matiere-poires": "matiere-automne-poires",
+        "matiere-fleurs-oranger": "matiere-ete-fleurs-oranger",
+    }.items():
+        P.append({"key": key, "src": GEN / f"{src}.png", "rel": f"matieres/{key}.webp", "max": 2048, "q": 84, "credit": gen_note})
+    studio = {
+        "name": "Maison Sillage",
+        "source": "Composition de démonstration",
+        "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : "
+        + ", ".join(STOCK_META[k]["photographer"] for k in STUDIO)
+        + " (Unsplash)",
+    }
+    for f in sorted(COMPOSED.glob("pack-*.png")):
+        P.append({"key": f.stem, "src": f, "rel": f"products/{f.stem[5:]}.webp", "max": 1400, "q": 88, "credit": studio})
+    for f in sorted(COMPOSED.glob("gamme-*.png")):
+        P.append({"key": f.stem, "src": f, "rel": f"products/{f.stem}.webp", "max": 3200, "q": 86, "credit": studio})
+    for f in sorted(COMPOSED.glob("acc-*.png")):
+        P.append({"key": f.stem, "src": f, "rel": f"products/{f.stem}.webp", "max": 1600, "q": 86, "credit": credit_of(MOCKUP_BASE[f.stem], "visuel d'intention, logo appliqué")})
+    for k in STOCK_META:
+        if k.startswith(("fond-", "acc-")) or k in STOCK_SKIP:
+            continue
+        folder = "recettes" if k.startswith(("boisson-", "dessert-")) else "lifestyle" if k.startswith("barista") else "univers"
+        P.append({"key": k, "src": STOCK / f"{k}.jpg", "rel": f"{folder}/{k}.webp", "max": 2400, "q": 84, "credit": credit_of(k)})
+    return P
 
 
 def publish(im: Image.Image, rel: str, q: int) -> dict:
@@ -78,7 +133,7 @@ def blur_data(im: Image.Image) -> str:
 
 def build_og() -> None:
     """Image de partage 1200 × 630 : le hero d'été au coucher du soleil (voilier et produits) et le logo."""
-    src = GEN / "hero-ete-coucher.png"
+    src = COMPOSED / "hero-ete-coucher.png"
     if not src.exists():
         return
     g = Image.open(src).convert("RGB")
@@ -98,38 +153,21 @@ def build_og() -> None:
     print(f"  {out.relative_to(ROOT)}  1200×630  {out.stat().st_size // 1024} Ko")
 
 
-# anciennes images publiées, conservées tant que leur nouvelle prise de vue n'existe pas
-LEGACY = {"recipes/creme-brulee.webp": "recipes/creme-brulee-datte.webp"}
-
-
 def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
-    previous = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     manifest: dict[str, dict] = {}
-    missing, kept = [], []
-    for src_name, rel, max_w, q in PLAN:
-        src = GEN / f"{src_name}.png"
-        key = "/images/" + rel
-        if not src.exists() and rel.startswith(("hero/", "story/")):
-            missing.append(src_name)  # data/images.ts retombe sur une autre lumière ou une autre scène
+    missing = []
+    for item in plan():
+        if not item["src"].exists():
+            missing.append(item["key"])
             continue
-        if not src.exists():
-            # repli : l'image publiée précédemment reste en place jusqu'à la nouvelle prise de vue
-            prev = previous.get(key) or {}
-            candidates = [prev["src"][len("/images/"):]] if "src" in prev else []
-            candidates += [rel, LEGACY.get(rel, rel)]
-            old = next((OUT / c for c in candidates if (OUT / c).exists()), None)
-            if old:
-                manifest[key] = publish(Image.open(old).convert("RGB"), rel, q)
-                kept.append(rel)
-            else:
-                missing.append(src_name)
-            continue
-        im = Image.open(src).convert("RGB")
-        if im.size[0] > max_w:
-            im = im.resize((max_w, round(im.size[1] * max_w / im.size[0])), Image.LANCZOS)
-        manifest[key] = publish(im, rel, q)
-        print(f"  {manifest[key]['src'][len('/images/'):]:<52} {im.size[0]}×{im.size[1]}")
+        im = Image.open(item["src"]).convert("RGB")
+        if im.size[0] > item["max"]:
+            im = im.resize((item["max"], round(im.size[1] * item["max"] / im.size[0])), Image.LANCZOS)
+        entry = publish(im, item["rel"], item["q"])
+        entry["credit"] = item["credit"]
+        manifest[item["key"]] = entry
+        print(f"  {entry['src'][len('/images/'):]:<58} {im.size[0]}×{im.size[1]}")
     # nettoyage : tout fichier publié qui n'appartient plus au manifeste est retiré
     published = {OUT / m["src"][len("/images/"):] for m in manifest.values()}
     for f in OUT.rglob("*.webp"):
@@ -141,10 +179,8 @@ def main() -> None:
     build_og()
     MANIFEST.write_text(json.dumps(dict(sorted(manifest.items())), ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"\n{len(manifest)} images publiées, manifeste : {MANIFEST.relative_to(ROOT)}")
-    if kept:
-        print(f"↺ {len(kept)} ancienne(s) image(s) conservée(s) en attendant leur prise de vue : {', '.join(kept)}")
     if missing:
-        print(f"⚠ {len(missing)} prise(s) de vue absente(s), remplacée(s) sur le site par une autre lumière ou la scène d'été : {', '.join(missing)}")
+        print(f"⚠ {len(missing)} source(s) absente(s) : {', '.join(missing)}")
 
 
 if __name__ == "__main__":

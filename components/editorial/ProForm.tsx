@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getProduct } from "@/data/products";
 import { AnimatePresence, motion } from "motion/react";
 import { Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const TYPES = ["Coffee shop", "Salon de thé", "Restaurant", "Hôtel", "Bar à boissons sans alcool", "Glacier", "Autre établissement"];
-const NEEDS = ["Sirops 700 ml", "Poudres 1 kg", "Recettes signatures", "Échantillons", "Présentation de la Maison"];
+const NEEDS = ["Demande de devis", "Sirops 700 ml", "Poudres 1 kg", "Les Essentiels 1 kg", "Accessoires & coffrets", "Recettes signatures", "Échantillons", "Présentation de la Maison"];
 const VOLUMES = ["Je ne sais pas encore", "Moins de 10 bouteilles par mois", "10 à 30 bouteilles par mois", "Plus de 30 bouteilles par mois"];
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const PHONE = /^[+\d][\d\s.-]{7,}$/;
@@ -18,13 +19,14 @@ type Values = {
   email: string;
   telephone: string;
   ville: string;
+  produit: string;
   besoins: string[];
   volume: string;
   message: string;
   accord: boolean;
 };
 
-const EMPTY: Values = { etablissement: "", type: "", nom: "", email: "", telephone: "", ville: "", besoins: [], volume: VOLUMES[0], message: "", accord: false };
+const EMPTY: Values = { etablissement: "", type: "", nom: "", email: "", telephone: "", ville: "", produit: "", besoins: [], volume: VOLUMES[0], message: "", accord: false };
 
 function validate(v: Values) {
   const e: Partial<Record<keyof Values, string>> = {};
@@ -65,6 +67,15 @@ export function ProForm() {
     if (errors[k]) setErrors((e) => ({ ...e, [k]: undefined }));
   };
   const inv = (k: keyof Values) => ({ "aria-invalid": !!errors[k], "aria-describedby": errors[k] ? `${k}-msg` : undefined });
+
+  // arrivée depuis une fiche produit (« Demander un devis ») : produit et format pré-remplis
+  useEffect(() => {
+    const sp = new URLSearchParams(window.location.search);
+    const p = getProduct(sp.get("produit") ?? "");
+    if (!p) return;
+    const f = p.formats.find((x) => x.id === sp.get("format")) ?? p.formats.find((x) => x.public === "professionnel");
+    setV((prev) => ({ ...prev, produit: f ? `${p.name} — ${f.label}` : p.name, besoins: prev.besoins.includes("Demande de devis") ? prev.besoins : ["Demande de devis", ...prev.besoins] }));
+  }, []);
 
   return (
     <AnimatePresence mode="wait" initial={false}>
@@ -129,6 +140,11 @@ export function ProForm() {
           <Field id="ville" label="Ville" error={errors.ville}>
             <input id="ville" className="champ" value={v.ville} onChange={(e) => set("ville", e.target.value)} autoComplete="address-level2" {...inv("ville")} />
           </Field>
+          <div className="md:col-span-2">
+            <Field id="produit" label="Produit concerné (facultatif)" hint="Rempli automatiquement depuis le bouton « Demander un devis » d'une fiche.">
+              <input id="produit" className="champ" value={v.produit} onChange={(e) => set("produit", e.target.value)} />
+            </Field>
+          </div>
           <fieldset className="md:col-span-2" aria-describedby={errors.besoins ? "besoins-msg" : undefined}>
             <legend className="mention text-accent-ink">Sujets de la demande</legend>
             <div className="mt-3 flex flex-wrap gap-2">

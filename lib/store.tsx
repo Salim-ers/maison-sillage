@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
-import { getProduct, purchasable } from "@/data/products";
+import { cartFormats, getProduct } from "@/data/products";
 import type { Format, Product } from "@/lib/types";
 
 /* ──────────────────────────────────────────────────────────────
@@ -17,7 +17,7 @@ export interface CartLine {
 
 export interface ResolvedLine extends CartLine {
   product: Product;
-  format: Format;
+  format: Format & { price: number };
   total: number;
 }
 
@@ -69,7 +69,7 @@ function sanitize(lines: unknown): CartLine[] {
     .filter((l): l is CartLine => !!l && typeof l === "object" && typeof (l as CartLine).slug === "string")
     .filter((l) => {
       const p = getProduct(l.slug);
-      return !!p && purchasable(p) && p.formats.some((f) => f.id === l.formatId);
+      return !!p && cartFormats(p).some((f) => f.id === l.formatId);
     })
     .map((l) => ({ ...l, qty: Math.min(MAX_QTY, Math.max(1, Math.round(Number(l.qty) || 1))) }));
 }
@@ -104,8 +104,9 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   }, [favorites, ready]);
 
   const add = useCallback((slug: string, formatId: string, qty = 1) => {
+    // seuls les formats grand public avec prix entrent au panier ; les formats professionnels passent par un devis
     const p = getProduct(slug);
-    if (!p || !purchasable(p) || !p.formats.some((f) => f.id === formatId)) return;
+    if (!p || !cartFormats(p).some((f) => f.id === formatId)) return;
     setRaw((prev) => {
       const found = prev.find((l) => l.slug === slug && l.formatId === formatId);
       if (found) return prev.map((l) => (l === found ? { ...l, qty: Math.min(MAX_QTY, l.qty + qty) } : l));
@@ -135,7 +136,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
   const value = useMemo<StoreValue>(() => {
     const lines: ResolvedLine[] = raw.flatMap((l) => {
       const product = getProduct(l.slug);
-      const format = product?.formats.find((f) => f.id === l.formatId);
+      const format = product && cartFormats(product).find((f) => f.id === l.formatId);
       if (!product || !format) return [];
       return [{ ...l, product, format, total: Math.round(format.price * l.qty * 100) / 100 }];
     });

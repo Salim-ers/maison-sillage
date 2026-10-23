@@ -2,14 +2,14 @@ import { Hero } from "@/components/home/Hero";
 import { Monde } from "@/components/home/Monde";
 import { Creations } from "@/components/home/Creations";
 import { Saisons } from "@/components/home/Saisons";
-import { Histoire } from "@/components/home/Histoire";
-import { Usages } from "@/components/home/Usages";
-import { Signatures } from "@/components/home/Signatures";
-import { Poudres } from "@/components/home/Poudres";
+import { Essentiels } from "@/components/home/Essentiels";
+import { Atelier } from "@/components/home/Atelier";
+import { Comptoir } from "@/components/editorial/Comptoir";
 import { ProTeaser } from "@/components/home/ProTeaser";
+import { Histoire } from "@/components/home/Histoire";
 
-/* L'accueil se lit comme une traversée : le large, la Maison, les créations,
-   les saisons, l'histoire, les usages, la boutique, la poudre, les professionnels. */
+/* L'accueil se lit comme une traversée : le large, l'univers de la Maison, les saveurs signatures,
+   les quatre saisons, les Essentiels, l'Atelier, le Comptoir des Saveurs, les professionnels, l'histoire. */
 export default function Accueil() {
   return (
     <>
@@ -20,11 +20,11 @@ export default function Accueil() {
       </div>
       <Creations />
       <Saisons />
-      <Histoire />
-      <Usages />
-      <Signatures />
-      <Poudres />
+      <Essentiels />
+      <Atelier />
+      <Comptoir id="comptoir" />
       <ProTeaser />
+      <Histoire />
     </>
   );
 }

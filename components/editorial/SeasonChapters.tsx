@@ -13,7 +13,7 @@ import { MaskReveal, Parallax, RevealTitle, Rise } from "@/components/animations
 import type { SeasonId } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
-/* Les quatre chapitres : chacun son paysage, sa scène de collection, ses matières */
+/* Les quatre chapitres : chacun son paysage, sa matière, son sirop et sa poudre */
 export function SeasonChapters() {
   const [current, setCurrent] = useState<SeasonId>("printemps");
 
@@ -43,7 +43,6 @@ export function SeasonChapters() {
                 className={cn("flex items-center gap-2 whitespace-nowrap px-3 py-2 transition-opacity duration-500", current === s.id ? "opacity-100" : "opacity-50 hover:opacity-90")}
               >
                 <SeasonIcon season={s.id} className="h-4 w-4" />
-                <span className="font-serif text-sm italic">{s.numeral}</span>
                 <span className="font-serif text-lg">{s.name}</span>
               </a>
             </li>
@@ -60,12 +59,10 @@ export function SeasonChapters() {
           <section key={s.id} id={s.id} className={cn("chapitre scroll-mt-32 py-20 md:py-28", idx % 2 ? "bg-tint" : "bg-page")} aria-labelledby={`titre-${s.id}`}>
             <div className="shell">
               <div className={cn("flex flex-col gap-4 md:flex-row md:items-end md:gap-10", flip && "md:flex-row-reverse md:text-right")}>
-                <p className="font-serif text-[clamp(5rem,12vw,11rem)] font-light italic leading-[0.8]" style={{ color: s.accent }} aria-hidden>
-                  {s.numeral}
-                </p>
+                <SeasonIcon season={s.id} className="h-14 w-14 shrink-0 md:h-20 md:w-20" />
                 <div>
                   <p className="mention text-accent-ink">
-                    Chapitre {s.numeral} · {s.name}
+                    {s.name}
                   </p>
                   <RevealTitle id={`titre-${s.id}`} text={s.chapter} className="titre mt-3" />
                 </div>
@@ -94,19 +91,15 @@ export function SeasonChapters() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-10 grid grid-cols-2 gap-3">
-                    {img.matieres.map((m) => (
-                      <figure key={m.src}>
-                        <Photo photo={m} sizes="(min-width:1024px) 18vw, 45vw" className="aspect-square" />
-                        <figcaption className="mt-2 text-xs text-muted">{m.alt}</figcaption>
-                      </figure>
-                    ))}
-                  </div>
+
                 </div>
                 <div className={cn("lg:col-span-6", flip ? "lg:order-1 lg:col-start-1" : "lg:col-start-7")}>
-                  <MaskReveal from="bottom" className="aspect-[16/10]">
-                    <Photo photo={img.scene} sizes="(min-width:1024px) 48vw, 100vw" className="h-full w-full" />
-                  </MaskReveal>
+                  <figure>
+                    <MaskReveal from="bottom" className="aspect-[16/10]">
+                      <Photo photo={img.matiere} sizes="(min-width:1024px) 48vw, 100vw" className="h-full w-full" />
+                    </MaskReveal>
+                    <figcaption className="mt-2 text-xs text-muted">{img.matiere.alt}</figcaption>
+                  </figure>
                   <h3 className="mention mt-10 text-accent-ink">Les créations du chapitre</h3>
                   <div className="mt-4 grid gap-3 sm:grid-cols-2">
                     {items.map((p) => (

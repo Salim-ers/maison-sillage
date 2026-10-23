@@ -7,46 +7,68 @@ import { ArrowUpRight } from "lucide-react";
 import { useReducedMotion } from "@/lib/useReduced";
 import { home } from "@/data/images";
 import type { Photo as PhotoData } from "@/data/images";
+import { products, startingPrice } from "@/data/products";
+import type { Category } from "@/lib/types";
 import { Photo } from "@/components/ui/Photo";
 import { MaskReveal, Parallax, RevealTitle, Rise } from "@/components/animations";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 
-const UNIVERS: { n: string; title: string; text: string; href: string; cta: string; photo: PhotoData; aspect: string; col: string; depth: number; sizes: string }[] = [
+const range = (c: Category[]) => products.filter((p) => c.includes(p.category));
+const fromPrice = (c: Category[]) => Math.min(...range(c).map((p) => startingPrice(p).price ?? Infinity));
+
+/* quatre univers, des repères concrets plutôt qu'une numérotation */
+const UNIVERS: { key: string; title: string; text: string; facts: string; href: string; cta: string; photo: PhotoData; aspect: string; col: string; depth: number; sizes: string }[] = [
   {
-    n: "I",
+    key: "sirops",
     title: "Les sirops signatures",
-    text: "Quatre créations saisonnières dans un même flacon gravé, pour le café, le latte, les boissons glacées et les mocktails.",
+    text: "Quatre créations de saison et quatre Signatures de la Maison, dans un même flacon : pour le café, le latte, les boissons glacées et les mocktails.",
+    facts: `${range(["sirop"]).length} sirops · dès ${formatPrice(fromPrice(["sirop"]))}`,
     href: "/sirops",
-    cta: "Découvrir les sirops",
-    photo: home.monde.sirops,
-    aspect: "aspect-[4/3]",
-    col: "md:col-span-7 lg:col-span-6",
-    depth: 50,
-    sizes: "(min-width:1024px) 46vw, (min-width:768px) 56vw, 100vw",
+    cta: "Les sirops",
+    photo: home.univers.sirops,
+    aspect: "aspect-[16/10]",
+    col: "md:col-span-7",
+    depth: 40,
+    sizes: "(min-width:768px) 56vw, 100vw",
   },
   {
-    n: "II",
-    title: "Les poudres gourmandes",
-    text: "Des préparations à fouetter dans le lait chaud ou froid, pour des lattes, des chocolats et des frappés onctueux.",
+    key: "poudres",
+    title: "Les poudres signatures",
+    text: "Les saveurs de saison et quatre créations à fouetter dans le lait, chaud ou froid, pour des lattes et des chocolats plus ronds.",
+    facts: `${range(["poudre"]).length} poudres · sachet 200 g`,
     href: "/poudres",
-    cta: "Découvrir les poudres",
-    photo: home.monde.poudres,
-    aspect: "aspect-[3/4]",
-    col: "md:col-span-5 md:mt-48 lg:col-span-3 lg:mt-56",
-    depth: 90,
-    sizes: "(min-width:1024px) 23vw, (min-width:768px) 40vw, 100vw",
+    cta: "Les poudres",
+    photo: home.univers.poudres,
+    aspect: "aspect-[4/5]",
+    col: "md:col-span-5 md:mt-40",
+    depth: 80,
+    sizes: "(min-width:768px) 40vw, 100vw",
   },
   {
-    n: "III",
-    title: "Les recettes & créations",
-    text: "Latte, iced latte, mocktail, chocolat chaud, dessert : une saveur, mille façons de la déguster.",
-    href: "/recettes",
-    cta: "Explorer les recettes",
-    photo: home.monde.recettes,
-    aspect: "aspect-[4/5] lg:aspect-[3/4.4]",
-    col: "md:col-span-8 md:col-start-3 lg:col-span-3 lg:col-start-auto lg:mt-20",
-    depth: 30,
-    sizes: "(min-width:1024px) 23vw, (min-width:768px) 64vw, 100vw",
+    key: "essentiels",
+    title: "Les Essentiels de la Maison",
+    text: "Les grands classiques, sans détour : chocolat noir, au lait ou blanc, vanille, caramel, noisette, pistache et chaï.",
+    facts: `${range(["essentiel"]).length} classiques · dès ${formatPrice(fromPrice(["essentiel"]))}`,
+    href: "/essentiels",
+    cta: "Les Essentiels",
+    photo: home.univers.essentiels,
+    aspect: "aspect-[4/5]",
+    col: "md:col-span-4 md:col-start-2 md:-mt-64 lg:-mt-72",
+    depth: 50,
+    sizes: "(min-width:768px) 32vw, 100vw",
+  },
+  {
+    key: "atelier",
+    title: "L'Atelier & les accessoires",
+    text: "Mug, tasse en grès, verre à latte glacé, carafe, carnet de recettes et coffret découverte : les objets du comptoir.",
+    facts: `${range(["accessoire", "coffret"]).length} objets & coffret`,
+    href: "/atelier",
+    cta: "L'Atelier",
+    photo: home.univers.atelier,
+    aspect: "aspect-[4/5]",
+    col: "md:col-span-4 md:col-start-8 md:mt-10",
+    depth: 70,
+    sizes: "(min-width:768px) 32vw, 100vw",
   },
 ];
 
@@ -82,7 +104,7 @@ function Houle() {
   );
 }
 
-/* Section 2 — le monde Maison Sillage : trois univers, une mise en page éditoriale asymétrique */
+/* Section 2 — l'univers de la Maison : quatre rayons, une mise en page éditoriale asymétrique */
 export function Monde() {
   return (
     <section className="relative z-10 mt-[64px] bg-page pb-28 pt-12 md:mt-[110px] md:pb-40 md:pt-16" aria-labelledby="monde-titre">
@@ -91,7 +113,7 @@ export function Monde() {
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-8">
             <Rise>
-              <p className="mention text-accent-ink">Le monde Maison Sillage</p>
+              <p className="mention text-accent-ink">L&apos;univers de la Maison</p>
             </Rise>
             <RevealTitle id="monde-titre" text="L'art de donner une nouvelle dimension aux saveurs." className="titre mt-5 max-w-[17ch]" />
           </div>
@@ -102,11 +124,11 @@ export function Monde() {
           </Rise>
         </div>
 
-        <div className="mt-20 grid gap-y-20 md:mt-28 md:grid-cols-12 md:gap-x-8 lg:gap-x-10">
+        <div className="mt-20 grid gap-y-20 md:mt-28 md:grid-cols-12 md:gap-x-8 md:gap-y-24 lg:gap-x-10">
           {UNIVERS.map((u, i) => (
-            <article key={u.n} className={cn("group", u.col)}>
+            <article key={u.key} className={cn("group", u.col)}>
               <Link href={u.href} className="block" aria-label={`${u.title} — ${u.cta}`}>
-                <MaskReveal from={i === 1 ? "top" : "bottom"} delay={i * 0.08} className={u.aspect}>
+                <MaskReveal from={i % 2 ? "top" : "bottom"} delay={i * 0.06} className={u.aspect}>
                   <Parallax amount={u.depth} bleed>
                     <Photo
                       photo={u.photo}
@@ -117,10 +139,10 @@ export function Monde() {
                   </Parallax>
                 </MaskReveal>
               </Link>
-              <Rise className="mt-7 flex gap-5" delay={0.1}>
-                <span className="font-serif text-[2.6rem] italic leading-none text-accent">{u.n}.</span>
+              <Rise className="mt-7" delay={0.1}>
                 <div>
-                  <h3 className="font-serif text-[1.9rem] leading-tight md:text-[2.15rem]">
+                  <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-accent-ink">{u.facts}</p>
+                  <h3 className="mt-2 font-serif text-[1.9rem] leading-tight md:text-[2.15rem]">
                     <Link href={u.href} className="transition-colors hover:text-accent-ink">
                       {u.title}
                     </Link>

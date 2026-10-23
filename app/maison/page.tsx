@@ -17,7 +17,7 @@ export default function Maison() {
   return (
     <>
       <MaritimeBanner kicker="Notre histoire" title="La trace qu'une saveur laisse derrière elle.">
-        Maison Sillage est une jeune maison française de créations gourmandes, en phase de conception. Son esthétique emprunte au XIXe siècle ; son
+        Maison Sillage est une jeune maison de créations gourmandes, en phase de conception. Son esthétique emprunte au XIXe siècle ; son
         histoire, elle, commence aujourd&apos;hui.
       </MaritimeBanner>
 
@@ -133,11 +133,11 @@ export default function Maison() {
             {seasons.map((s, i) => (
               <Rise as="li" key={s.id} delay={i * 0.06}>
                 <Link href={`/collections#${s.id}`} className="group block">
-                  <Photo photo={seasonImages[s.id].scene} sizes="(min-width:1024px) 22vw, (min-width:640px) 45vw, 100vw" className="aspect-[4/5]" position="62% 50%" imgClassName="transition-transform duration-[1.4s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105" />
-                  <p className="mt-4 font-serif text-4xl italic" style={{ color: s.accent }}>
-                    {s.numeral}
-                  </p>
-                  <h3 className="mt-1 font-serif text-2xl">{s.name}</h3>
+                  <Photo photo={seasonImages[s.id].paysage} sizes="(min-width:1024px) 22vw, (min-width:640px) 45vw, 100vw" className="aspect-[4/5]" position="55% 50%" imgClassName="transition-transform duration-[1.4s] ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-105" />
+                  <h3 className="mt-4 flex items-center gap-2.5 font-serif text-2xl">
+                    <span className="h-2.5 w-2.5 rounded-full" style={{ background: s.accent }} aria-hidden />
+                    {s.name}
+                  </h3>
                   <p className="mt-1 font-serif italic text-ink-2">{s.chapter}</p>
                   <span className="lien-revele mt-4 inline-block text-sm font-semibold">Lire le chapitre</span>
                 </Link>

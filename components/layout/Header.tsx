@@ -22,7 +22,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
   const pathname = usePathname();
   const active = pathname.startsWith(href);
   return (
-    <Link href={href} aria-current={active ? "page" : undefined} className="lien-revele whitespace-nowrap font-serif text-[1.08rem] leading-none tracking-[0.01em] opacity-90 transition-opacity hover:opacity-100">
+    <Link href={href} aria-current={active ? "page" : undefined} className="lien-revele whitespace-nowrap font-serif text-[1.02rem] leading-none tracking-[0.01em] opacity-90 transition-opacity hover:opacity-100 2xl:text-[1.08rem]">
       {label}
     </Link>
   );
@@ -51,7 +51,8 @@ export function Header() {
   useEffect(() => setMenuOpen(false), [pathname]);
 
   const overPhoto = isHome && !scrolled;
-  const iconBtn = cn("grid h-11 w-11 place-items-center rounded-full transition duration-300", overPhoto ? "hover:bg-creme/10" : "hover:bg-ink/5");
+  // pas de « display » ici : chaque bouton choisit le sien (grid, ou hidden sm:grid), sans conflit de classes
+  const iconBtn = cn("h-11 w-11 place-items-center rounded-full transition duration-300", overPhoto ? "hover:bg-creme/10" : "hover:bg-ink/5");
 
   return (
     <>
@@ -67,7 +68,7 @@ export function Header() {
         <div className="shell relative flex h-[var(--header-h)] items-center justify-between">
           <button
             type="button"
-            className={cn("-ml-2 xl:hidden", iconBtn)}
+            className={cn("-ml-2 grid xl:hidden", iconBtn)}
             onClick={() => setMenuOpen(true)}
             aria-label="Ouvrir le menu"
             aria-expanded={menuOpen}
@@ -76,7 +77,7 @@ export function Header() {
             <Menu className="h-5 w-5" strokeWidth={1.4} />
           </button>
 
-          <nav aria-label="Navigation principale, première partie" className="hidden flex-1 items-center gap-7 xl:flex 2xl:gap-9">
+          <nav aria-label="Navigation principale, première partie" className="hidden flex-1 items-center gap-5 xl:flex 2xl:gap-8">
             {LEFT.map((l) => (
               <NavLink key={l.href} {...l} />
             ))}
@@ -113,8 +114,8 @@ export function Header() {
             </motion.div>
           </Link>
 
-          <div className="flex flex-1 items-center justify-end gap-6 2xl:gap-9">
-            <nav aria-label="Navigation principale, seconde partie" className="hidden items-center gap-7 xl:flex 2xl:gap-9">
+          <div className="flex flex-1 items-center justify-end gap-5 2xl:gap-8">
+            <nav aria-label="Navigation principale, seconde partie" className="hidden items-center gap-5 xl:flex 2xl:gap-8">
               {RIGHT.map((l) => (
                 <NavLink key={l.href} {...l} />
               ))}
@@ -137,7 +138,8 @@ export function Header() {
                 <button
                   type="button"
                   onClick={() => setDrawerOpen(true)}
-                  className={cn("relative", iconBtn)}
+                  className={cn("relative grid", iconBtn)}
+                  data-cart-target
                   aria-label={`Panier, ${ready ? count : 0} article${count > 1 ? "s" : ""}`}
                 >
                   <ShoppingBag className="h-[19px] w-[19px]" strokeWidth={1.4} />

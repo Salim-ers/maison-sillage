@@ -27,12 +27,12 @@ export function Gallery({ views, name }: { views: { photo: PhotoData; label: str
             transition={{ duration: 0.95, ease: HOULE }}
           >
             <motion.div className="h-full w-full" initial={reduce ? false : { scale: 1.08 }} animate={{ scale: 1 }} transition={{ duration: 1.4, ease: EASE }}>
-              <Photo photo={v.photo} sizes="(min-width:1024px) 55vw, 100vw" preload={i === 0} className="h-full w-full" quality={85} />
+              <Photo photo={v.photo} sizes="(min-width:1024px) 55vw, 100vw" preload={i === 0} className="h-full w-full" quality={85} night={i !== 0} />
             </motion.div>
           </motion.div>
         </AnimatePresence>
         <p className="absolute bottom-3 left-3 bg-creme/90 px-2.5 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-espresso">
-          {v.label} · visuel de démonstration
+          {v.label}
         </p>
       </div>
       <div className="mt-3 grid grid-cols-4 gap-3" role="group" aria-label={`Vues de ${name}`}>

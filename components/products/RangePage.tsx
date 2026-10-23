@@ -7,9 +7,9 @@ import { Rise } from "@/components/animations";
 import { RevealNow } from "@/components/ui/RevealNow";
 import { ShopCatalog } from "./ShopCatalog";
 
-/** Page de gamme (sirops, poudres) : ouverture éditoriale photographique + catalogue filtré */
+/** Page de gamme (sirops, poudres, Essentiels, Atelier) : ouverture éditoriale photographique + catalogue filtré */
 export function RangePage({
-  category,
+  categories,
   kicker,
   title,
   intro,
@@ -18,7 +18,7 @@ export function RangePage({
   points,
   other,
 }: {
-  category: Category;
+  categories: Category[];
   kicker: string;
   title: string;
   intro: string;
@@ -34,7 +34,7 @@ export function RangePage({
         title={title}
         aside={
           <figure>
-            <RevealNow from="right" className="aspect-[4/3]">
+            <RevealNow from="right" className="aspect-[16/9]">
               <Photo photo={photo} sizes="(min-width:1024px) 40vw, 100vw" preload className="h-full w-full" />
             </RevealNow>
             <figcaption className="mt-3 font-serif text-[0.95rem] italic text-muted">{caption}</figcaption>
@@ -53,7 +53,7 @@ export function RangePage({
           ))}
         </div>
       </section>
-      <ShopCatalog initial={{}} lockedCategory={category} />
+      <ShopCatalog initial={{}} locked={categories} />
       <div className="shell -mt-12 pb-24">
         <Link href={other.href} className="lien text-sm font-semibold">
           {other.label}

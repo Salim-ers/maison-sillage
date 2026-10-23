@@ -69,9 +69,8 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
                     transition={{ duration: 0.7, ease: EASE, delay: 0.16 + i * 0.045 }}
                     className="border-b border-line"
                   >
-                    <Link href={l.href} className="group flex items-baseline justify-between py-3.5" aria-current={active ? "page" : undefined}>
+                    <Link href={l.href} className="group flex items-baseline py-3.5" aria-current={active ? "page" : undefined}>
                       <span className={`font-serif text-[2.1rem] leading-none transition-transform duration-500 group-active:translate-x-1 ${active ? "italic text-accent-ink" : ""}`}>{l.label}</span>
-                      <span className="font-serif text-sm italic text-muted">{String(i + 1).padStart(2, "0")}</span>
                     </Link>
                   </motion.li>
                 );
@@ -86,7 +85,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               <Link href="/favoris" className="flex items-center gap-2">
                 <Heart className="h-4 w-4" strokeWidth={1.4} /> Favoris{ready && favorites.length ? ` (${favorites.length})` : ""}
               </Link>
-              {[footerNav.maison[2], footerNav.maison[4], footerNav.aide[3]].map((l) => (
+              {[footerNav.boutique[4], footerNav.aide[1], footerNav.maison[4], footerNav.aide[3]].map((l) => (
                 <Link key={l.href} href={l.href}>
                   {l.label}
                 </Link>

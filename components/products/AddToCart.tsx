@@ -1,12 +1,16 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { Check } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { cn } from "@/lib/utils";
 
-/** Bouton d'ajout avec retour visuel : le libellé glisse vers « Ajouté ». */
+/** Événement capté par <FlyToCart> : une vignette du produit file du bouton vers le panier */
+export const FLY_EVENT = "maison-sillage:vers-panier";
+export type FlyDetail = { x: number; y: number; slug: string };
+
+/** Bouton d'ajout avec retour visuel : le libellé glisse vers « Ajouté » et le produit rejoint le panier. */
 export function AddToCart({
   slug,
   formatId,
@@ -26,14 +30,18 @@ export function AddToCart({
 }) {
   const { add } = useStore();
   const [done, setDone] = useState(0);
+  const ref = useRef<HTMLButtonElement>(null);
   return (
     <button
+      ref={ref}
       type="button"
       disabled={disabled}
       onClick={(e) => {
         e.preventDefault();
         e.stopPropagation();
         add(slug, formatId, qty);
+        const r = ref.current?.getBoundingClientRect();
+        if (r) window.dispatchEvent(new CustomEvent<FlyDetail>(FLY_EVENT, { detail: { x: r.left + r.width / 2, y: r.top + r.height / 2, slug } }));
         setDone(Date.now());
         window.setTimeout(() => setDone(0), 1800);
       }}

@@ -1,17 +1,24 @@
 import Link from "next/link";
 import { home } from "@/data/images";
+import { formatPrice } from "@/lib/utils";
 import { Photo } from "@/components/ui/Photo";
 import { Parallax, RevealTitle, Rise } from "@/components/animations";
 
 const LIEUX = ["Coffee shops", "Restaurants", "Hôtels", "Salons de thé", "Bars à mocktails", "Établissements gourmands"];
+/* formats professionnels du catalogue de démonstration */
+const FORMATS = [
+  { label: "Sirop · bouteille 700 ml", price: `${formatPrice(14.9)} HT`, note: "tarif indicatif" },
+  { label: "Poudre · sachet 1 kg", price: "Sur devis", note: "signatures et Essentiels" },
+  { label: "Accessoires & coffrets", price: "Sur demande", note: "quantités, personnalisation" },
+];
 
-/* Section 9 — les professionnels : un comptoir face au port, une offre en préparation */
+/* Section — les professionnels : un barista au comptoir, des formats indicatifs, une demande de devis */
 export function ProTeaser() {
   return (
     <section className="relative z-10 isolate overflow-hidden bg-deep text-creme" aria-labelledby="pro-titre">
       <div className="relative h-[52svh] min-h-[340px] md:absolute md:inset-0 md:h-auto">
         <Parallax amount={70} bleed className="h-full">
-          <Photo photo={home.pro} sizes="100vw" className="h-full w-full" position="30% 55%" />
+          <Photo photo={home.pro} sizes="100vw" className="h-full w-full" position="38% 55%" />
         </Parallax>
         <div className="absolute inset-0 bg-gradient-to-t from-deep via-transparent to-transparent md:bg-[linear-gradient(90deg,transparent_25%,rgb(var(--a-veil)/.82)_58%,rgb(var(--a-veil)/.94)_100%)]" aria-hidden />
       </div>
@@ -36,11 +43,29 @@ export function ProTeaser() {
               ))}
             </ul>
           </Rise>
-          <Rise delay={0.25}>
-            <p className="mt-8 text-sm text-creme/65">Offre en préparation : formats, conditions et délais restent à définir.</p>
-            <Link href="/professionnels" className="btn btn-clair mt-8">
-              Découvrir l&apos;espace professionnel
-            </Link>
+          <Rise delay={0.22}>
+            <dl className="mt-9 divide-y divide-creme/15 border-y border-creme/15 text-sm">
+              {FORMATS.map((f) => (
+                <div key={f.label} className="flex items-baseline justify-between gap-4 py-3.5">
+                  <dt>
+                    {f.label}
+                    <span className="block text-xs text-creme/60">{f.note}</span>
+                  </dt>
+                  <dd className="shrink-0 font-serif text-lg">{f.price}</dd>
+                </div>
+              ))}
+            </dl>
+          </Rise>
+          <Rise delay={0.28}>
+            <p className="mt-6 text-sm text-creme/65">Offre en préparation : conditions, volumes et délais restent à définir.</p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="/professionnels#demande" className="btn btn-clair">
+                Demander un devis
+              </Link>
+              <Link href="/professionnels" className="btn btn-verre">
+                L&apos;espace professionnel
+              </Link>
+            </div>
           </Rise>
         </div>
       </div>

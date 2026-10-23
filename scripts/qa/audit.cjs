@@ -46,7 +46,7 @@ const { launch, BASE } = require("./browser.cjs");
           const r = i.getBoundingClientRect();
           if (r.width < 2 || r.height < 2) return false;
           // les vignettes d'une galerie reprennent volontairement la vue principale
-          if (i.closest('[role="group"][aria-label^="Vues de"]') || i.closest('[role="dialog"]')) return false;
+          if (i.closest('[role="group"][aria-label^="Vues de"]') || i.closest('[role="dialog"]') || i.closest("[data-interactif]")) return false;
           for (let e = i; e; e = e.parentElement) {
             const cs = getComputedStyle(e);
             if (cs.opacity === "0" || cs.visibility === "hidden" || cs.display === "none") return false;

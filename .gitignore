@@ -9,3 +9,5 @@ next-env.d.ts
 __pycache__
 assets/generated/
 assets/generated-archive/
+assets/stock/
+assets/composed/

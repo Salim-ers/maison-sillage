@@ -8,11 +8,11 @@ import { AnimatePresence, motion } from "motion/react";
 import { Search, X } from "lucide-react";
 import { useStore } from "@/lib/store";
 import { useDialog } from "@/lib/useDialog";
-import { searchAll } from "@/lib/search";
+import { searchAll, suggest } from "@/lib/search";
 import { ProductThumb } from "@/components/products/ProductArt";
 import { categoryLabels } from "@/data/collections";
 
-const SUGGESTIONS = ["Vanille", "Fleur d'oranger", "Iced latte", "Chocolat chaud", "Fraise", "Mocktail"];
+const SUGGESTIONS = ["Pistache", "Fleur d'oranger", "Iced latte", "Chocolat chaud", "Caramel", "Mocktail", "Essentiels", "Mug"];
 
 export function SearchOverlay() {
   const { searchOpen, setSearchOpen } = useStore();
@@ -22,6 +22,7 @@ export function SearchOverlay() {
   const router = useRouter();
   const reduce = useReducedMotion();
   const res = useMemo(() => searchAll(q), [q]);
+  const hints = useMemo(() => suggest(q, 6).filter((h) => h.value.toLowerCase() !== q.trim().toLowerCase()), [q]);
   const total = res.products.length + res.recipes.length + res.articles.length;
 
   return (
@@ -81,6 +82,24 @@ export function SearchOverlay() {
               </div>
             )}
 
+            {q && hints.length > 0 && (
+              <ul className="mt-5 flex flex-wrap gap-2" aria-label="Suggestions">
+                {hints.map((h) => (
+                  <li key={`${h.kind}-${h.label}`}>
+                    {h.href ? (
+                      <Link href={h.href} onClick={close} className="inline-flex items-baseline gap-2 border border-line px-3.5 py-1.5 text-sm transition hover:border-ink hover:bg-paper">
+                        {h.label} <span className="text-[0.62rem] uppercase tracking-[0.14em] text-muted">{h.kind}</span>
+                      </Link>
+                    ) : (
+                      <button type="button" onClick={() => setQ(h.value)} className="inline-flex items-baseline gap-2 border border-line px-3.5 py-1.5 text-sm transition hover:border-ink hover:bg-paper">
+                        {h.label} <span className="text-[0.62rem] uppercase tracking-[0.14em] text-muted">{h.kind}</span>
+                      </button>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+
             {q && (
               <div className="mt-8 space-y-10" aria-live="polite">
                 <p className="text-sm text-muted">{total === 0 ? "Aucun résultat. Essayez un fruit, une épice ou un type de boisson." : `${total} résultat${total > 1 ? "s" : ""}`}</p>
@@ -94,7 +113,7 @@ export function SearchOverlay() {
                             <ProductThumb product={p} className="h-20 w-14 shrink-0" sizes="56px" />
                             <span>
                               <span className="block font-serif text-xl leading-tight">{p.name}</span>
-                              <span className="text-xs text-muted">{p.status === "a-venir" ? "Édition à venir" : categoryLabels[p.category]}</span>
+                              <span className="text-xs text-muted">{categoryLabels[p.category]}</span>
                             </span>
                           </Link>
                         </li>

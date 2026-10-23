@@ -3,8 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { recipes, getRecipe } from "@/data/recipes";
 import { getProduct } from "@/data/products";
-import { recipeCategoryLabels } from "@/data/collections";
-import { recipePhotos } from "@/data/images";
+import { drinkLabels } from "@/data/recipes";
+import { photo, recipePhoto } from "@/data/images";
 import { Photo } from "@/components/ui/Photo";
 import { ProductMini } from "@/components/products/ProductMini";
 import { RevealTitle, Rise, DrawRule, MaskReveal, Parallax } from "@/components/animations";
@@ -19,7 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const r = getRecipe(slug);
   if (!r) return {};
-  return { title: r.title, description: r.intro, alternates: { canonical: `/recettes/${r.slug}` } };
+  const og = recipePhoto(r);
+  return { title: r.title, description: r.intro, alternates: { canonical: `/recettes/${r.slug}` }, openGraph: { images: [{ url: og.src, width: og.width, height: og.height, alt: og.alt }] } };
 }
 
 export default async function RecettePage({ params }: { params: Promise<{ slug: string }> }) {
@@ -27,8 +28,10 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
   const r = getRecipe(slug);
   if (!r) notFound();
   const linked = r.products.map(getProduct).filter((x): x is NonNullable<typeof x> => !!x);
-  const others = recipes.filter((x) => x.slug !== r.slug && (x.category === r.category || x.products.some((p) => r.products.includes(p)))).slice(0, 3);
-  const ph = recipePhotos[r.slug];
+  const others = recipes.filter((x) => x.slug !== r.slug && (x.drink === r.drink || x.products.some((p) => r.products.includes(p)))).slice(0, 3);
+  // la boisson, puis la matière de la création utilisée (son packshot figure déjà dans la vignette produit)
+  const matiere = linked[0]?.images.slice(1).find((k) => k !== r.image && !k.startsWith("gamme-"));
+  const ph = { main: recipePhoto(r), second: matiere ? photo(matiere) : null };
 
   return (
     <article>
@@ -39,8 +42,8 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
               Recettes
             </Link>{" "}
             /{" "}
-            <Link href={`/recettes?usage=${r.category}`} className="hover:text-ink">
-              {recipeCategoryLabels[r.category]}
+            <Link href={`/recettes?boisson=${r.drink}`} className="hover:text-ink">
+              {drinkLabels[r.drink]}
             </Link>
           </nav>
           <RevealTitle as="h1" text={r.title} immediate className="display mt-6 text-[clamp(2.6rem,5.4vw,5.4rem)] font-light" />
@@ -58,7 +61,7 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
             </div>
             <div>
               <dt className="text-muted">Type</dt>
-              <dd className="mt-1 font-serif text-xl">{recipeCategoryLabels[r.category]}</dd>
+              <dd className="mt-1 font-serif text-xl">{drinkLabels[r.drink]}</dd>
             </div>
           </dl>
         </div>
@@ -107,11 +110,13 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
       <section className="bg-tint py-20" aria-labelledby="final-titre">
         <div className="shell grid gap-12 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-5">
-            <MaskReveal from="left" className="aspect-[4/3]">
-              <Parallax amount={40} bleed>
-                <Photo photo={ph.second} sizes="(min-width:1024px) 40vw, 100vw" className="h-full w-full" />
-              </Parallax>
-            </MaskReveal>
+            {ph.second && (
+              <MaskReveal from="left" className="aspect-[4/5] max-w-md">
+                <Parallax amount={40} bleed>
+                  <Photo photo={ph.second} sizes="(min-width:1024px) 34vw, 100vw" className="h-full w-full" />
+                </Parallax>
+              </MaskReveal>
+            )}
           </div>
           <div className="lg:col-span-6 lg:col-start-7">
             <p className="mention text-accent-ink">La boisson finale</p>
@@ -141,7 +146,7 @@ export default async function RecettePage({ params }: { params: Promise<{ slug: 
                 <Link href={`/recettes/${o.slug}`} className="flex items-baseline justify-between gap-4 py-4 font-serif text-2xl transition-colors hover:text-accent-ink">
                   {o.title}
                   <span className="font-sans text-xs text-muted">
-                    {recipeCategoryLabels[o.category]} · {o.temps}
+                    {drinkLabels[o.drink]} · {o.temps}
                   </span>
                 </Link>
               </li>

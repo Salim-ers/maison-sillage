@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useStore } from "@/lib/store";
-import { getProduct, startingPrice } from "@/data/products";
+import { getProduct, cartFormats } from "@/data/products";
 import { ProductMini } from "./ProductMini";
 import { AddToCart } from "./AddToCart";
 import { FavoriteButton } from "./FavoriteButton";
@@ -31,7 +31,7 @@ export function FavoritesList() {
             <ProductMini product={p} />
           </div>
           <div className="flex items-center gap-2 px-2">
-            {p.status !== "a-venir" && <AddToCart slug={p.slug} formatId={startingPrice(p).id} label="Ajouter" variant="trait" className="min-h-10 px-4 text-[0.66rem]" />}
+            {cartFormats(p)[0] && <AddToCart slug={p.slug} formatId={cartFormats(p)[0].id} label="Ajouter" variant="trait" className="min-h-10 px-4 text-[0.66rem]" />}
             <FavoriteButton slug={p.slug} name={p.name} />
           </div>
         </li>

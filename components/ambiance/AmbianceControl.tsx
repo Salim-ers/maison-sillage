@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
 import { useAmbiance } from "@/lib/ambiance";
 import { useReducedMotion } from "@/lib/useReduced";
-import { heroPhotos } from "@/data/images";
+import { heroPhotos, seasonImages } from "@/data/images";
 import { lights, seasons } from "@/data/collections";
 import { cn } from "@/lib/utils";
 import { CompassIcon, LightIcon, SeasonIcon } from "./icons";
@@ -103,7 +103,7 @@ export function AmbianceControl({ tone }: { tone: "photo" | "page" }) {
               <div className="grid grid-cols-3 gap-2">
                 {lights.map((l) => {
                   const on = target.light === l.id;
-                  const p = heroPhotos(target.season, l.id).desktop;
+                  const p = heroPhotos(l.id).desktop;
                   return (
                     <label key={l.id} className={cn("group/opt relative block cursor-pointer overflow-hidden rounded-[2px] border transition", on ? "border-ink" : "border-line hover:border-ink/40")}>
                       <input
@@ -132,7 +132,7 @@ export function AmbianceControl({ tone }: { tone: "photo" | "page" }) {
               <div className="grid grid-cols-4 gap-2">
                 {seasons.map((s) => {
                   const on = target.season === s.id;
-                  const p = heroPhotos(s.id, target.light).desktop;
+                  const p = seasonImages[s.id].paysage;
                   return (
                     <label key={s.id} className={cn("group/opt relative block cursor-pointer overflow-hidden rounded-[2px] border transition", on ? "border-ink" : "border-line hover:border-ink/40")}>
                       <input

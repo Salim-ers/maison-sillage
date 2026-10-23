@@ -5,9 +5,9 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react";
 import { useReducedMotion } from "@/lib/useReduced";
 import { useAmbiance, useAmbianceAssets } from "@/lib/ambiance";
-import { HERO_FOCUS, heroPhotos } from "@/data/images";
-import { lights, seasons } from "@/data/collections";
-import { siropOf } from "@/data/products";
+import { HERO_FOCUS, HERO_PRODUCTS, heroPhotos } from "@/data/images";
+import { lights } from "@/data/collections";
+import { getProduct } from "@/data/products";
 import { AmbientImage } from "@/components/ambiance/AmbientImage";
 import { SeasonDrift } from "@/components/ambiance/Atmosphere";
 
@@ -15,7 +15,6 @@ import { SeasonDrift } from "@/components/ambiance/Atmosphere";
 const SIZES = "(max-aspect-ratio: 16/9) 178vh, 100vw";
 const MOBILE_SIZES = "100vw";
 const LINES = ["Des saveurs", "qui traversent", "le temps."];
-const ESCALE: Record<string, string> = { printemps: "de printemps", ete: "d'été", automne: "d'automne", hiver: "d'hiver" };
 
 /**
  * Hero cinématographique : un grand voilier au large et, au premier plan,
@@ -28,10 +27,11 @@ export function Hero() {
   const amb = useAmbiance();
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
-  const { desktop, mobile, season: shown } = heroPhotos(amb.season, amb.light);
-  const focus = HERO_FOCUS[shown];
+  // une seule scène, celle d'été, dans les trois lumières : les particules suivent la saison choisie
+  const { desktop, mobile } = heroPhotos(amb.light);
+  const focus = HERO_FOCUS;
   useAmbianceAssets((a) => {
-    const p = heroPhotos(a.season, a.light);
+    const p = heroPhotos(a.light);
     const small = typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
     return [small && p.mobile ? { photo: p.mobile, sizes: MOBILE_SIZES, quality: 85 } : { photo: p.desktop, sizes: SIZES, quality: 85 }];
   });
@@ -53,10 +53,9 @@ export function Hero() {
   const [paused, setPaused] = useState(false);
   useMotionValueEvent(p, "change", (v) => setPaused(v > 0.97));
 
-  const season = seasons.find((s) => s.id === amb.season)!;
   const light = lights.find((l) => l.id === amb.light)!;
   // la création nommée est celle qui figure sur la photographie
-  const product = siropOf(seasons.find((s) => s.id === shown)!.flavor);
+  const product = getProduct(HERO_PRODUCTS.sirop)!;
 
   return (
     <section ref={ref} className="sticky top-0 isolate h-[100svh] min-h-[600px] overflow-hidden bg-[rgb(var(--a-veil))] text-creme" aria-labelledby="hero-titre">
@@ -84,14 +83,15 @@ export function Hero() {
               <svg viewBox="0 0 40 10" className="h-2.5 w-9 shrink-0 text-or" aria-hidden>
                 <path d="M0 5 C6 1 10 9 16 5 S28 1 40 5" fill="none" stroke="currentColor" strokeWidth="1.2" />
               </svg>
-              Maison Sillage — Sirops &amp; créations gourmandes
+              Maison Sillage — Sirops, poudres &amp; créations gourmandes
             </p>
             <h1 id="hero-titre" className="mt-3 font-serif text-[clamp(2.55rem,4.3vw,5.6rem)] font-light leading-[0.92] tracking-[-0.025em] [text-shadow:0_2px_30px_rgb(0_0_0/0.3)] md:mt-5">
-              <span className="sr-only">Des saveurs qui traversent le temps.</span>
+              {/* le titre n'existe qu'une fois : chaque ligne porte son espace final, rien n'est dupliqué */}
               {LINES.map((l, i) => (
-                <span key={l} aria-hidden className="block overflow-hidden pb-[0.08em]">
+                <span key={l} className="block overflow-hidden pb-[0.08em]">
                   <span className={`hero-ligne ${i === 2 ? "italic" : ""}`} style={{ ["--delay" as string]: `${0.55 + i * 0.13}s` }}>
                     {l}
+                    {i < LINES.length - 1 ? " " : ""}
                   </span>
                 </span>
               ))}
@@ -100,8 +100,8 @@ export function Hero() {
               « Inspirée par les grands voyages, Maison Sillage imagine des créations gourmandes pour sublimer cafés, lattes et boissons d&apos;exception. »
             </p>
             <div className="hero-monte mt-5 flex flex-col gap-2.5 xs:flex-row md:mt-7 md:gap-3 [&>a]:whitespace-nowrap" style={{ ["--delay" as string]: "1.25s" }}>
-              <Link href="#creations" className="btn btn-clair">
-                Explorer nos créations
+              <Link href="/boutique" className="btn btn-clair">
+                Découvrir la boutique
               </Link>
               <Link href="/maison" className="btn btn-verre min-h-11 md:min-h-[3.25rem]">
                 Découvrir notre histoire
@@ -128,7 +128,7 @@ export function Hero() {
             aria-live="polite"
           >
             <span className="mention block text-creme/80">
-              Escale {ESCALE[season.id]} · {light.name.toLowerCase()}
+              Escale d&apos;été · {light.name.toLowerCase()}
             </span>
             <span className="lien mt-1 inline-block font-serif text-[1.15rem] italic">{product.name}</span>
           </Link>

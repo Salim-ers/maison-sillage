@@ -15,8 +15,8 @@ export function MaritimeBanner({ kicker, title, children }: { kicker: string; ti
   const amb = useAmbiance();
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
-  const photo = storyPhoto(amb.season, amb.light);
-  useAmbianceAssets((a) => [{ photo: storyPhoto(a.season, a.light), sizes: SIZES }]);
+  const photo = storyPhoto(amb.season);
+  useAmbianceAssets((a) => [{ photo: storyPhoto(a.season), sizes: SIZES }]);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["0%", "18%"]);
   const o = useTransform(scrollYProgress, [0, 0.7], [1, 0]);

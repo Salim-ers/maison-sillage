@@ -9,13 +9,13 @@ import { MaskReveal, Parallax, RevealTitle, Rise, WakeStroke } from "@/component
 const MAIN_SIZES = "(min-width:1024px) 58vw, 100vw";
 const DETAIL_SIZES = "(min-width:1024px) 18vw, 40vw";
 
-/* Section 5 — l'histoire de la Maison : retour au large, une autre vue maritime que le hero */
+/* Dernière section — l'histoire de la Maison : retour au large, une autre vue maritime que le hero */
 export function Histoire() {
   const amb = useAmbiance();
-  const main = storyPhoto(amb.season, amb.light);
+  const main = storyPhoto(amb.season);
   const detail = storyDetail(amb.season);
   useAmbianceAssets((a) => [
-    { photo: storyPhoto(a.season, a.light), sizes: MAIN_SIZES },
+    { photo: storyPhoto(a.season), sizes: MAIN_SIZES },
     { photo: storyDetail(a.season), sizes: DETAIL_SIZES },
   ]);
 

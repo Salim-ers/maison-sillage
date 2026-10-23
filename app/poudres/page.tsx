@@ -3,26 +3,27 @@ import { RangePage } from "@/components/products/RangePage";
 import { pages } from "@/data/images";
 
 export const metadata: Metadata = {
-  title: "Les préparations en poudre",
-  description: "Les quatre créations de saison en préparation à fouetter : fraise des bois & madeleine, pêche blanche & fleur d'oranger, poire & vanille, datte & crème brûlée.",
+  title: "Les poudres signatures",
+  description:
+    "Huit poudres signatures à fouetter dans le lait : les quatre saveurs de saison, pistache grillée, chocolat noir et orange confite, vanille torréfiée, chaï doux et fleur d'oranger. Sachet 200 g, prix indicatifs.",
   alternates: { canonical: "/poudres" },
 };
 
 export default function Poudres() {
   return (
     <RangePage
-      category="poudre"
-      kicker="Les préparations en poudre"
+      categories={["poudre"]}
+      kicker="Les poudres signatures"
       title="La gourmandise, à fouetter."
-      intro="Nos quatre créations de saison existent aussi en poudre : des préparations à fouetter dans le lait, chaud ou froid, qui donnent du corps aux lattes, aux chocolats, aux frappés et aux boissons créatives."
+      intro="Les quatre saveurs de saison existent en poudre, et quatre créations s'y ajoutent toute l'année. Des préparations à fouetter dans un lait chaud ou froid, pour des lattes, des chocolats et des frappés plus ronds."
       photo={pages.poudres}
-      caption="Cacao et chocolat noir : la matière d'une préparation gourmande."
+      caption="Quatre poudres signatures dans leur sachet espresso."
       points={[
-        { title: "Deux formats", text: "Un sachet de 200 g pour la maison, un sachet de 1 kg pour les établissements. Tarifs indicatifs." },
+        { title: "Deux formats", text: "Sachet 200 g à 14,90 € TTC pour la maison ; sachet professionnel 1 kg, tarif sur devis. Prix indicatifs." },
         { title: "Chaud ou froid", text: "Lattes, chocolats, frappés, milkshakes : la tenue à froid comme à chaud fait partie des essais à mener." },
         { title: "Formulation en cours", text: "Aucune composition ni valeur nutritionnelle n'est annoncée avant la finalisation des recettes." },
       ]}
-      other={{ href: "/sirops", label: "Découvrir aussi les sirops signatures" }}
+      other={{ href: "/essentiels", label: "Découvrir aussi Les Essentiels de la Maison" }}
     />
   );
 }

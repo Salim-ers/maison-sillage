@@ -1,34 +1,46 @@
 import type { Metadata } from "next";
 import { PageIntro } from "@/components/ui/PageIntro";
 import { RecipeIndex } from "@/components/editorial/RecipeIndex";
+import { Comptoir } from "@/components/editorial/Comptoir";
 import { Photo } from "@/components/ui/Photo";
 import { RevealNow } from "@/components/ui/RevealNow";
 import { pages } from "@/data/images";
-import { recipeCategoryLabels } from "@/data/collections";
-import type { RecipeCategory } from "@/lib/types";
+import { drinkLabels } from "@/data/recipes";
+import type { Recipe } from "@/lib/types";
 
 export const metadata: Metadata = {
-  title: "Recettes",
-  description: "Lattes, iced lattes, cafés, mocktails sans alcool, chocolats chauds, milkshakes et desserts : les recettes de démonstration Maison Sillage.",
+  title: "Recettes & Comptoir des Saveurs",
+  description:
+    "Espresso, lattes, iced lattes, chocolats chauds, frappés, mocktails sans alcool, milkshakes : les recettes de démonstration Maison Sillage, et le Comptoir des Saveurs pour composer sa boisson.",
   alternates: { canonical: "/recettes" },
 };
 
 export default async function Recettes({ searchParams }: { searchParams: Promise<Record<string, string | string[] | undefined>> }) {
   const sp = await searchParams;
-  const u = Array.isArray(sp.usage) ? sp.usage[0] : sp.usage;
-  const initial = u && u in recipeCategoryLabels ? (u as RecipeCategory) : undefined;
+  const b = Array.isArray(sp.boisson) ? sp.boisson[0] : sp.boisson;
+  const initial = b && b in drinkLabels ? (b as Recipe["drink"]) : undefined;
   return (
     <>
-      <PageIntro kicker="Recettes & usages" title="Une saveur, mille façons de la déguster.">
-        Chaque création de la Maison est pensée pour plusieurs boissons. Voici nos propositions : des recettes simples, chaudes ou glacées, dont les
-        dosages sont indicatifs.
+      <PageIntro
+        kicker="Recettes"
+        title="Une saveur, mille façons de la servir."
+        aside={
+          <RevealNow from="right" className="aspect-[4/5] max-h-[70vh]">
+            <Photo photo={pages.recettes} sizes="(min-width:1024px) 40vw, 100vw" preload className="h-full w-full" />
+          </RevealNow>
+        }
+      >
+        Chaque création est pensée pour plusieurs boissons. Composez la vôtre au Comptoir des Saveurs, ou parcourez nos recettes, chaudes ou glacées, aux
+        dosages indicatifs.
       </PageIntro>
-      <div className="shell mb-14">
-        <RevealNow from="bottom" className="aspect-[16/9] md:aspect-[21/9]" delay={0.3}>
-          <Photo photo={pages.recettes} sizes="100vw" preload className="h-full w-full" />
-        </RevealNow>
+      <Comptoir id="comptoir" tone="tint" recipeThumb={false} />
+      <div className="pt-20 md:pt-28">
+        <div className="shell mb-10">
+          <p className="mention text-accent-ink">Toutes les recettes</p>
+          <h2 className="titre mt-4">Par type de boisson.</h2>
+        </div>
+        <RecipeIndex initial={initial} />
       </div>
-      <RecipeIndex initial={initial} />
     </>
   );
 }

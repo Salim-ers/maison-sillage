@@ -1,332 +1,1028 @@
 {
- "/images/hero/ete-coucher.webp": {
-  "src": "/images/hero/ete-coucher.a5dfe8b1.webp",
-  "w": 3840,
-  "h": 2160,
-  "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoQAAkAA4BaJZACdAEJQFliAAD+9QS1s0O83zU4G6N5RxuecUBfy+EoJZ37WoL3qEq/tDbqpTeXwAAA"
- },
- "/images/hero/ete-jour.webp": {
-  "src": "/images/hero/ete-jour.2f5ac482.webp",
-  "w": 3840,
-  "h": 2160,
-  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoQAAkAA4BaJYgCdAEHuTAAAP7wR1Y7HfjdUNbDlOBX5R8fxTzeJ+XDW12KdrcWw1eM4Ps5l8AAAA=="
- },
- "/images/hero/ete-nuit.webp": {
-  "src": "/images/hero/ete-nuit.fe827f10.webp",
-  "w": 3840,
-  "h": 2160,
-  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJQBOgB6R8fZDAAD+7NftV7m6dMRxe+swNj2shKfMgFtU2WSIYCAA"
- },
- "/images/hero/mobile-ete-coucher.webp": {
-  "src": "/images/hero/mobile-ete-coucher.189abe18.webp",
-  "w": 1536,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADQAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JZgCdACHwhmktxaLiPkAA/u1IWblo1nY92bo8tjA95gQ8OQBHI8r+/wMf6TUdYYTkmOq/v59YYwRpEG7pzzrScaukteqKo35or0GUE3l4MygA"
- },
- "/images/hero/mobile-ete-jour.webp": {
-  "src": "/images/hero/mobile-ete-jour.3ba9a54e.webp",
-  "w": 1536,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADQAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JaACw7B09HyoDrh1e7kgA/udBQyOUTlD7lYCPqXR+zg3vOibBGLHFjW0O+BdcfydJEr0XqnU62NArJimVIxpBbVoRAyFTNYiA/e3WXjc7Kz+gAAA="
- },
- "/images/hero/mobile-ete-nuit.webp": {
-  "src": "/images/hero/mobile-ete-nuit.73e33a8b.webp",
-  "w": 1536,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABUAPu1kqU2ppaQiMAgBMB2JYgCdAB5GEL+coRmJAAD+6QbA6POh8Qw2wHP7sG8ulW/eyBlnLOkL+Ih8O+i+C9ZQqowHcsqIVInfOEzEOmcMmX+zAAAA"
- },
- "/images/lifestyle/comptoir-professionnel.webp": {
-  "src": "/images/lifestyle/comptoir-professionnel.9b5e0d36.webp",
-  "w": 1672,
-  "h": 941,
-  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACQAQCdASoQAAkAA4BaJaACdABU2cAA/uhnQ8zwOuGJhIfXi6JbLYQezCGHosAQ4bMQBV1xubX3LBuELSoAAA=="
- },
- "/images/products/coffret-decouverte.webp": {
-  "src": "/images/products/coffret-decouverte.ea0800ee.webp",
-  "w": 3072,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJYgCdAEUPm5OA4AA/oXrZ0I7Ef6gkdZ5P7XwP7/wHJUZjLG3mAVqW05QaiyqJm4atL49ubjRvWmNMfkOQAAA"
- },
- "/images/products/duo-datte.webp": {
-  "src": "/images/products/duo-datte.893f2ded.webp",
-  "w": 1536,
-  "h": 1920,
-  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwAASoWrLFYK+wxw7AAA/vDfcHs4H51EEGSxmXY3ddiwgrwTWvDeYCcVNx0c9YPVCwsnsuu61QZ8PyA3bnUtPiHmAA=="
- },
- "/images/products/duo-fraise.webp": {
-  "src": "/images/products/duo-fraise.abb1e677.webp",
-  "w": 1536,
-  "h": 1920,
-  "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYgCdAB6RPFjNjxik5gAA/vK0eib5AuXfAeJP4t8XOfk+MKdUr/XVj5CtjpNQqwvrOhXQ9zDDpHmUnGkte/wfPypyqsCojAA="
- },
- "/images/products/duo-peche.webp": {
-  "src": "/images/products/duo-peche.1ed0d496.webp",
-  "w": 1536,
-  "h": 1920,
-  "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQBACdASoQABQAPu1kqU2ppaOiMAgBMB2JYgCdMoADUFtmnijfY/CmC+AAAP7r709CeJkwVyDeQp/zK0lAPecGnDXzKpGT+enwlKfP1b/sdYZO5Qyi0QkV7Hd7fOBL2Xk+YcKNFwAAAA=="
- },
- "/images/products/duo-poire.webp": {
-  "src": "/images/products/duo-poire.74261d6a.webp",
-  "w": 1536,
-  "h": 1920,
-  "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOmUABfhvqCMbHXOcAA/vMlmInRH6zXj//alWfPUpSaqbTPilQumm1XWqIEpb+sAnfxoGWWnWf/v17lu4q4ON+JeiASzy4L2Dlxr8RM8HspEgAAAA=="
- },
- "/images/products/gamme-poudres.webp": {
-  "src": "/images/products/gamme-poudres.ec082358.webp",
-  "w": 3072,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAsAA4BaJZgCdAEPQ2bAAAD0aren7qtDfK/izUfAHmvgMfbDKvcQmODvfXqlrkAsCStWYQAAAA=="
- },
- "/images/products/gamme-sirops.webp": {
-  "src": "/images/products/gamme-sirops.afcf1392.webp",
-  "w": 3072,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAwAgCdASoQAAsAA4BaJZACdAELySFTLHiRAADhmrlqA2CII7bDQQOR0k3rcSRRMGyFav1VT1+N2djqcYgAAA=="
- },
- "/images/products/poudre-datte.webp": {
-  "src": "/images/products/poudre-datte.54b37a9d.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwBACdASoQABgAPu1iqk2ppaQiMAgBMB2JYwCdAywBtG6c8Se5xqLQf2QOwAD+5zk5m5P1YA0dSGHPaoZY1ZA7lsG98AJYyAiIj/RDRBwT1YnuoPi5P5ESbM/vp9DMZVrdJxTkneuT1ucs2SGd6pf0dS9XOzshW9c+xGrJkKkuAeNWPJrHSSAA"
- },
- "/images/products/poudre-fraise.webp": {
-  "src": "/images/products/poudre-fraise.6ce55bba.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoQABgAPu1iqk4ppaQiMAgBMB2JQBYd5YA2mE4BPwHs75uXtiGQAPoBTGGuxmhpPw3n/N22OgNaeXRxJPZmjluLhkMOJvohYALqwcJwsuaaFiPBzLbYBlPmlJFcogaZQTdjefazxWFYkRnLY+wCAAAA"
- },
- "/images/products/poudre-peche.webp": {
-  "src": "/images/products/poudre-peche.ea3e118e.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAQBACdASoQABgAPu1iqk2ppaQiMAgBMB2JQBOgBD3aZswL9j1x/cdbAAD+4MuqWMZylgWC/Zii+w9Fb87ta12HH5kxjTu6vnRlimIw1uRN2E6/kkMfVUi78XOFPHihBbn/oe6Cqu4kqh+iFocj6uVH7itmyjBTjeWYHO3gAAA="
- },
- "/images/products/poudre-poire.webp": {
-  "src": "/images/products/poudre-poire.310a6d7f.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoQABgAPu1kq04ppaQiMAgBMB2JYwCdAB7BJxQSl6QSVoPRAAD+3yRoqI7IKO5I/hWlMlP4EFMlkQ+ii1f5AuIw0BIal0NtNwbQ6CsR0A6GYsrc8mpLvvyag/GqOgOyky20Wte0xpVyQ6+IoTlkAAAA"
- },
- "/images/products/sirop-datte.webp": {
-  "src": "/images/products/sirop-datte.1a4afc2e.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JQBOgA3SQdLlqpQ5leGjlegAA/uBwQME519U/h4Douryn3YkO//FXwBMiey5P08copX1D4XcQBSi6ZPdVewDtUrUDLOpk2fVEPS3YKvqoWz63KsU5nO2dlieRFkIu8l90AA=="
- },
- "/images/products/sirop-fraise.webp": {
-  "src": "/images/products/sirop-fraise.73ece211.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JQBOl65A70cx7ejs62Bq6O4AA/uC69HppRDLe6oDnSTwoPahlZDTDiP3pD/XDFrSL46AUbeebNZ0+u7MOhh6AB9iFi6XjFqI4AJMHXnTa/eKSOltaE+f4+CSlvgAA"
- },
- "/images/products/sirop-peche.webp": {
-  "src": "/images/products/sirop-peche.fbad9c50.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAADwAwCdASoQABgAPu1kqk4ppaQiMAgBMB2JYgCdMoACa9SYd7kQSs1QAP7q3AIkt2Zv055EjGbzc4wXNNsDgXk//JTfQhjKOBudzySbH0pZ+Savm/ekU7pL2yYrm/sy/18YGGbRlmxOWemzTkT0o0zUJY62Zgoy8AA="
- },
- "/images/products/sirop-poire.webp": {
-  "src": "/images/products/sirop-poire.00dac7c4.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwBACdASoQABgAPu1kqk2ppaQiMAgBMB2JYgCdMoACs8gAr6irJuZOQiAA/tObi9Epo9WnLoVMQXphvbVpLM3r4KjEf7EfREqdmQiyP4/IDS0qHQ7JFsGN2Ub4kd43ieVLH9d+dH624AAA"
- },
- "/images/recipes/cafe-terrasse.webp": {
-  "src": "/images/recipes/cafe-terrasse.5039469c.webp",
+ "acc-cafetiere-italienne": {
+  "src": "/images/products/acc-cafetiere-italienne.25bd5039.webp",
   "w": 1600,
-  "h": 1419,
-  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQAA4AA4BaJaACdAEf489TjVQAAPZ1BhKrr2ZuErooBpRLo/FGT/NIrXIuITloz7GW8YZjmCI6eYF8m49HGxvdu7W6AAAA"
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JaACdMoRwFf/gK7XFGrlQBgUKcAD9ktesRsU5iuzisZvryp0ml5R7X3LD7Ktx2VYBr82RhUpyms7HJ0OwKo6kz2QhXMDJGw2xLMAAAAA=",
+  "credit": {
+   "name": "Hrushi Chavhan",
+   "url": "https://unsplash.com/photos/une-tasse-de-cafe-posee-sur-une-table-en-bois-2Id2h3GoSJE",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/recipes/chocolat-chaud.webp": {
-  "src": "/images/recipes/chocolat-chaud.5e3d06ac.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JQBOmUGYwBFlUbCECGrykNkAA/GCfKcjxaojfGRqoGdtF4Um9d5qzFMQD7l5Yo2zMWdJkGkI0xln4+Rades+wTteqatCCGHHaO9Zslw1BfN7iv2201S9Twj5gBZyl/PeKd6keAEQAAA=="
+ "acc-carafe-sirop": {
+  "src": "/images/products/acc-carafe-sirop.b4e613c1.webp",
+  "w": 1600,
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JaQAAW+uVfvBCu77KcAD+8dPrF7V948LrI9i4OHwzihyUbxyuOMJEI1CZfJuKKQBIKz6R2rvCoNW2AAA=",
+  "credit": {
+   "name": "Marco Palumbo",
+   "url": "https://unsplash.com/photos/un-elegant-pichet-en-verre-a-motif-de-diamants-e8Eyb_tM4Lc",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/recipes/creme-brulee.webp": {
-  "src": "/images/recipes/creme-brulee.fe0bfc78.webp",
-  "w": 516,
-  "h": 456,
-  "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAABwAgCdASoQAA4AA4BaJbACdLoAAzf352+PTxAgAP6+dtTk1N5XEjpuQf9dz9brz5PlCM2kVqtL3vd64ThmSze90NhS6G18zPqy5lQAn4+L9cUnQqQAAA=="
+ "acc-carnet-recettes": {
+  "src": "/images/products/acc-carnet-recettes.27b2b40a.webp",
+  "w": 1600,
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoQABQAPu1iqU2ppaQiMAgBMB2JZgCdMoADQKf+582Oq9+JIAD+tAiQ3gdcfuXQ1ZeHwHzYjRgIX1V+g//8IBlXqae0Y8BTiZaAvl66CnLrpk75EygJ1ubqSIBRORAA",
+  "credit": {
+   "name": "Tim Wildsmith",
+   "url": "https://unsplash.com/photos/portefeuille-en-cuir-marron-sur-table-en-bois-marron-ULXZmSKt1KA",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/recipes/iced-latte-poire.webp": {
-  "src": "/images/recipes/iced-latte-poire.cf3e84cd.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoQABgAPu1iqU2ppaQiMAgBMB2JYgCdMoACfImtkWlcGlaB4YhAAP628TWykCop4WOVyBNj+pGq/mrAmCsCk3dlDvn2AohTIb2wJ8DPa0PcBQNC9mLnahJtMokOUIhjyQxzYgEirMxSpljk+OZoy4ylbsgaEkSe/eJt51xUdAAAAA=="
+ "acc-coffret-decouverte": {
+  "src": "/images/products/acc-coffret-decouverte.27ce71f8.webp",
+  "w": 1600,
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JZACdMoRwABRxgg/38KaFtAD+gztvZTHn60JYhr4TyU4x4wwidZ1eA5ZzA+k2tUkPO8jZfFeRfa+ZWTtQ7Q/QAAA=",
+  "credit": {
+   "name": "Raymond Petrik",
+   "url": "https://unsplash.com/photos/boite-cadeau-emballee-dans-de-la-ficelle-et-de-la-verdure-festive-l6A1CggyaS4",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/recipes/latte-datte.webp": {
-  "src": "/images/recipes/latte-datte.25849e31.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYgCdMoR4GCRLhL0XtK/jdgVgAP7AT1zFGMUPsmqoMF04BWUGMUA87yE2ttGeG9v8hxmSLX63T8qtSqE1LW8vLDtFYXGXZUnFXotvOmdM8Gn6SjorCTX+qCcAIp4fgY56JXUmvrDMAA=="
+ "acc-cuillere-doseuse": {
+  "src": "/images/products/acc-cuillere-doseuse.2cbbecac.webp",
+  "w": 1600,
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZwDE2ywBD0li/OGffLlAwAD+yNc6ZGpCPuMuJ7FA5ip7DY1sq/ZH3o+kK0QxKjmvCJSLC4gQSkXA3D0bZg1PVIV92xdmWxv6pfyBoLETZPeaxQRaa2sAAAA=",
+  "credit": {
+   "name": "Christina Rumpf",
+   "url": "https://unsplash.com/photos/cafe-et-cafe-moulu-petit-dejeuner-LMzwJDu6hTE",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/recipes/latte-poire.webp": {
-  "src": "/images/recipes/latte-poire.248f127d.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZACdMoRwACRcAw4lx8VMgAwA/tGa5s41XdGAudawl5qK05+wX82kJQWocwf83L57h+FsXyKVZcb2qHVQy8+AcmY9pPnQTWtgpaRH0nEtYliLFtb9Sa/F9fgX0Btp1jiWnQx3JWd0aaAA"
+ "acc-mug-ceramique": {
+  "src": "/images/products/acc-mug-ceramique.9eeaf951.webp",
+  "w": 1600,
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoQABQAPu1kq04ppaQiMAgBMB2JZwDKAB6ORVAlunFO/vYAAP7n1Rewzh7qVD0Q6M5Iq1YZrroTpnEXEru6Pwygcr3xPx3QNYKssQdcAAA=",
+  "credit": {
+   "name": "Mediamodifier",
+   "url": "https://unsplash.com/photos/tasse-en-ceramique-blanche-sur-cloture-en-fil-de-metal-noir-zYs06jGwx7Y",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/recipes/milkshake-fraise.webp": {
-  "src": "/images/recipes/milkshake-fraise.81fa7661.webp",
-  "w": 520,
-  "h": 690,
-  "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JagCdMoCUAAsuVvqqSXe7GPsAAM0l00C9yF0WB7b1qH4nNin8PpmdIDO9mTqUeaplq5XlwzcjinNu+wtI55Q2xVEbevv7cFADt0NQOSOIB2BBPMFKdIfeek3gqfMZyZ5tLFcCbAAAAA=="
+ "acc-tasse-espresso-gres": {
+  "src": "/images/products/acc-tasse-espresso-gres.58fb31fb.webp",
+  "w": 1600,
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOl6gA0obUTlqxZGHQAAN5UbtJj2iHirBQrnrXBTkm6cA/qPyuAuA2UspcdjDJ9d4ZPAC++cqEIEX6aQRNz7Msv4ZaAAAA=",
+  "credit": {
+   "name": "Adam Rasheed",
+   "url": "https://unsplash.com/photos/tasse-en-ceramique-rustique-avec-glacure-rouge-sur-une-surface-en-bois-dpmUrwiS4q4",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/recipes/mocktail-peche.webp": {
-  "src": "/images/recipes/mocktail-peche.337aba6a.webp",
-  "w": 1024,
-  "h": 1536,
-  "blur": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQBACdASoQABgAPu1kqU2ppaQiMAgBMB2JZgCxDExCNIKfD09gx+gEuSYAAP7WEpE5hpqce5oNd/UTNWovOHxOzUNQDnBujZ5t4nyiqlyBVyomF3kJRa5jPbMit87UD62uxxJhdm16GgHEpw2KxcECwDeSsoR/FwcUZ6s9bCF3Wtg/hI1KAAAA"
+ "acc-verre-latte-glace": {
+  "src": "/images/products/acc-verre-latte-glace.74763881.webp",
+  "w": 1600,
+  "h": 2000,
+  "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwDCgA3x+f/D5VPCAAD+z0pg/ZoigIG2WLtauFRbEuY8AbMZDic/Qwg5vtRMpZqqetryVt5Vh98WDD4KS6sE54XYSKUh9TQ99kYXSark7QAA",
+  "credit": {
+   "name": "Eiliv Aceron",
+   "url": "https://unsplash.com/photos/verre-highball-rempli-de-cafe-glace-_tSgUmeYMm8",
+   "source": "Unsplash",
+   "note": "visuel d'intention, logo appliqué"
+  }
  },
- "/images/seasons/matiere-automne-epices.webp": {
-  "src": "/images/seasons/matiere-automne-epices.3a57aa87.webp",
-  "w": 1158,
-  "h": 1158,
-  "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQAgCdASoQABAAA4BaJbACdB2gAYdxOQXNfwAA/tDR8ZUGFihzMm9tPb0uBUBp0VTATV+XVYzkbKoiBiW5aOxIagwkh6AKzAAwHr1UJU3I+LttCz3YAAAA"
+ "barista": {
+  "src": "/images/lifestyle/barista.9f84128f.webp",
+  "w": 2400,
+  "h": 1600,
+  "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQAAsAA4BaJYwAAexagFn45oAA/u9pfRwfZ9rEUsk0fOQe7wVyI4by1xJ+lFSmxjQBMWbo0CSi1eJ2XNWAAA==",
+  "credit": {
+   "name": "Armin Lotfi",
+   "url": "https://unsplash.com/photos/cappuccino-gURxlcD9I0U",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-automne-poires.webp": {
-  "src": "/images/seasons/matiere-automne-poires.b71a7832.webp",
-  "w": 2048,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQABAAA4BaJbACdAEDWIXOEwQAAPvHCsIr6v/sAfM2G15nXrMsuQbUPjkIZ8lHhBdnT2jp3EJ4mIrIpGcwi4N59lC9qttuayrzfgHA0AAAAA=="
+ "boisson-chocolat-1": {
+  "src": "/images/recettes/boisson-chocolat-1.b059b2b9.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBACdASoQABgAPu1kqU2ppaOiMAgBMB2JYwAOfIOxcVKdtJBXDlUbAAD1t72UWZj97KUb9DVCj+S6xMO51J+n/l0V6IA9UXrpuYi4FLPn5J0K7NNGE04nrhOw+nvR+7lq1OisynguHUSJxTGdfuWrX0AAAA==",
+  "credit": {
+   "name": "Maddi Bazzocco",
+   "url": "https://unsplash.com/photos/cafe-au-chocolat-versant-dans-une-tasse-blanche-MjZq7A2RJxQ",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-ete-fleurs-oranger.webp": {
-  "src": "/images/seasons/matiere-ete-fleurs-oranger.d15cfda1.webp",
-  "w": 2048,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQABAAA4BaJQAAYoN6c6Su0fQAAP6VCFayjNRICbQ+9pOED/7pSmPJYFW54JfFottGbXzjIYyGwJsXdJUnOIUJ9vfsYcAA"
+ "boisson-chocolat-2": {
+  "src": "/images/recettes/boisson-chocolat-2.ecb99b1e.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoQABgAPu1kqU2ppaQiMAgBMB2JQBOgBDtKHdoGYjSljoAJuMAA/uP78XXmap5NMmx0qtkH75Ey3rTel2ZOpto2sL74Rki3+c1zsPberhSWynVPYvU+ZNLdvXy/R+Z2/feweY55RriCOUzc9PFykDU3/wKAh4CXHoAAAA==",
+  "credit": {
+   "name": "Rachael Gorjestani",
+   "url": "https://unsplash.com/photos/tasse-beige-avec-chocolat-chaud-pres-des-batons-de-cannelle-sur-la-surface-RqBoo_uHIl4",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-ete-peches.webp": {
-  "src": "/images/seasons/matiere-ete-peches.093783cf.webp",
-  "w": 1200,
-  "h": 1012,
-  "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAABQAgCdASoQAA0AA4BaJbACdADdQlgBytuflAAA/uX1VZSak025l3eyNmXSZ1bDTWQ/UHnr8y22WfBePfKMmvz/Sq7FhZ+PKerRG1foAAA="
+ "boisson-chocolat-3": {
+  "src": "/images/recettes/boisson-chocolat-3.b52b465b.webp",
+  "w": 1920,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwCdACG6re3IAHe+P0QAAP7i8YdP1QP+v5yBN+m6uw0P9DLTMuiKkwWzSnyokr430Sm5td0eE2AA",
+  "credit": {
+   "name": "Sixteen Miles Out",
+   "url": "https://unsplash.com/photos/une-tasse-de-chocolat-chaud-avec-des-guimauves-dedans-s0Cnecr8W4U",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-hiver-chocolat.webp": {
-  "src": "/images/seasons/matiere-hiver-chocolat.8bea226b.webp",
-  "w": 1140,
-  "h": 1139,
-  "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQAgCdASoQABAAA4BaJZACdAERH9R+YXPwjAAA/vEgYByYkAAmKhQX9/ANo15sv+LP8UnoyB9l8RLU9m9aLItzxGB0AAAA"
+ "boisson-chocolat-blanc": {
+  "src": "/images/recettes/boisson-chocolat-blanc.155f3877.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQBACdASoQABgAPu1iqU2ppaQiMAgBMB2JZwC7ACHfCRpBmuxtp5ykAAD+5FzB1x7kArmN7PkEEKAooXuwxxhhnm3IhphvYihA1DU4JqBdAAAA",
+  "credit": {
+   "name": "Karthick Gislen",
+   "url": "https://unsplash.com/photos/une-tasse-de-chocolat-chaud-mousseux-sur-une-table-en-bois-GHnsgYYsY8M",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-hiver-dattes.webp": {
-  "src": "/images/seasons/matiere-hiver-dattes.324024a3.webp",
-  "w": 1140,
-  "h": 1138,
-  "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoQABAAA4BaJaACdADcQB5RsuuAAP7Qb74NiEAEdfczlDk7G7WGsLd/JMlzVhhnvnD52ihOrIKrjyd4xggnBskG77O1hGaKgAA="
+ "boisson-espresso-1": {
+  "src": "/images/recettes/boisson-espresso-1.b8432448.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoQABgAPu1kq04ppaQiMAgBMB2JYgAAUpjIQ4ENt968X7YmIAD+eMD8iBC8GiN1CrB9+hGdJHsyJuun39O6f6NmbAotHBQIuYvNw4vCjlQLao8E2AAAAA==",
+  "credit": {
+   "name": "Katt Galvan",
+   "url": "https://unsplash.com/photos/une-tasse-de-cafe-posee-sur-une-assiette-blanche-3v0vppDjvMI",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-poudre.webp": {
-  "src": "/images/seasons/matiere-poudre.1597700e.webp",
-  "w": 2048,
-  "h": 1365,
-  "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAsAA4BaJaACdAEDTSg5lAAA/Zn5EzvzmKeGF6EL/AczwHuO+nTz33+NtsCka+EQW4mdWdSPN5ZnvwsqkGrEp7CAAA=="
+ "boisson-espresso-2": {
+  "src": "/images/recettes/boisson-espresso-2.86e64b01.webp",
+  "w": 1804,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgC7AB6XiE8WhN2Y80ro4AD+z3Pi1EVA5Dp2prFIwJDL+nYxoaXvPMqD3KZdmqpj0F0ifP/QD+K0gostm+wuOHJkiUOzgAA=",
+  "credit": {
+   "name": "David Magalhães",
+   "url": "https://unsplash.com/photos/une-petite-tasse-de-cafe-noir-sur-une-soucoupe-7jhmhJUedQw",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-printemps-fleurs.webp": {
-  "src": "/images/seasons/matiere-printemps-fleurs.881dd2e8.webp",
-  "w": 2048,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoQABAAA4BaJZQCdACjQmhAAP63+i1wdxqkSzEC+NqSrrqj9YCvYj0LZRxPLc47+JWpCw56EH0+u4YjTkQ4hAAA"
+ "boisson-frappe-1": {
+  "src": "/images/recettes/boisson-frappe-1.6030f779.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABgAPu1mqk4ppaOiMAgBMB2JYwAAOGgceFUfqsv6A3gAyeFuXZWmWQ3QnIZp8n82J3MsbimRC+XF1rSI3/3Cx1iUSAPAmy6XlGhsx6Cql2MkkDW7BfgA",
+  "credit": {
+   "name": "Tetiana Shyshkina",
+   "url": "https://unsplash.com/photos/creme-glacee-blanche-sur-cornet-brun-4Lqjr8gu_bg",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/matiere-printemps-fraises.webp": {
-  "src": "/images/seasons/matiere-printemps-fraises.95ab998d.webp",
-  "w": 2048,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAgCdASoQABAAA4BaJYgCdAEPh+VnTP/4Y0EAAP5kjPkHJq1nIKsLfPMWtUB18oOqHSHbCEgVH67u+LfKA/HMnot8djAGQATJbghap8qoAA=="
+ "boisson-frappe-2": {
+  "src": "/images/recettes/boisson-frappe-2.2da1fa99.webp",
+  "w": 1602,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAwCdASoQABgAPu1yrU+pp6QiMAgBMB2JYwDE2GjrrI8Fff6tsucAAP7sq+yAmKi04MuQh5r23nAY4H4R6TiAqnTHWyOvStbg+gDY+yrlDdHToIAAAA==",
+  "credit": {
+   "name": "Diego Arenas de Rodrigo",
+   "url": "https://unsplash.com/photos/cafe-glace-avec-sirop-de-chocolat-et-chantilly-XLyWd3HsWNc",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/paysage-automne.webp": {
-  "src": "/images/seasons/paysage-automne.92b0b651.webp",
-  "w": 3072,
-  "h": 1728,
-  "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoQAAkAA4BaJYgCdAEUnZ0oAAD+4AlHxOzzg26H55m9M7SIw7ytGkf6oLW6Bdj+86QyBgAA"
+ "boisson-iced-latte-1": {
+  "src": "/images/recettes/boisson-iced-latte-1.3470f90c.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoQABgAPu1iqk2ppaQiMAgBMB2JZgCdMoR3ABCbwnW3EzTaAiLgAP7c02ho296kRY4o4usYHX5UHL+6+JEN+IFLlEoU6kxFi6pVvI+QLairv1LPQrFmF1/b/zrnJmTaW7mCcXoHAGk8v4JsnlhjAAAA",
+  "credit": {
+   "name": "Nathan Dumlao",
+   "url": "https://unsplash.com/photos/cafe-glace-rempli-de-verre-transparent-vZOZJH_xkUk",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/paysage-ete.webp": {
-  "src": "/images/seasons/paysage-ete.8a6a0ae5.webp",
-  "w": 3072,
-  "h": 1728,
-  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAQCdASoQAAkAA4BaJQBdgBWVpsAA/uswEw23evvZrU2Zb2lyXUTTiN1rvIH31f7kOWACawWJa7UTAAA="
+ "boisson-iced-latte-2": {
+  "src": "/images/recettes/boisson-iced-latte-2.cb4b2c50.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoQABgALrV2u12jqampiYC0SxgF80JiJSKWOniX19ZDUGCAAP5ekeIrzPv1mJdrQZBlI9Kx8rYnRqUrcCcWSIWtRGlf+56ukP9LUZR2mNqWhyv2tnVck8ntNEIz+Z7vZlc3qen6hAtNOOAAAAA=",
+  "credit": {
+   "name": "Empreinte",
+   "url": "https://unsplash.com/photos/cafe-glace-avec-du-lait-verse-02O1bXB_fgk",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/paysage-hiver.webp": {
-  "src": "/images/seasons/paysage-hiver.6fbd285c.webp",
-  "w": 3072,
-  "h": 1728,
-  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJYwCw7D6KLE5MAD+749clJq3j2b7vAxoA1GV1EHtgnF0R+LHEaAA"
+ "boisson-latte-1": {
+  "src": "/images/recettes/boisson-latte-1.19be9d9c.webp",
+  "w": 1920,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JZgCdIIjDAtNkmQWK3ZxPzBnAAP7sQM1R3ULyBZcNVbzbyoGR7Hb+T6MZzIYWIE8OuDl1S43NMPy9awOpDd+AxTku8OlcmAAAAA==",
+  "credit": {
+   "name": "Luke Porter",
+   "url": "https://unsplash.com/photos/mug-en-ceramique-blanche-avec-liquide-brun-et-blanc-WdJ_5Txrg7k",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/paysage-printemps.webp": {
-  "src": "/images/seasons/paysage-printemps.160eda62.webp",
-  "w": 3072,
-  "h": 1728,
-  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoQAAkAA4BaJYgCdAEOlb7GZ4AA/rYRgaumSz2QE6FLabJjvwkPwR07VRLyYAAA"
+ "boisson-latte-2": {
+  "src": "/images/recettes/boisson-latte-2.08146c35.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQBACdASoQABgAPu1iqU2ppaQiMAgBMB2JagCdMoRwACmpZDSxUqNGnm2nndgA/svPN9qelm0aHyz+PPzRJ3Rdgax8RF3moccoZWze5Jjd1zDzZ9J+065/H5Fk7gOSKUpb0sVS9oybkSJKiA/ExjKSm+9IiQV/xnjZ3kgA",
+  "credit": {
+   "name": "Abolfazl eslami",
+   "url": "https://unsplash.com/photos/tasse-en-ceramique-blanche-avec-soucoupe-sur-table-en-bois-brun-c8gSQkwWoRA",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/scene-automne.webp": {
-  "src": "/images/seasons/scene-automne.7c278590.webp",
-  "w": 3072,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJbACdADPRC2njgAA/N96bPa8UHyphHgfZ/+IHfXPKdSWYQ0uExEdGtV/uB0jsPONqQge96W328ytphgzAAAA"
+ "boisson-latte-chai": {
+  "src": "/images/recettes/boisson-latte-chai.d434f78e.webp",
+  "w": 1800,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZACdMoADZCvxViNg26AA/uRYcyRjn8yIHDg5ew9w6VA0hTYtgjvl4L3En9aFK6m7siPxdfAy0q1SCiVywykhDj9b4+GEUZwhzBFaAAA=",
+  "credit": {
+   "name": "Billy Kwok",
+   "url": "https://unsplash.com/photos/verre-a-boire-transparent-avec-expresso-vfiA7rRtjWo",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/scene-ete.webp": {
-  "src": "/images/seasons/scene-ete.69d653fa.webp",
-  "w": 3072,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoQAAsAA4BaJbACdADbCDzAAP7wGnnXbdaczh1WKTGmPXTdpiPflbovOVkNn2kPqI3TexTSdlJzuIH7q0U+ZIAA"
+ "boisson-milkshake-choco": {
+  "src": "/images/recettes/boisson-milkshake-choco.78ab0bb5.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwBACdASoQABgAPu1iqk2ppaQiMAgBMB2JQBOmUI7g2gA1+lmq0lxBDpdWV35AAP4IeSpaG9EX0Fz93yzTJ+VOOyZNKrsrPgzXwC6PFUlBtKQkdmIVF+bkITFPTnef/Xfa3sBgwgBIe3PvOodVRu5WCO02+fH2XDghmfzHPRPB75mECCDwotAAAAA=",
+  "credit": {
+   "name": "Jonathan Borba",
+   "url": "https://unsplash.com/photos/full-filled-cream-glass-on-table-7TeR1A1MUpM",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/scene-hiver.webp": {
-  "src": "/images/seasons/scene-hiver.36ff47bc.webp",
-  "w": 3072,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAwAgCdASoQAAsAA4BaJZACdADpJ6XL4wGW2AD+ab6w9l4yO1rvdraYky4dekyMeDu5f40yvbccfigL/1Ik9GE0k6GzXzcLwAA="
+ "boisson-milkshake-fraise": {
+  "src": "/images/recettes/boisson-milkshake-fraise.1fee5465.webp",
+  "w": 1920,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoQABQAPu1kqk4ppaQiMAgBMB2JagCdAB9hDjGu+kGNa6gMxAD+f5IEJJ2pAogUjDi+A8bctF7bN601QSa8tFQ7+tlhfzfnC7QAh3YWkYh3AC1Ejh4SaulAoO32P/fIAAA=",
+  "credit": {
+   "name": "VD Photography",
+   "url": "https://unsplash.com/photos/deux-verres-de-milkshake-aux-fraises-avec-des-fraises-sur-le-cote-lK3vb6ep9qE",
+   "source": "Unsplash"
+  }
  },
- "/images/seasons/scene-printemps.webp": {
-  "src": "/images/seasons/scene-printemps.c95442fd.webp",
-  "w": 3072,
-  "h": 2048,
-  "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQAAsAA4BaJagCdADwfSXAVAAA/bN45S/yMU4D5U9dtbUyJoEuEMtZLm1YtiWea8A5NwX9wxOFey+BJWtf4AAA"
+ "boisson-mocktail-orange": {
+  "src": "/images/recettes/boisson-mocktail-orange.3827a1fd.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAwCdASoQABgAPu1orU2ppqSiMAgBMB2JZgCdAHEa7MAA/uazHVsUvHhe45wJLlbWNizdYxJtPdeirdtaw+aHjOunNo2pg3XQGmaa1jMicAAA",
+  "credit": {
+   "name": "Nikita Tikhomirov",
+   "url": "https://unsplash.com/photos/jus-dorange-dans-un-verre-transparent-hAHHxUrlxFw",
+   "source": "Unsplash"
+  }
  },
- "/images/story/automne-coucher.webp": {
-  "src": "/images/story/automne-coucher.6472abc2.webp",
-  "w": 2560,
-  "h": 1440,
-  "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQAAkAA4BaJagCdADFGRfoAP6t3A9UceQpLlX3tyvg4MQCdiPRs5QL3n/m68jbGlP5V5H1R26rD5ZVri3gLaiFwAA="
+ "boisson-mocktail-peche": {
+  "src": "/images/recettes/boisson-mocktail-peche.0a358f0e.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoQABgAPu1iqk2ppaQiMAgBMB2JQBibAw6z/td1j9aQdQgQwAD947GbhNXXc9YNKuaFSCf6BD+tLqlLCn/Fb4wNn54ndTBJkXVXyvWRmAnYHVb2cquEFDxpmuEWInefDoAAAA==",
+  "credit": {
+   "name": "Mariah Hewines",
+   "url": "https://unsplash.com/photos/fruits-orange-tranches-dans-un-vase-en-verre-transparent-Yz7nxHidlhw",
+   "source": "Unsplash"
+  }
  },
- "/images/story/detail-automne.webp": {
+ "dessert-creme-brulee": {
+  "src": "/images/recettes/dessert-creme-brulee.17669db0.webp",
+  "w": 1920,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdGaA2zQCdA/obP1c4wDAA/Ge7DatEWhCsmWU7C311pdsrESU+aH3dIFlm1vIw5+/s7sJmbjF+RtD2GMmIlDORdYHcRZoNjdXt4UvNEvcooLfSNR7QGAA=",
+  "credit": {
+   "name": "Max Griss",
+   "url": "https://unsplash.com/photos/bol-en-ceramique-blanche-avec-soupe-brune-Wp7ZsJYWP0M",
+   "source": "Unsplash"
+  }
+ },
+ "detail-automne": {
   "src": "/images/story/detail-automne.980a7c78.webp",
   "w": 1024,
   "h": 1280,
-  "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JYwCdACPm7/FMmlHeL/NNVADxOZvUtXqbuTJcB9Mw96yGQnH8fLVpksBe+Q56uriogNqorasVRkqR7ljkB9ieResHvVAvaw+/rkgA"
+  "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JYwCdACPm7/FMmlHeL/NNVADxOZvUtXqbuTJcB9Mw96yGQnH8fLVpksBe+Q56uriogNqorasVRkqR7ljkB9ieResHvVAvaw+/rkgA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
  },
- "/images/story/detail-ete.webp": {
+ "detail-ete": {
   "src": "/images/story/detail-ete.7ad0bcb4.webp",
   "w": 1024,
   "h": 1280,
-  "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOgBDffmLw9lZP6iDxAAP1TkeQ5LtETVrwS2znGmz/y8oA9PGh45k/1b/Xc+nzMH256yGBxkoicwkU2AAAA"
+  "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOgBDffmLw9lZP6iDxAAP1TkeQ5LtETVrwS2znGmz/y8oA9PGh45k/1b/Xc+nzMH256yGBxkoicwkU2AAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
  },
- "/images/story/detail-hiver.webp": {
+ "detail-hiver": {
   "src": "/images/story/detail-hiver.a9d82543.webp",
   "w": 1024,
   "h": 1280,
-  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwDDNBX+8u6B7+J8LAAA/Phfhkn5ftj2P3i/y+OUhCVBfaqe43vfkS0DmiBwq5YVyR+JEs7CFaPcGAp/KuoM8cOQAAAA"
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwDDNBX+8u6B7+J8LAAA/Phfhkn5ftj2P3i/y+OUhCVBfaqe43vfkS0DmiBwq5YVyR+JEs7CFaPcGAp/KuoM8cOQAAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
  },
- "/images/story/detail-printemps.webp": {
+ "detail-printemps": {
   "src": "/images/story/detail-printemps.2887dc8b.webp",
   "w": 1024,
   "h": 1280,
-  "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCw7CP6aSE4O5hoGx5lgAD+6VSnOxcqB4bY+APJEN9Hh1taJv/9vAwNlnrzP00RIjpc8zymzl/6i18GUN7kaSpje/m/WX1PjSwQ4QGdINIAAAA="
+  "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCw7CP6aSE4O5hoGx5lgAD+6VSnOxcqB4bY+APJEN9Hh1taJv/9vAwNlnrzP00RIjpc8zymzl/6i18GUN7kaSpje/m/WX1PjSwQ4QGdINIAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
  },
- "/images/story/ete-coucher.webp": {
-  "src": "/images/story/ete-coucher.afeddcd4.webp",
+ "gamme-essentiels": {
+  "src": "/images/products/gamme-essentiels.8db6e750.webp",
+  "w": 3200,
+  "h": 1800,
+  "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoQAAkAA4BaJQBOgCHgOa/YAAD+8jtVAp7WRnrYoEG0O0WGEv+dk7xAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "gamme-maison": {
+  "src": "/images/products/gamme-maison.c5a79759.webp",
+  "w": 3200,
+  "h": 1800,
+  "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoQAAkAA4BaJQBOgB4W40XQAP7yOxSzqX9YBMGT6ntpkJFdr0u9Z8ekvWmKzsneIAAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "gamme-poudres": {
+  "src": "/images/products/gamme-poudres.4b4a07e4.webp",
+  "w": 3200,
+  "h": 1800,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoQAAkAA4BaJQBOgCHpf/KHIAAA/uhtacH9A7NuQXV4FLd7S3tYyT73Jdn7Go1KSP0NGn4BN04AAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "gamme-saisons": {
+  "src": "/images/products/gamme-saisons.e4fee4bd.webp",
+  "w": 3200,
+  "h": 1800,
+  "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA4BaJQBOgCHgpHDAAAD+8hFAIJ8MvFmZ78HxnlWGSt0crzy0hy1fLJ3iAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "gamme-signatures": {
+  "src": "/images/products/gamme-signatures.f7e4ff89.webp",
+  "w": 3200,
+  "h": 1800,
+  "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA4BaJQBOgB6HFq8PYAD+85Y3yB2+J8Mz2os+ai9Kf5ZdGUdi4ZDC9j2uAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "hero-ete-coucher": {
+  "src": "/images/hero/ete-coucher.d8916284.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA4BaJZACdAELzXc3QAD+9QS1s0Kw67giPGp5LNq0YRplw7074fzL3pbA7LF3IWI+IAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-ete-jour": {
+  "src": "/images/hero/ete-jour.6a7ecbc9.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJYgCdH8AF3QnAAD+8EdWOwhKYykUyC/5VWoT+8iD5BhYSWm1UFfVVMZIkqI2KUQAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-ete-nuit": {
+  "src": "/images/hero/ete-nuit.9858e0b4.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJQBOgB6SAZBgQAD+7NftWBbIX2FtSHFtz151h2QpV0wFWvQsrkAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-ete-coucher": {
+  "src": "/images/hero/mobile-ete-coucher.bb0af0f3.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCdMoADUFPLT8IGa+MxvAAA/u1IWblo1nY92sgtTB/FBilVxSenUpP6O0q1qyCjAywOlHjpk1Wxc9t8FoZLWl0GCnGQjFS2hjUjTuQ7LyBAEvMAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-ete-jour": {
+  "src": "/images/hero/mobile-ete-jour.f90d6143.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCdAB09HWlG2IC4AQAaAAD+50FDI5ROUPuVgI539FFh9SxUhnW7mxNL1SeNIq4Oa1JGl6UHYjz/vQ2i2iyYPpgfxJbStE8Bbxw8JyYeDVcN/pYZMAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-ete-nuit": {
+  "src": "/images/hero/mobile-ete-nuit.3b3ed90b.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoQABUAPu1iqk2ppaQiMAgBMB2JYgCdAB5KbbQsp37dQAD+6QbA6POh8QxHlmtQKF4MuetxCeKucKPGqqks3GBTydV9dayEH3DnnJc/noDQW+146/Nb+cMnVxhIAAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "matiere-cerisier": {
+  "src": "/images/matieres/matiere-cerisier.881dd2e8.webp",
+  "w": 2048,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoQABAAA4BaJZQCdACjQmhAAP63+i1wdxqkSzEC+NqSrrqj9YCvYj0LZRxPLc47+JWpCw56EH0+u4YjTkQ4hAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "matiere-fleurs-oranger": {
+  "src": "/images/matieres/matiere-fleurs-oranger.d15cfda1.webp",
+  "w": 2048,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQABAAA4BaJQAAYoN6c6Su0fQAAP6VCFayjNRICbQ+9pOED/7pSmPJYFW54JfFottGbXzjIYyGwJsXdJUnOIUJ9vfsYcAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "matiere-fraises": {
+  "src": "/images/matieres/matiere-fraises.95ab998d.webp",
+  "w": 2048,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAgCdASoQABAAA4BaJYgCdAEPh+VnTP/4Y0EAAP5kjPkHJq1nIKsLfPMWtUB18oOqHSHbCEgVH67u+LfKA/HMnot8djAGQATJbghap8qoAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "matiere-poires": {
+  "src": "/images/matieres/matiere-poires.b71a7832.webp",
+  "w": 2048,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQABAAA4BaJbACdAEDWIXOEwQAAPvHCsIr6v/sAfM2G15nXrMsuQbUPjkIZ8lHhBdnT2jp3EJ4mIrIpGcwi4N59lC9qttuayrzfgHA0AAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "pack-caramel-beurre-sale": {
+  "src": "/images/products/caramel-beurre-sale.4ecd5a26.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JQBdgBDvxz/yCqqvTAAD+7VgYSbszfdUdBs2Om9y0SRCbsOzasWvaSev6sPXtaEtUgAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-caramel-blond-abricot-confit": {
+  "src": "/images/products/caramel-blond-abricot-confit.5ed71102.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBWABDeCpZl/+x5PWewAAP7tWlq9eTVs4Xizq6WF73LRJB2PcFXm7PJTr7Q09wikXRcYrAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-chai-epice-classique": {
+  "src": "/images/products/chai-epice-classique.654d60e0.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwCw7CHfjn/luRqZgAD+7VgYSbszfdUdBs2OmkOFj7se4NY1J2ySJWmCUyku1JKd2AAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-chocolat-au-lait-onctueux": {
+  "src": "/images/products/chocolat-au-lait-onctueux.1c533268.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwAAW+vQdHUaE3+AAAD+7VgYSbrTOCBmjto3f9B9GbXnY9KZe8T8mIraUUykwsp4NAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-chocolat-blanc": {
+  "src": "/images/products/chocolat-blanc.b78673a5.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACHf+NJUNpMuUAAA/u1YGEm60zggZo7aN3EYaM5LhEoFEsk347GyYsFgTW0AAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-chocolat-noir-intense": {
+  "src": "/images/products/chocolat-noir-intense.794fa375.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwAAW+vQdHUaE3+AAAD+7VgYSbrTOCBmjto3f9B9GbXnY9KZe8T8mIraUUykwsp4NAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-chocolat-noir-orange-confite": {
+  "src": "/images/products/chocolat-noir-orange-confite.703fa053.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBYdhDwBS0w4CJsbvAAA/u1aW8Y7vq2wS+FCwUpvdWerbXxhMd12TvSgDnRYFvCR7C9f1UOpMQMFWucAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-datte-fondante-creme-brulee": {
+  "src": "/images/products/datte-fondante-creme-brulee.ded5ab02.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwC7ACG8FON+xw9tghwA/u1aWr15Q4pCLHENVhf0U6aS2xCwnY9J7Rl+E/MNJbTct21KRW9twAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-fraise-des-bois-creme-de-madeleine": {
+  "src": "/images/products/fraise-des-bois-creme-de-madeleine.b8230e4c.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwCw7CHf/ZLvZH9yNKAA/u1aWrujiBjumv4wNgDFSpZuNEYaNHY9wVjTQ4+JGaAzDiybu4bNc0YAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-noisette-grillee": {
+  "src": "/images/products/noisette-grillee.8eb50a09.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwC7ACHfjn/kFVVagAD+7VgYSbszfdUdBs2Om9aLIdk7YAwxoUqwf65xwWdFcAEAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-peche-blanche-fleur-oranger": {
+  "src": "/images/products/peche-blanche-fleur-oranger.80e03f74.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwCw7CG7V5dE4D/clMAA/u1aWr15GzOO6ROsVtX4uE5cibsOmkZ/SY5YmCt0M8Wkp2sAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-pistache-classique": {
+  "src": "/images/products/pistache-classique.25d3d111.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwC7ACHf+NJURgf5SAAA/u1YGEm60zggZo7aN3iMUOO3Z7un5P9W6sg2eOpI7V2QAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-pistache-grillee-biscuit-au-beurre": {
+  "src": "/images/products/pistache-grillee-biscuit-au-beurre.ba50285c.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwCdACG8FSzJ6hTSZOAA/u1aWr15NWx99cCpEfY0hwjn+mbb2Kn731YPPJY7eqs6MAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poire-rotie-sable-noisette": {
+  "src": "/images/products/poire-rotie-sable-noisette.39f994ee.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JQBWABDeCpZBX1OkHqagAAP7tWlq9eTVs4Xi0luuzjSXS3jibsOmwn93sA1Vp2A7wvPUiX4AAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-chai-doux-fleur-oranger": {
+  "src": "/images/products/poudre-chai-doux-fleur-oranger.cac14620.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACHfhi7OEtZhogAA/u1YGErfjtprzeYZh2/YcOcNIg+xZFrQFfFwmqBN1aZS4vs4FxDlW+D+mAGSHQd5LZXxxYgA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-chocolat-noir-orange-confite": {
+  "src": "/images/products/poudre-chocolat-noir-orange-confite.2f953d1a.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCw7CHh5e0r6ACVHYAA/u1YGErfjtprzeYaGI3+B39IINiyMWbP2ClCuJuw6XmG5rqGS59SKXxIYlmAxm3a7bMRSSAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-datte-fondante-creme-brulee": {
+  "src": "/images/products/poudre-datte-fondante-creme-brulee.c651761c.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwC7ACHfhi7KNPnLQAD+7VgYSt+O2mvN5hmFkEl17e3z1IqimKe4bQfFywm6tBLQWBlIsFEvraZIWZqK6lnl6AAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-fraise-des-bois-creme-de-madeleine": {
+  "src": "/images/products/poudre-fraise-des-bois-creme-de-madeleine.e753d41a.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoQABQAPu1kqk4ppaQiMAgBMB2JZQC7LwAB0bVCPrjI6kOqQAD+7Uf/m58p2VfTZzvV3y0h16dZKFaLRp9s9nZ75A4R5ztBNzGKt9kM4HHT5GG1muUAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-peche-blanche-fleur-oranger": {
+  "src": "/images/products/poudre-peche-blanche-fleur-oranger.54257f3b.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwCdACHfhi7OEgMKAAD+7VgYSt+O2mvN5hmFkEl17e3z1IqimKe4ag+LlCbq0Eta5Oo+80ypPCFUzf1E38TVgEe1wAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-pistache-grillee-biscuit-au-beurre": {
+  "src": "/images/products/poudre-pistache-grillee-biscuit-au-beurre.680a77b2.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwCw7CHfhyPgjwsgkgAA/u1YGErfjtprzd+J5VFvy1nyalYqF6VWKg+LVwZwOVp6/yVrxgR68xFonam7HKB2AAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-poire-rotie-sable-noisette": {
+  "src": "/images/products/poudre-poire-rotie-sable-noisette.49780f27.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABQAPu1iqk4ppaQiMAgBMB2JYwCdACHfhi7OEgMKAAD+7VgYSt+O2mvN5hmHb9hw5w0iD7FkWtAV8XCaoE3VplEvGkwcwkS+tpkhZmowrUjHbD2RGYAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-poudre-vanille-torrefiee-praline-blanc": {
+  "src": "/images/products/poudre-vanille-torrefiee-praline-blanc.b665b02b.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwCw7CHfhi7QHAO4AAD+7VgYSt+O2mvN34nckUROQjJ8/+8Owkc8n6Xgm6tBLYw/DqD+I/PvKEYsxFe9lD2xpQjAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-vanille-bourbon": {
+  "src": "/images/products/vanille-bourbon.1dbdc991.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwC7ACHfjn/luRsB5AD+7VgYSbszfdUdBs2Om9aLwQTdWfAuoMJ4pfZxwjAxqUVAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "pack-vanille-torrefiee-praline-blanc": {
+  "src": "/images/products/vanille-torrefiee-praline-blanc.f5dde01f.webp",
+  "w": 1400,
+  "h": 1750,
+  "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC7AC0a3W4p5AD+7cb0tSuPuNr1AcH8xASqlg2LhOXLsekQW5fXgfYI5w4RtFQAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Composition de démonstration",
+   "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
+  }
+ },
+ "paysage-automne": {
+  "src": "/images/seasons/paysage-automne.92b0b651.webp",
+  "w": 3072,
+  "h": 1728,
+  "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoQAAkAA4BaJYgCdAEUnZ0oAAD+4AlHxOzzg26H55m9M7SIw7ytGkf6oLW6Bdj+86QyBgAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "paysage-ete": {
+  "src": "/images/seasons/paysage-ete.8a6a0ae5.webp",
+  "w": 3072,
+  "h": 1728,
+  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAQCdASoQAAkAA4BaJQBdgBWVpsAA/uswEw23evvZrU2Zb2lyXUTTiN1rvIH31f7kOWACawWJa7UTAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "paysage-hiver": {
+  "src": "/images/seasons/paysage-hiver.6fbd285c.webp",
+  "w": 3072,
+  "h": 1728,
+  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJYwCw7D6KLE5MAD+749clJq3j2b7vAxoA1GV1EHtgnF0R+LHEaAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "paysage-printemps": {
+  "src": "/images/seasons/paysage-printemps.160eda62.webp",
+  "w": 3072,
+  "h": 1728,
+  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoQAAkAA4BaJYgCdAEOlb7GZ4AA/rYRgaumSz2QE6FLabJjvwkPwR07VRLyYAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-automne": {
+  "src": "/images/story/automne.6472abc2.webp",
   "w": 2560,
   "h": 1440,
-  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoQAAkAA4BaJbACdAEfUrwTmnjAAPzYylTShwJ6GGs56lya2T1RvoqHhVns79TEw8kY09lWAAA="
+  "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQAAkAA4BaJagCdADFGRfoAP6t3A9UceQpLlX3tyvg4MQCdiPRs5QL3n/m68jbGlP5V5H1R26rD5ZVri3gLaiFwAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
  },
- "/images/story/hiver-coucher.webp": {
-  "src": "/images/story/hiver-coucher.e01ccb48.webp",
+ "story-ete": {
+  "src": "/images/story/ete.afeddcd4.webp",
   "w": 2560,
   "h": 1440,
-  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA4BaJQBdgCHerUaaYAD9421R2XXbsmoQ6ZfGVhoHlN1otl04Axllw0ISDKQzB0gQAAA="
+  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoQAAkAA4BaJbACdAEfUrwTmnjAAPzYylTShwJ6GGs56lya2T1RvoqHhVns79TEw8kY09lWAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
  },
- "/images/story/printemps-coucher.webp": {
-  "src": "/images/story/printemps-coucher.2de516bb.webp",
+ "story-hiver": {
+  "src": "/images/story/hiver.e01ccb48.webp",
   "w": 2560,
   "h": 1440,
-  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJYgCdAELMk0fwAD+3bt87fcwxKpKBFIo7X+MC50K7HFlzd5vmCcxVD6FOlwY4lAAAA=="
+  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA4BaJQBdgCHerUaaYAD9421R2XXbsmoQ6ZfGVhoHlN1otl04Axllw0ISDKQzB0gQAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-printemps": {
+  "src": "/images/story/printemps.2de516bb.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJYgCdAELMk0fwAD+3bt87fcwxKpKBFIo7X+MC50K7HFlzd5vmCcxVD6FOlwY4lAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "univers-abricot": {
+  "src": "/images/univers/univers-abricot.65678142.webp",
+  "w": 1571,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAwCdASoQABgAPu1iqU2ppaQiMAgBMB2JbACsABKgPLEgzkrd+IUAAP7ISsMXJ8DB69TbgCv1VTfKegI+t/IwiQtRNJLqu64W24xEGW7AEQbqePRatOMSyvMBbicQPql1BraSIAAAAA==",
+  "credit": {
+   "name": "Vojtech Bartonicek",
+   "url": "https://unsplash.com/photos/tasse-en-ceramique-blanche-avec-liquide-noir-a-linterieur-jfL3DspTcf4",
+   "source": "Unsplash"
+  }
+ },
+ "univers-cacao": {
+  "src": "/images/univers/univers-cacao.6a88c4c3.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoQABgAPu1iqk2ppaQiMAgBMB2JYwCsABTUK6PFB7AbAAD9YNN3RB7ewPLHWQtDtvN3Ke+bSD0H95fQtzMiiewZxvlCUvjz9TN4SRUQ+8vEAAAA",
+  "credit": {
+   "name": "Tetiana Bykovets",
+   "url": "https://unsplash.com/photos/une-barre-de-chocolat-a-cote-dun-tas-de-noix-7LKpstdOad0",
+   "source": "Unsplash"
+  }
+ },
+ "univers-cannelle": {
+  "src": "/images/univers/univers-cannelle.ce44e024.webp",
+  "w": 1833,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoQABUAPu1iqk4ppaQiMAgBMB2JZgCdMoADTrpVjKKw2YpXowAA/uMnmvie/hEhe5wAgdH0gb16BrQdSTbRJ/Vy1A4Mulck1i2OYOOKQH9aFdmpoHkOpMNYAAA=",
+  "credit": {
+   "name": "Alex Bayev",
+   "url": "https://unsplash.com/photos/une-pile-de-cigarettes-sVlJxOJYwDo",
+   "source": "Unsplash"
+  }
+ },
+ "univers-caramel": {
+  "src": "/images/univers/univers-caramel.a740b87a.webp",
+  "w": 1800,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBdgBDfmq5SrAp/sLUqAAP7qhXfGGL4f9zdtBJgI0EDaI3wuWZcQTvGAHjrdWSohZhwQyXD/jlZlK2REoBuuBXZgAA==",
+  "credit": {
+   "name": "Yulia Khlebnikova",
+   "url": "https://unsplash.com/photos/pot-de-miel-EZlAKT3x3pg",
+   "source": "Unsplash"
+  }
+ },
+ "univers-chai": {
+  "src": "/images/univers/univers-chai.f69f9fb2.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABgAPu1iqk2ppaQiMAgBMB2JbACw7CHgDB9asmoGgAD+9Bv7itbkQyBdebR4HOghxMbVaDNoxinmRxEm9PSLNkPZI/AA",
+  "credit": {
+   "name": "Serhii Kalyn",
+   "url": "https://unsplash.com/photos/un-tas-de-batons-de-cannelle-avec-de-lanis-etoile-sur-le-dessus-7AWTCfzqPrw",
+   "source": "Unsplash"
+  }
+ },
+ "univers-choco-blanc": {
+  "src": "/images/univers/univers-choco-blanc.7ee8e47f.webp",
+  "w": 1800,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwBACdASoQABUAPu1orU6ppiSiMAgBMB2JQBYdjSwMJimFHHwAHaJi8iAA/u/AQdu2UbHHyPv3536ELQTGydSHUgpPzPOMKNbYrn2uDT2MZfVNP6J/KUlldOBVL0AA",
+  "credit": {
+   "name": "emy",
+   "url": "https://unsplash.com/photos/photo-de-mise-au-point-peu-profonde-de-cacahuetes-brunes-Rx3QSrG1coc",
+   "source": "Unsplash"
+  }
+ },
+ "univers-choco-lait": {
+  "src": "/images/univers/univers-choco-lait.0dd5804b.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYwCdABmTQBnHSdjc7bf4AAD0S+XqjEFMaT6ivk1PSJFcxUdNBVaEX+LPxlVWio4e6Iuf9ggPgG4sQxXvsjsiAbAAAA==",
+  "credit": {
+   "name": "Tetiana Bykovets",
+   "url": "https://unsplash.com/photos/chocolate-bars-on-white-table-H22N-9s8AUw",
+   "source": "Unsplash"
+  }
+ },
+ "univers-choco-orange": {
+  "src": "/images/univers/univers-choco-orange.3605be66.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JagCdMoMYJmjAdqKgDrdW8s3nl0BNAAD+3/Bi3D6bmCiViejnHiamKEpVTypymJ/6fDeNBqet4BXEDrUWcoQlcrY26CEVM7B/QNlN2s1hYCaXilnU2uQHaMlC3YkX+rHh9HMXjBfpYjq2/yVhIdMES+VhdzDPj+43eiJbjiNBV4Ai6qLhDKUzsjEWEeQAAAA=",
+  "credit": {
+   "name": "Massimo Adami",
+   "url": "https://unsplash.com/photos/fruit-orange-a-cote-dune-cle-usb-noire-et-argentee-PDCX_aCmAig",
+   "source": "Unsplash"
+  }
+ },
+ "univers-choco-orange-2": {
+  "src": "/images/univers/univers-choco-orange-2.01b0badc.webp",
+  "w": 1920,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JQBhmhDwsAhS+BAo14AD+9CiJQ6vXrvLDsI5EqKbuNM/A6R12JQIekYAAAA==",
+  "credit": {
+   "name": "Pickled Stardust",
+   "url": "https://unsplash.com/photos/fruits-orange-tranches-sur-une-surface-noire-l7cxei1lI30",
+   "source": "Unsplash"
+  }
+ },
+ "univers-chocolat-noir": {
+  "src": "/images/univers/univers-chocolat-noir.a00de646.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JZQDE2BCM5kx857icZ3LyAP7y3Nol7jaF3Q82SllUIEs0MTa9A0Drg9ajBS2OpftEf4EekxZvhNMItOjQcdu02AA=",
+  "credit": {
+   "name": "Monika Grabkowska",
+   "url": "https://unsplash.com/photos/tablette-de-chocolat-et-poudre-dans-un-bol-jEu4F6oJtUQ",
+   "source": "Unsplash"
+  }
+ },
+ "univers-dattes": {
+  "src": "/images/univers/univers-dattes.27d4063a.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoQABgAPu1iqk4ppaQiMAgBMB2JQBYdgvc9DsLtTLCsYHQAAP7sRCUsKUcokMMIsug2u3mrIXOP5ib+PPiJTKmESbnkBgG9jwsRf5z53hOyrwsfJYZ7LFJEdJcyR3vAAAA=",
+  "credit": {
+   "name": "Husien Bisky",
+   "url": "https://unsplash.com/photos/une-assiette-de-dattes-sechees-sur-une-surface-texturee-N6FivLXJ8jY",
+   "source": "Unsplash"
+  }
+ },
+ "univers-fleur-oranger": {
+  "src": "/images/univers/univers-fleur-oranger.34ecb89f.webp",
+  "w": 1800,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCsABuH+fNdAOaMp6fvQADyQdMCDOfTO1u9pnUK7JjE/pZkwcEnX56qOxu2gPeAr+hUOc18pxh6gte8fbPL6/mL65ia83g/qdMd87ugvgwA",
+  "credit": {
+   "name": "Muhammad Ali Khoshkerdar",
+   "url": "https://unsplash.com/photos/un-gros-plan-de-quelques-fleurs-T4P_NabNaKU",
+   "source": "Unsplash"
+  }
+ },
+ "univers-noisette": {
+  "src": "/images/univers/univers-noisette.e2c83ef6.webp",
+  "w": 1702,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABcAPu1kqU2ppaQiMAgBMB2JaACdMoRwAAPu6XBoWAD54yLBrTVqnP4R0L89/0JcOxDP1x6bF9VAVttqJYyEntxwlfV+6gZkyHYnWaDUJBiK8D/elgAA",
+  "credit": {
+   "name": "Victoria Druc",
+   "url": "https://unsplash.com/photos/un-bol-de-noix-sur-une-serviette-sur-une-table-KvNGJE3DrDQ",
+   "source": "Unsplash"
+  }
+ },
+ "univers-pistache": {
+  "src": "/images/univers/univers-pistache.17cef325.webp",
+  "w": 1600,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoQABgALrV2u12jqampiYC0SgC06EOUMlPlYil61God1AAA/lknXTNTh3J2D/G72Z7xbwYNt/6lcAwWXIwn2GgydT6pFIVH5T5t5dfMDa9bXJZTgAA=",
+  "credit": {
+   "name": "Nour Wageh",
+   "url": "https://unsplash.com/photos/un-bol-de-noix-et-une-cuillere-sur-une-surface-en-marbre-g3QzhnFflAE",
+   "source": "Unsplash"
+  }
+ },
+ "univers-praline": {
+  "src": "/images/univers/univers-praline.527d81d1.webp",
+  "w": 1920,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYgCdMoACfFcgzAw9zBrHKAD6PYHUIKUmOI0C3zzp1vCr6ZCCjwVp6Ccl+OH3ehOiSBcvsNaGKR/6hI0sCAVAAAA=",
+  "credit": {
+   "name": "Edoardo Cuoghi",
+   "url": "https://unsplash.com/photos/un-tas-dobjets-bruns-et-blancs-kG4morB0Cq0",
+   "source": "Unsplash"
+  }
+ },
+ "univers-vanille": {
+  "src": "/images/univers/univers-vanille.d2835c28.webp",
+  "w": 1920,
+  "h": 2400,
+  "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACHgAGODxoAA/t5ZV6kXX1pEOuBHcfpBeGAAAA==",
+  "credit": {
+   "name": "Jocelyn Morales",
+   "url": "https://unsplash.com/photos/baton-brun-sur-fond-jaune-TYA9f8hYEX4",
+   "source": "Unsplash"
+  }
  }
 }

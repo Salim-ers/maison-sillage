@@ -7,13 +7,13 @@ import { ArrowUpRight } from "lucide-react";
 import { useAmbiance, useAmbianceAssets } from "@/lib/ambiance";
 import { useReducedMotion } from "@/lib/useReduced";
 import { seasons } from "@/data/collections";
-import { seasonImages } from "@/data/images";
-import { siropOf } from "@/data/products";
+import { photo, seasonImages } from "@/data/images";
+import { poudreOfSeason, siropOfSeason, startingPrice } from "@/data/products";
 import { Photo } from "@/components/ui/Photo";
 import { SeasonIcon } from "@/components/ambiance/icons";
 import { SeasonDrift } from "@/components/ambiance/Atmosphere";
 import { EASE, HOULE, RevealTitle, Rise } from "@/components/animations";
-import { cn } from "@/lib/utils";
+import { cn, formatPrice } from "@/lib/utils";
 import type { SeasonId } from "@/lib/types";
 
 const BG_SIZES = "(min-width:768px) 100vw, 100vw";
@@ -38,10 +38,12 @@ export function Saisons() {
   const target = (amb.pending ?? amb).season;
   const shown = amb.season;
   const s = seasons.find((x) => x.id === target)!;
-  const product = siropOf(s.flavor);
+  const product = siropOfSeason(s.id);
+  const poudre = poudreOfSeason(s.id);
+  const price = startingPrice(product);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const swipe = useRef<{ x: number; y: number } | null>(null);
-  useAmbianceAssets((a) => [{ photo: seasonImages[a.season].scene, sizes: BG_SIZES }]);
+  useAmbianceAssets((a) => [{ photo: seasonImages[a.season].paysage, sizes: BG_SIZES }]);
 
   const choose = (id: SeasonId) => {
     if (id !== target) amb.setAmbiance({ season: id }, { mode: "doux" });
@@ -87,7 +89,7 @@ export function Saisons() {
             transition={{ duration: 1.1, ease: HOULE }}
           >
             <motion.div className="h-full w-full" initial={reduce ? false : { scale: 1.12 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease: EASE }}>
-              <Photo photo={seasonImages[shown].scene} sizes={BG_SIZES} className="h-full w-full" position="64% 50%" />
+              <Photo photo={seasonImages[shown].paysage} sizes={BG_SIZES} className="h-full w-full" position="60% 50%" />
             </motion.div>
           </motion.div>
         </AnimatePresence>
@@ -99,7 +101,7 @@ export function Saisons() {
       <div className="shell relative z-10 -mt-24 pb-20 md:mt-0 md:flex md:min-h-[100svh] md:flex-col md:justify-center md:py-28">
         <div className="max-w-[40rem]">
           <Rise>
-            <p className="mention text-creme/80">Les collections saisonnières</p>
+            <p className="mention text-creme/80">Collection Les Quatre Saisons</p>
           </Rise>
           <RevealTitle id="saisons-titre" text="Quatre saisons. Une infinité d'émotions." className="titre mt-4 max-w-[13ch] text-creme" />
 
@@ -121,11 +123,10 @@ export function Saisons() {
                   onKeyDown={(e) => onKey(e, i)}
                   className={cn("group relative shrink-0 px-4 pb-3.5 pt-2 text-left transition-opacity duration-500 first:pl-0 md:px-5 md:first:pl-0", on ? "opacity-100" : "opacity-55 hover:opacity-90")}
                 >
-                  <span className="flex items-center gap-2 font-serif text-sm italic text-creme/80">
-                    <SeasonIcon season={x.id} className="h-4 w-4" />
-                    {x.numeral}
+                  <span className="flex items-center gap-2.5 font-serif text-[1.65rem] leading-none md:text-[1.9rem]">
+                    <SeasonIcon season={x.id} className="h-[18px] w-[18px] shrink-0 opacity-80" />
+                    {x.name}
                   </span>
-                  <span className="mt-1 block font-serif text-[1.65rem] leading-none md:text-[1.9rem]">{x.name}</span>
                   {on && (
                     <motion.span
                       layoutId="saison-trait"
@@ -145,7 +146,7 @@ export function Saisons() {
               <motion.div key={target} initial={reduce ? { opacity: 0 } : "out"} animate="in" exit={reduce ? { opacity: 0 } : "exit"} variants={{ out: {}, in: { transition: { staggerChildren: 0.07 } }, exit: { opacity: 0, y: -10, transition: { duration: 0.3 } } }}>
                 {[
                   <p key="ch" className="font-serif text-lg italic text-creme/80">
-                    Chapitre {s.numeral} · {s.chapter}
+                    {s.chapter}
                   </p>,
                   <h3 key="t" className="mt-3 font-serif text-[clamp(2rem,3.4vw,3.2rem)] font-light leading-[1.02]" style={{ color: ACCENT_ON_PHOTO[s.id] }}>
                     {product.name}
@@ -160,12 +161,15 @@ export function Saisons() {
                       </li>
                     ))}
                   </ul>,
-                  <div key="c" className="mt-9 flex flex-wrap gap-3">
+                  <p key="p" className="mt-7 text-sm text-creme/75">
+                    Sirop dès {price.price !== null ? `${formatPrice(price.price)} ${price.tax}` : "—"} · poudre 200 g · prix indicatifs
+                  </p>,
+                  <div key="c" className="mt-6 flex flex-wrap gap-3">
                     <Link href={`/produits/${product.slug}`} className="btn btn-clair">
-                      Découvrir la création
+                      Le sirop
                     </Link>
-                    <Link href={`/collections#${s.id}`} className="btn btn-verre">
-                      Le chapitre {s.name.toLowerCase()}
+                    <Link href={`/produits/${poudre.slug}`} className="btn btn-verre">
+                      La poudre
                     </Link>
                   </div>,
                 ].map((node, k) => (
@@ -189,7 +193,7 @@ export function Saisons() {
               transition={{ duration: 0.9, ease: EASE }}
               className="bg-creme p-2.5 pb-3 shadow-[0_30px_60px_-20px_rgba(0,0,0,.6)]"
             >
-              <Photo photo={seasonImages[shown].matieres[0]} sizes="19rem" className="aspect-[4/5]" night={false} />
+              <Photo photo={photo(siropOfSeason(shown).images[0])} sizes="19rem" className="aspect-[4/5]" night={false} />
               <figcaption className="mt-2.5 px-1 font-serif text-[0.95rem] italic leading-snug text-espresso">« {seasons.find((x) => x.id === shown)!.carnet} »</figcaption>
             </motion.figure>
           </AnimatePresence>
