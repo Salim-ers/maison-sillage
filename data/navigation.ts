@@ -3,6 +3,7 @@ export const mainNav = [
   { href: "/sirops", label: "Sirops" },
   { href: "/poudres", label: "Poudres" },
   { href: "/essentiels", label: "Les Essentiels" },
+  { href: "/atelier", label: "Accessoires" },
   { href: "/maison", label: "Notre Maison" },
   { href: "/recettes", label: "Recettes" },
   { href: "/professionnels", label: "Professionnels" },

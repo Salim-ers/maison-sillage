@@ -7,12 +7,12 @@ import { motion, type Variants } from "motion/react";
 import { getProduct } from "@/data/products";
 import { getRecipe } from "@/data/recipes";
 import { getArticle } from "@/data/journal";
+import { photo } from "@/data/images";
 
 /* ──────────────────────────────────────────────────────────────
    Transition de page « Le sillage ».
    1. une houle en trois couches (crête dorée, puis le large) monte et recouvre la page ;
-   2. le hublot s'ouvre sur le trois-mâts de l'emblème, son sillage doré se trace
-      jusqu'aux bords de l'écran, des vaguelettes s'en éloignent ; « Cap sur … » ;
+   2. le hublot s'ouvre sur le trois-mâts de l'emblème ; « Cap sur … » ;
    3. pendant ce temps la page suivante se charge ; la vague passe et la découvre.
    Les liens internes sont interceptés avant <Link> (phase de capture) : Link voit
    l'événement déjà annulé et laisse la navigation à ce composant. Rien ne change
@@ -21,7 +21,7 @@ import { getArticle } from "@/data/journal";
 
 const COVER_S = 0.62; // la houle couvre l'écran
 const REVEAL_S = 0.78; // la houle passe et découvre la page
-const MIN_HOLD_MS = 1250; // le hublot et le sillage ont le temps de se lire
+const MIN_HOLD_MS = 1050; // l'emblème et la destination ont le temps de se lire
 const NAV_TIMEOUT_MS = 6000;
 
 const PAGES: Record<string, string> = {
@@ -29,7 +29,7 @@ const PAGES: Record<string, string> = {
   "/sirops": "Les Sirops",
   "/poudres": "Les Poudres",
   "/essentiels": "Les Essentiels",
-  "/atelier": "L'Atelier",
+  "/atelier": "Les Accessoires",
   "/maison": "Notre Maison",
   "/recettes": "Les Recettes",
   "/professionnels": "Les Professionnels",
@@ -68,6 +68,7 @@ const FULL = sea(L(0), L(100));
 const PASSING = sea(L(0), [52, 78, 34, 58]);
 const GONE = sea(L(0), L(0));
 
+const EMBLEM = photo("brand-emblem-dark");
 const EASE_SEA = [0.7, 0, 0.3, 1] as const;
 const EASE_OUT = [0.22, 1, 0.36, 1] as const;
 
@@ -165,10 +166,6 @@ export function PageTransition() {
     cover: { opacity: 1, y: 0, transition: { duration: 0.01 } },
     reveal: { opacity: 0, y: -46, transition: { duration: 0.42, ease: [0.55, 0, 1, 0.45] } },
   };
-  const draw = (delay: number): Variants => ({
-    cover: { pathLength: [0, 1], opacity: [0, 0.95], transition: { duration: 0.8, ease: EASE_OUT, delay } },
-    reveal: { opacity: 0, transition: { duration: 0.3 } },
-  });
 
   return (
     <div className="pointer-events-auto fixed inset-0 z-[95] cursor-wait" aria-hidden key={run.id} data-houle>
@@ -201,38 +198,15 @@ export function PageTransition() {
           </span>
         </div>
 
-        {/* le hublot, l'emblème, le sillage */}
-        <div className="absolute left-1/2 top-[58%] w-[min(38vw,168px)] -translate-x-1/2 -translate-y-1/2 md:top-[56%]">
-          <svg className="absolute -inset-[16%] h-[132%] w-[132%] text-gold" viewBox="0 0 100 100">
-            <motion.circle cx="50" cy="52" r="47" fill="none" stroke="currentColor" strokeWidth="0.5" initial={{ pathLength: 0, opacity: 0 }} animate={phase} variants={draw(0.5)} style={{ rotate: -90, transformOrigin: "50% 52%" }} />
-          </svg>
+        {/* l'emblème seul : il s'ouvre comme un hublot, puis s'efface avec la houle */}
+        <div className="absolute left-1/2 top-[57%] w-[min(46vw,210px)] -translate-x-1/2 -translate-y-1/2">
           <motion.div
             initial={{ clipPath: "circle(0% at 50% 56%)", scale: 1.14, opacity: 0 }}
             animate={{ clipPath: "circle(78% at 50% 56%)", scale: 1, opacity: 1 }}
             transition={{ duration: 0.95, ease: EASE_OUT, delay: 0.52 }}
           >
-            <Image src="/brand/emblem-dark.png" alt="" width={582} height={691} sizes="168px" quality={90} className="h-auto w-full select-none" draggable={false} />
+            <Image src={EMBLEM.src} alt="" width={EMBLEM.width} height={EMBLEM.height} sizes="210px" className="h-auto w-full select-none" draggable={false} />
           </motion.div>
-          {/* le sillage s'ouvre derrière le navire et file vers le spectateur. Repère 1600 × 900 recadré,
-              sans déformation : le tracé progressif (pathLength) reste juste sur toute la longueur */}
-          <svg className="pointer-events-none absolute left-1/2 top-[88%] h-[62vh] w-[100vw] -translate-x-1/2 text-gold" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMin slice">
-            {["M790,0 C760,150 480,470 -40,900", "M810,0 C840,150 1120,470 1640,900"].map((d, i) => (
-              <motion.path key={d} d={d} fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" initial={{ pathLength: 0, opacity: 0 }} animate={phase} variants={draw(0.68 + i * 0.04)} />
-            ))}
-            {["M752,128 Q800,146 848,128", "M632,338 Q800,382 968,338", "M348,575 Q800,652 1252,575", "M64,815 Q800,920 1536,815"].map((d, i) => (
-              <motion.path
-                key={d}
-                d={d}
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.3"
-                strokeLinecap="round"
-                initial={{ opacity: 0, y: -14 }}
-                animate={phase === "cover" ? { opacity: [0, 0.7, 0], y: [-14, 10, 34] } : { opacity: 0 }}
-                transition={phase === "cover" ? { duration: 1.4, ease: "easeOut", delay: 0.8 + i * 0.15, repeat: Infinity, repeatDelay: 0.25 } : { duration: 0.25 }}
-              />
-            ))}
-          </svg>
         </div>
       </motion.div>
     </div>

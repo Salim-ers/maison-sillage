@@ -31,10 +31,18 @@ const RECETTES: Record<string, string> = {
 
 const nextConfig: NextConfig = {
   images: {
-    formats: ["image/avif", "image/webp"],
+    // images pré-publiées en plusieurs largeurs WebP (scripts/images/build.py) : servies telles quelles
+    loader: "custom",
+    loaderFile: "./lib/image-loader.ts",
+    deviceSizes: [640, 960, 1280, 1920, 2560, 3840],
+    imageSizes: [64, 96, 160, 256, 384, 480],
     qualities: [70, 80, 85, 90],
   },
   poweredByHeader: false,
+  async headers() {
+    // adresses à empreinte : une image modifiée change de nom, la mise en cache peut être définitive
+    return [{ source: "/images/:path*", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] }];
+  },
   async redirects() {
     return [
       ...Object.entries(PRODUITS).map(([from, to]) => ({ source: `/produits/${from}`, destination: `/produits/${to}`, permanent: true })),

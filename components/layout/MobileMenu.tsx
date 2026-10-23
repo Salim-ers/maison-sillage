@@ -85,7 +85,7 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
               <Link href="/favoris" className="flex items-center gap-2">
                 <Heart className="h-4 w-4" strokeWidth={1.4} /> Favoris{ready && favorites.length ? ` (${favorites.length})` : ""}
               </Link>
-              {[footerNav.boutique[4], footerNav.aide[1], footerNav.maison[4], footerNav.aide[3]].map((l) => (
+              {[footerNav.boutique[5], footerNav.aide[1], footerNav.maison[4], footerNav.aide[3]].map((l) => (
                 <Link key={l.href} href={l.href}>
                   {l.label}
                 </Link>

@@ -15,14 +15,15 @@ import { AmbianceControl } from "@/components/ambiance/AmbianceControl";
 import { MobileMenu } from "./MobileMenu";
 import { AddedNotice } from "@/components/cart/AddedNotice";
 
-const LEFT = mainNav.slice(0, 4);
-const RIGHT = mainNav.slice(4);
+// à gauche les rayons, à droite la Maison : le logo reste au centre
+const LEFT = mainNav.slice(0, 5);
+const RIGHT = mainNav.slice(5);
 
 function NavLink({ href, label }: { href: string; label: string }) {
   const pathname = usePathname();
   const active = pathname.startsWith(href);
   return (
-    <Link href={href} aria-current={active ? "page" : undefined} className="lien-revele whitespace-nowrap font-serif text-[1.02rem] leading-none tracking-[0.01em] opacity-90 transition-opacity hover:opacity-100 2xl:text-[1.08rem]">
+    <Link href={href} aria-current={active ? "page" : undefined} className="lien-revele whitespace-nowrap font-serif text-[0.98rem] leading-none tracking-[0.01em] opacity-90 transition-opacity hover:opacity-100 2xl:text-[1.08rem]">
       {label}
     </Link>
   );
@@ -77,7 +78,7 @@ export function Header() {
             <Menu className="h-5 w-5" strokeWidth={1.4} />
           </button>
 
-          <nav aria-label="Navigation principale, première partie" className="hidden flex-1 items-center gap-5 xl:flex 2xl:gap-8">
+          <nav aria-label="Navigation principale, première partie" className="hidden flex-1 items-center gap-4 xl:flex 2xl:gap-7">
             {LEFT.map((l) => (
               <NavLink key={l.href} {...l} />
             ))}
@@ -114,8 +115,8 @@ export function Header() {
             </motion.div>
           </Link>
 
-          <div className="flex flex-1 items-center justify-end gap-5 2xl:gap-8">
-            <nav aria-label="Navigation principale, seconde partie" className="hidden items-center gap-5 xl:flex 2xl:gap-8">
+          <div className="flex flex-1 items-center justify-end gap-4 2xl:gap-7">
+            <nav aria-label="Navigation principale, seconde partie" className="hidden items-center gap-4 xl:flex 2xl:gap-7">
               {RIGHT.map((l) => (
                 <NavLink key={l.href} {...l} />
               ))}

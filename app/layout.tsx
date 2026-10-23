@@ -5,6 +5,7 @@ import { cormorant, manrope } from "./fonts";
 import { SITE } from "@/lib/utils";
 import { AMBIANCE_SCRIPT, DEFAULT_AMBIANCE, INTRO_SCRIPT } from "@/lib/ambiance-script";
 import { IntroCurtain } from "@/components/layout/Intro";
+import { photo } from "@/data/images";
 import { Providers } from "@/components/layout/Providers";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -55,7 +56,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div id="intro" aria-hidden>
           <span className="intro-halo" />
           <div className="intro-contenu">
-            <Image src="/brand/logo-dark.png" alt="" width={1124} height={1203} sizes="230px" quality={90} preload className="intro-logo" draggable={false} />
+            <Image src={photo("brand-logo-dark").src} alt="" width={photo("brand-logo-dark").width} height={photo("brand-logo-dark").height} sizes="230px" preload className="intro-logo" draggable={false} />
             <svg className="intro-sillage" viewBox="0 0 260 22" aria-hidden>
               <path d="M2 12 C 40 2, 72 2, 104 11 S 170 22, 206 11 S 246 3, 258 8" fill="none" stroke="currentColor" strokeWidth="1.1" />
             </svg>

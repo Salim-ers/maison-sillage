@@ -13,8 +13,8 @@ const COLS = [
 function Sillage() {
   return (
     <svg viewBox="0 0 1440 90" preserveAspectRatio="none" className="h-[54px] w-full text-gold md:h-[90px]" aria-hidden>
-      <path d="M-10 60 C 220 20, 420 22, 640 46 S 1020 86, 1240 52 S 1400 26, 1450 34" fill="none" stroke="currentColor" strokeOpacity=".55" strokeWidth="1" vectorEffect="non-scaling-stroke" />
-      <path d="M120 74 C 320 52, 520 56, 700 66 S 980 86, 1140 70" fill="none" stroke="currentColor" strokeOpacity=".25" strokeWidth="1" vectorEffect="non-scaling-stroke" />
+      <path d="M-10 60 C 220 20, 420 22, 640 46 S 1020 86, 1240 52 S 1400 26, 1450 34" fill="none" stroke="currentColor" strokeOpacity=".9" strokeWidth="1.4" vectorEffect="non-scaling-stroke" />
+      <path d="M120 74 C 320 52, 520 56, 700 66 S 980 86, 1140 70" fill="none" stroke="currentColor" strokeOpacity=".5" strokeWidth="1.1" vectorEffect="non-scaling-stroke" />
     </svg>
   );
 }
@@ -97,8 +97,10 @@ export function Footer() {
 
       {/* signature : la dernière image du voyage */}
       <div className="shell relative mt-16 select-none lg:mt-24" aria-hidden>
-        <Rose className="absolute left-1/2 top-0 h-10 w-10 -translate-x-1/2 -translate-y-1/2 text-gold/70 md:h-12 md:w-12" />
-        <p className="pied-marque text-center font-serif font-light uppercase leading-[0.8] tracking-[0.08em]">Sillage</p>
+        <Rose className="absolute left-1/2 top-0 h-10 w-10 -translate-x-1/2 -translate-y-[70%] text-gold md:h-12 md:w-12" />
+        <div className="pied-marque-cadre pb-6 pt-8 md:pb-8">
+          <p className="pied-marque text-center font-serif font-light uppercase">Sillage</p>
+        </div>
       </div>
 
       <div className="shell">

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { photo } from "@/data/images";
 import { cn } from "@/lib/utils";
 
 /* Le logo officiel, détouré sans aucune retouche de dessin.
@@ -9,10 +10,10 @@ import { cn } from "@/lib/utils";
 export function Logo({ tone = "clair", className, preload = false, sizes = "180px" }: { tone?: "clair" | "sombre"; className?: string; preload?: boolean; sizes?: string }) {
   return (
     <Image
-      src={tone === "clair" ? "/brand/logo-light.png" : "/brand/logo-dark.png"}
+      src={photo(tone === "clair" ? "brand-logo-light" : "brand-logo-dark").src}
       alt="Maison Sillage — L'empreinte d'une saveur"
-      width={1124}
-      height={1203}
+      width={photo("brand-logo-light").width}
+      height={photo("brand-logo-light").height}
       preload={preload}
       sizes={sizes}
       quality={90}
@@ -25,10 +26,10 @@ export function Logo({ tone = "clair", className, preload = false, sizes = "180p
 export function Emblem({ tone = "clair", className, sizes = "64px", alt = "" }: { tone?: "clair" | "sombre"; className?: string; sizes?: string; alt?: string }) {
   return (
     <Image
-      src={tone === "clair" ? "/brand/emblem-light.png" : "/brand/emblem-dark.png"}
+      src={photo(tone === "clair" ? "brand-emblem-light" : "brand-emblem-dark").src}
       alt={alt}
-      width={582}
-      height={691}
+      width={photo("brand-emblem-light").width}
+      height={photo("brand-emblem-light").height}
       sizes={sizes}
       quality={90}
       className={cn("h-auto w-full select-none", className)}

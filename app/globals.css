@@ -454,13 +454,19 @@ html[data-vt="fondu"]::view-transition-new(root) { animation: amb-fondu 0.75s ea
 }
 [data-light="nuit"] .pied-lanterne { opacity: 1; animation: vacille 5s ease-in-out infinite; }
 @keyframes vacille { 0%, 100% { opacity: 0.92; scale: 1; } 40% { opacity: 0.78; scale: 0.96; } 70% { opacity: 1; scale: 1.03; } }
+/* signature du pied de page : le mot entier tient dans la largeur (unités de conteneur), dégradé doré lisible */
+.pied-marque-cadre { container-type: inline-size; }
 .pied-marque {
-  font-size: clamp(5rem, 21vw, 21rem);
-  background: linear-gradient(180deg, color-mix(in oklab, var(--a-gold) 55%, transparent), transparent 92%);
+  font-size: min(20vw, 19rem);
+  font-size: 23.5cqw;
+  letter-spacing: 0.04em;
+  line-height: 0.86;
+  padding-bottom: 0.03em;
+  white-space: nowrap;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--a-gold) 92%, transparent) 0%, color-mix(in oklab, var(--a-gold) 62%, transparent) 55%, color-mix(in oklab, var(--a-gold) 26%, transparent) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  margin-bottom: -0.12em;
 }
 
 /* défilement : un trait qui descend */

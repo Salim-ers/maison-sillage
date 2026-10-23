@@ -55,7 +55,7 @@ const { launch, BASE } = require("./browser.cjs");
         });
         const key = (i) => {
           const u = new URL(i.currentSrc || i.src, location.href);
-          return decodeURIComponent(u.searchParams.get("url") || u.pathname);
+          return decodeURIComponent(u.searchParams.get("url") || u.pathname).replace(/\.w\d+\.webp$/, ".webp");
         };
         const counts = {};
         visible.forEach((i) => {

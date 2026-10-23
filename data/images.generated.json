@@ -1,6 +1,6 @@
 {
  "acc-cafetiere-italienne": {
-  "src": "/images/products/acc-cafetiere-italienne.25bd5039.webp",
+  "src": "/images/products/acc-cafetiere-italienne.25bd5039.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JaACdMoRwFf/gK7XFGrlQBgUKcAD9ktesRsU5iuzisZvryp0ml5R7X3LD7Ktx2VYBr82RhUpyms7HJ0OwKo6kz2QhXMDJGw2xLMAAAAA=",
@@ -12,7 +12,7 @@
   }
  },
  "acc-carafe-sirop": {
-  "src": "/images/products/acc-carafe-sirop.b4e613c1.webp",
+  "src": "/images/products/acc-carafe-sirop.b4e613c1.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JaQAAW+uVfvBCu77KcAD+8dPrF7V948LrI9i4OHwzihyUbxyuOMJEI1CZfJuKKQBIKz6R2rvCoNW2AAA=",
@@ -24,7 +24,7 @@
   }
  },
  "acc-carnet-recettes": {
-  "src": "/images/products/acc-carnet-recettes.27b2b40a.webp",
+  "src": "/images/products/acc-carnet-recettes.27b2b40a.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoQABQAPu1iqU2ppaQiMAgBMB2JZgCdMoADQKf+582Oq9+JIAD+tAiQ3gdcfuXQ1ZeHwHzYjRgIX1V+g//8IBlXqae0Y8BTiZaAvl66CnLrpk75EygJ1ubqSIBRORAA",
@@ -36,7 +36,7 @@
   }
  },
  "acc-coffret-decouverte": {
-  "src": "/images/products/acc-coffret-decouverte.27ce71f8.webp",
+  "src": "/images/products/acc-coffret-decouverte.27ce71f8.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JZACdMoRwABRxgg/38KaFtAD+gztvZTHn60JYhr4TyU4x4wwidZ1eA5ZzA+k2tUkPO8jZfFeRfa+ZWTtQ7Q/QAAA=",
@@ -48,7 +48,7 @@
   }
  },
  "acc-cuillere-doseuse": {
-  "src": "/images/products/acc-cuillere-doseuse.2cbbecac.webp",
+  "src": "/images/products/acc-cuillere-doseuse.2cbbecac.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZwDE2ywBD0li/OGffLlAwAD+yNc6ZGpCPuMuJ7FA5ip7DY1sq/ZH3o+kK0QxKjmvCJSLC4gQSkXA3D0bZg1PVIV92xdmWxv6pfyBoLETZPeaxQRaa2sAAAA=",
@@ -60,7 +60,7 @@
   }
  },
  "acc-mug-ceramique": {
-  "src": "/images/products/acc-mug-ceramique.9eeaf951.webp",
+  "src": "/images/products/acc-mug-ceramique.9eeaf951.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoQABQAPu1kq04ppaQiMAgBMB2JZwDKAB6ORVAlunFO/vYAAP7n1Rewzh7qVD0Q6M5Iq1YZrroTpnEXEru6Pwygcr3xPx3QNYKssQdcAAA=",
@@ -72,7 +72,7 @@
   }
  },
  "acc-tasse-espresso-gres": {
-  "src": "/images/products/acc-tasse-espresso-gres.58fb31fb.webp",
+  "src": "/images/products/acc-tasse-espresso-gres.58fb31fb.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOl6gA0obUTlqxZGHQAAN5UbtJj2iHirBQrnrXBTkm6cA/qPyuAuA2UspcdjDJ9d4ZPAC++cqEIEX6aQRNz7Msv4ZaAAAA=",
@@ -84,7 +84,7 @@
   }
  },
  "acc-verre-latte-glace": {
-  "src": "/images/products/acc-verre-latte-glace.74763881.webp",
+  "src": "/images/products/acc-verre-latte-glace.74763881.w1600.webp",
   "w": 1600,
   "h": 2000,
   "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwDCgA3x+f/D5VPCAAD+z0pg/ZoigIG2WLtauFRbEuY8AbMZDic/Qwg5vtRMpZqqetryVt5Vh98WDD4KS6sE54XYSKUh9TQ99kYXSark7QAA",
@@ -96,7 +96,7 @@
   }
  },
  "barista": {
-  "src": "/images/lifestyle/barista.9f84128f.webp",
+  "src": "/images/lifestyle/barista.9f84128f.w2400.webp",
   "w": 2400,
   "h": 1600,
   "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAQCdASoQAAsAA4BaJYwAAexagFn45oAA/u9pfRwfZ9rEUsk0fOQe7wVyI4by1xJ+lFSmxjQBMWbo0CSi1eJ2XNWAAA==",
@@ -107,7 +107,7 @@
   }
  },
  "boisson-chocolat-1": {
-  "src": "/images/recettes/boisson-chocolat-1.b059b2b9.webp",
+  "src": "/images/recettes/boisson-chocolat-1.b059b2b9.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBACdASoQABgAPu1kqU2ppaOiMAgBMB2JYwAOfIOxcVKdtJBXDlUbAAD1t72UWZj97KUb9DVCj+S6xMO51J+n/l0V6IA9UXrpuYi4FLPn5J0K7NNGE04nrhOw+nvR+7lq1OisynguHUSJxTGdfuWrX0AAAA==",
@@ -118,7 +118,7 @@
   }
  },
  "boisson-chocolat-2": {
-  "src": "/images/recettes/boisson-chocolat-2.ecb99b1e.webp",
+  "src": "/images/recettes/boisson-chocolat-2.ecb99b1e.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoQABgAPu1kqU2ppaQiMAgBMB2JQBOgBDtKHdoGYjSljoAJuMAA/uP78XXmap5NMmx0qtkH75Ey3rTel2ZOpto2sL74Rki3+c1zsPberhSWynVPYvU+ZNLdvXy/R+Z2/feweY55RriCOUzc9PFykDU3/wKAh4CXHoAAAA==",
@@ -129,7 +129,7 @@
   }
  },
  "boisson-chocolat-3": {
-  "src": "/images/recettes/boisson-chocolat-3.b52b465b.webp",
+  "src": "/images/recettes/boisson-chocolat-3.b52b465b.w1920.webp",
   "w": 1920,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwCdACG6re3IAHe+P0QAAP7i8YdP1QP+v5yBN+m6uw0P9DLTMuiKkwWzSnyokr430Sm5td0eE2AA",
@@ -140,7 +140,7 @@
   }
  },
  "boisson-chocolat-blanc": {
-  "src": "/images/recettes/boisson-chocolat-blanc.155f3877.webp",
+  "src": "/images/recettes/boisson-chocolat-blanc.155f3877.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQBACdASoQABgAPu1iqU2ppaQiMAgBMB2JZwC7ACHfCRpBmuxtp5ykAAD+5FzB1x7kArmN7PkEEKAooXuwxxhhnm3IhphvYihA1DU4JqBdAAAA",
@@ -151,7 +151,7 @@
   }
  },
  "boisson-espresso-1": {
-  "src": "/images/recettes/boisson-espresso-1.b8432448.webp",
+  "src": "/images/recettes/boisson-espresso-1.b8432448.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoQABgAPu1kq04ppaQiMAgBMB2JYgAAUpjIQ4ENt968X7YmIAD+eMD8iBC8GiN1CrB9+hGdJHsyJuun39O6f6NmbAotHBQIuYvNw4vCjlQLao8E2AAAAA==",
@@ -162,7 +162,7 @@
   }
  },
  "boisson-espresso-2": {
-  "src": "/images/recettes/boisson-espresso-2.86e64b01.webp",
+  "src": "/images/recettes/boisson-espresso-2.86e64b01.w1804.webp",
   "w": 1804,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgC7AB6XiE8WhN2Y80ro4AD+z3Pi1EVA5Dp2prFIwJDL+nYxoaXvPMqD3KZdmqpj0F0ifP/QD+K0gostm+wuOHJkiUOzgAA=",
@@ -173,7 +173,7 @@
   }
  },
  "boisson-frappe-1": {
-  "src": "/images/recettes/boisson-frappe-1.6030f779.webp",
+  "src": "/images/recettes/boisson-frappe-1.6030f779.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABgAPu1mqk4ppaOiMAgBMB2JYwAAOGgceFUfqsv6A3gAyeFuXZWmWQ3QnIZp8n82J3MsbimRC+XF1rSI3/3Cx1iUSAPAmy6XlGhsx6Cql2MkkDW7BfgA",
@@ -184,7 +184,7 @@
   }
  },
  "boisson-frappe-2": {
-  "src": "/images/recettes/boisson-frappe-2.2da1fa99.webp",
+  "src": "/images/recettes/boisson-frappe-2.2da1fa99.w1602.webp",
   "w": 1602,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADwAwCdASoQABgAPu1yrU+pp6QiMAgBMB2JYwDE2GjrrI8Fff6tsucAAP7sq+yAmKi04MuQh5r23nAY4H4R6TiAqnTHWyOvStbg+gDY+yrlDdHToIAAAA==",
@@ -195,7 +195,7 @@
   }
  },
  "boisson-iced-latte-1": {
-  "src": "/images/recettes/boisson-iced-latte-1.3470f90c.webp",
+  "src": "/images/recettes/boisson-iced-latte-1.3470f90c.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABQBACdASoQABgAPu1iqk2ppaQiMAgBMB2JZgCdMoR3ABCbwnW3EzTaAiLgAP7c02ho296kRY4o4usYHX5UHL+6+JEN+IFLlEoU6kxFi6pVvI+QLairv1LPQrFmF1/b/zrnJmTaW7mCcXoHAGk8v4JsnlhjAAAA",
@@ -206,7 +206,7 @@
   }
  },
  "boisson-iced-latte-2": {
-  "src": "/images/recettes/boisson-iced-latte-2.cb4b2c50.webp",
+  "src": "/images/recettes/boisson-iced-latte-2.cb4b2c50.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoQABgALrV2u12jqampiYC0SxgF80JiJSKWOniX19ZDUGCAAP5ekeIrzPv1mJdrQZBlI9Kx8rYnRqUrcCcWSIWtRGlf+56ukP9LUZR2mNqWhyv2tnVck8ntNEIz+Z7vZlc3qen6hAtNOOAAAAA=",
@@ -217,7 +217,7 @@
   }
  },
  "boisson-latte-1": {
-  "src": "/images/recettes/boisson-latte-1.19be9d9c.webp",
+  "src": "/images/recettes/boisson-latte-1.19be9d9c.w1920.webp",
   "w": 1920,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JZgCdIIjDAtNkmQWK3ZxPzBnAAP7sQM1R3ULyBZcNVbzbyoGR7Hb+T6MZzIYWIE8OuDl1S43NMPy9awOpDd+AxTku8OlcmAAAAA==",
@@ -228,7 +228,7 @@
   }
  },
  "boisson-latte-2": {
-  "src": "/images/recettes/boisson-latte-2.08146c35.webp",
+  "src": "/images/recettes/boisson-latte-2.08146c35.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAACQBACdASoQABgAPu1iqU2ppaQiMAgBMB2JagCdMoRwACmpZDSxUqNGnm2nndgA/svPN9qelm0aHyz+PPzRJ3Rdgax8RF3moccoZWze5Jjd1zDzZ9J+065/H5Fk7gOSKUpb0sVS9oybkSJKiA/ExjKSm+9IiQV/xnjZ3kgA",
@@ -239,7 +239,7 @@
   }
  },
  "boisson-latte-chai": {
-  "src": "/images/recettes/boisson-latte-chai.d434f78e.webp",
+  "src": "/images/recettes/boisson-latte-chai.d434f78e.w1800.webp",
   "w": 1800,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JZACdMoADZCvxViNg26AA/uRYcyRjn8yIHDg5ew9w6VA0hTYtgjvl4L3En9aFK6m7siPxdfAy0q1SCiVywykhDj9b4+GEUZwhzBFaAAA=",
@@ -250,7 +250,7 @@
   }
  },
  "boisson-milkshake-choco": {
-  "src": "/images/recettes/boisson-milkshake-choco.78ab0bb5.webp",
+  "src": "/images/recettes/boisson-milkshake-choco.78ab0bb5.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAACwBACdASoQABgAPu1iqk2ppaQiMAgBMB2JQBOmUI7g2gA1+lmq0lxBDpdWV35AAP4IeSpaG9EX0Fz93yzTJ+VOOyZNKrsrPgzXwC6PFUlBtKQkdmIVF+bkITFPTnef/Xfa3sBgwgBIe3PvOodVRu5WCO02+fH2XDghmfzHPRPB75mECCDwotAAAAA=",
@@ -261,7 +261,7 @@
   }
  },
  "boisson-milkshake-fraise": {
-  "src": "/images/recettes/boisson-milkshake-fraise.1fee5465.webp",
+  "src": "/images/recettes/boisson-milkshake-fraise.1fee5465.w1920.webp",
   "w": 1920,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAQBACdASoQABQAPu1kqk4ppaQiMAgBMB2JagCdAB9hDjGu+kGNa6gMxAD+f5IEJJ2pAogUjDi+A8bctF7bN601QSa8tFQ7+tlhfzfnC7QAh3YWkYh3AC1Ejh4SaulAoO32P/fIAAA=",
@@ -272,7 +272,7 @@
   }
  },
  "boisson-mocktail-orange": {
-  "src": "/images/recettes/boisson-mocktail-orange.3827a1fd.webp",
+  "src": "/images/recettes/boisson-mocktail-orange.3827a1fd.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAwCdASoQABgAPu1orU2ppqSiMAgBMB2JZgCdAHEa7MAA/uazHVsUvHhe45wJLlbWNizdYxJtPdeirdtaw+aHjOunNo2pg3XQGmaa1jMicAAA",
@@ -283,7 +283,7 @@
   }
  },
  "boisson-mocktail-peche": {
-  "src": "/images/recettes/boisson-mocktail-peche.0a358f0e.webp",
+  "src": "/images/recettes/boisson-mocktail-peche.0a358f0e.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAQBACdASoQABgAPu1iqk2ppaQiMAgBMB2JQBibAw6z/td1j9aQdQgQwAD947GbhNXXc9YNKuaFSCf6BD+tLqlLCn/Fb4wNn54ndTBJkXVXyvWRmAnYHVb2cquEFDxpmuEWInefDoAAAA==",
@@ -293,8 +293,48 @@
    "source": "Unsplash"
   }
  },
+ "brand-emblem-dark": {
+  "src": "/images/brand/emblem-dark.40eb4a9f.w579.webp",
+  "w": 579,
+  "h": 689,
+  "blur": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAwAwCdASoQABMAPu1iqU2ppaQiMAgBMB2JQBWAA9KqrIYgAP7nQKmodQJaGUYwmrAuVFFH/Gn8iusgqrCVAAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Logo d'origine"
+  }
+ },
+ "brand-emblem-light": {
+  "src": "/images/brand/emblem-light.58487098.w579.webp",
+  "w": 579,
+  "h": 689,
+  "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoQABMAPu1iqU2ppaOiMAgBMB2JbACdMoADKEEwXN1FEfsAAMXWZX4a2yOW/xq1tPkdeOGpliX3V/0Y2T6THQsjrzKFDqmVtCKpCH0gAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Logo d'origine"
+  }
+ },
+ "brand-logo-dark": {
+  "src": "/images/brand/logo-dark.773a8696.w1083.webp",
+  "w": 1083,
+  "h": 1169,
+  "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAgCdASoQABEAPu1iqU2ppaOiMAgBMB2JTGfJlAJ64AD+7OxrVvQkHqysEzFvGE0k5rJ3pe50byNDsjkZLKRgAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Logo d'origine"
+  }
+ },
+ "brand-logo-light": {
+  "src": "/images/brand/logo-light.d8272686.w1083.webp",
+  "w": 1083,
+  "h": 1169,
+  "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwBACdASoQABEAPu1iqU2ppaQiMAgBMB2JagCdMoRwACfIold8i1fjfcAAx8YhbQCatXIkjGdvg6FUyBH59pNx2vvukvf9ir6dYm//+4zFhTAgAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Logo d'origine"
+  }
+ },
  "dessert-creme-brulee": {
-  "src": "/images/recettes/dessert-creme-brulee.17669db0.webp",
+  "src": "/images/recettes/dessert-creme-brulee.17669db0.w1920.webp",
   "w": 1920,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdGaA2zQCdA/obP1c4wDAA/Ge7DatEWhCsmWU7C311pdsrESU+aH3dIFlm1vIw5+/s7sJmbjF+RtD2GMmIlDORdYHcRZoNjdXt4UvNEvcooLfSNR7QGAA=",
@@ -305,7 +345,7 @@
   }
  },
  "detail-automne": {
-  "src": "/images/story/detail-automne.980a7c78.webp",
+  "src": "/images/story/detail-automne.980a7c78.w1024.webp",
   "w": 1024,
   "h": 1280,
   "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAQBACdASoQABQAPu1iqk2ppaQiMAgBMB2JYwCdACPm7/FMmlHeL/NNVADxOZvUtXqbuTJcB9Mw96yGQnH8fLVpksBe+Q56uriogNqorasVRkqR7ljkB9ieResHvVAvaw+/rkgA",
@@ -315,7 +355,7 @@
   }
  },
  "detail-ete": {
-  "src": "/images/story/detail-ete.7ad0bcb4.webp",
+  "src": "/images/story/detail-ete.7ad0bcb4.w1024.webp",
   "w": 1024,
   "h": 1280,
   "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBOgBDffmLw9lZP6iDxAAP1TkeQ5LtETVrwS2znGmz/y8oA9PGh45k/1b/Xc+nzMH256yGBxkoicwkU2AAAA",
@@ -325,7 +365,7 @@
   }
  },
  "detail-hiver": {
-  "src": "/images/story/detail-hiver.a9d82543.webp",
+  "src": "/images/story/detail-hiver.a9d82543.w1024.webp",
   "w": 1024,
   "h": 1280,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZwDDNBX+8u6B7+J8LAAA/Phfhkn5ftj2P3i/y+OUhCVBfaqe43vfkS0DmiBwq5YVyR+JEs7CFaPcGAp/KuoM8cOQAAAA",
@@ -335,7 +375,7 @@
   }
  },
  "detail-printemps": {
-  "src": "/images/story/detail-printemps.2887dc8b.webp",
+  "src": "/images/story/detail-printemps.2887dc8b.w1024.webp",
   "w": 1024,
   "h": 1280,
   "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZQCw7CP6aSE4O5hoGx5lgAD+6VSnOxcqB4bY+APJEN9Hh1taJv/9vAwNlnrzP00RIjpc8zymzl/6i18GUN7kaSpje/m/WX1PjSwQ4QGdINIAAAA=",
@@ -345,7 +385,7 @@
   }
  },
  "gamme-essentiels": {
-  "src": "/images/products/gamme-essentiels.8db6e750.webp",
+  "src": "/images/products/gamme-essentiels.8db6e750.w3200.webp",
   "w": 3200,
   "h": 1800,
   "blur": "data:image/webp;base64,UklGRjwAAABXRUJQVlA4IDAAAADQAQCdASoQAAkAA4BaJQBOgCHgOa/YAAD+8jtVAp7WRnrYoEG0O0WGEv+dk7xAAAA=",
@@ -356,7 +396,7 @@
   }
  },
  "gamme-maison": {
-  "src": "/images/products/gamme-maison.c5a79759.webp",
+  "src": "/images/products/gamme-maison.c5a79759.w3200.webp",
   "w": 3200,
   "h": 1800,
   "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoQAAkAA4BaJQBOgB4W40XQAP7yOxSzqX9YBMGT6ntpkJFdr0u9Z8ekvWmKzsneIAAAAA==",
@@ -367,7 +407,7 @@
   }
  },
  "gamme-poudres": {
-  "src": "/images/products/gamme-poudres.4b4a07e4.webp",
+  "src": "/images/products/gamme-poudres.4b4a07e4.w3200.webp",
   "w": 3200,
   "h": 1800,
   "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoQAAkAA4BaJQBOgCHpf/KHIAAA/uhtacH9A7NuQXV4FLd7S3tYyT73Jdn7Go1KSP0NGn4BN04AAA==",
@@ -378,7 +418,7 @@
   }
  },
  "gamme-saisons": {
-  "src": "/images/products/gamme-saisons.e4fee4bd.webp",
+  "src": "/images/products/gamme-saisons.e4fee4bd.w3200.webp",
   "w": 3200,
   "h": 1800,
   "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA4BaJQBOgCHgpHDAAAD+8hFAIJ8MvFmZ78HxnlWGSt0crzy0hy1fLJ3iAAA=",
@@ -389,7 +429,7 @@
   }
  },
  "gamme-signatures": {
-  "src": "/images/products/gamme-signatures.f7e4ff89.webp",
+  "src": "/images/products/gamme-signatures.f7e4ff89.w3200.webp",
   "w": 3200,
   "h": 1800,
   "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA4BaJQBOgB6HFq8PYAD+85Y3yB2+J8Mz2os+ai9Kf5ZdGUdi4ZDC9j2uAAA=",
@@ -400,7 +440,7 @@
   }
  },
  "hero-ete-coucher": {
-  "src": "/images/hero/ete-coucher.d8916284.webp",
+  "src": "/images/hero/ete-coucher.d8916284.w3840.webp",
   "w": 3840,
   "h": 2160,
   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA4BaJZACdAELzXc3QAD+9QS1s0Kw67giPGp5LNq0YRplw7074fzL3pbA7LF3IWI+IAA=",
@@ -411,7 +451,7 @@
   }
  },
  "hero-ete-jour": {
-  "src": "/images/hero/ete-jour.6a7ecbc9.webp",
+  "src": "/images/hero/ete-jour.6a7ecbc9.w3840.webp",
   "w": 3840,
   "h": 2160,
   "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJYgCdH8AF3QnAAD+8EdWOwhKYykUyC/5VWoT+8iD5BhYSWm1UFfVVMZIkqI2KUQAAA==",
@@ -422,7 +462,7 @@
   }
  },
  "hero-ete-nuit": {
-  "src": "/images/hero/ete-nuit.9858e0b4.webp",
+  "src": "/images/hero/ete-nuit.9858e0b4.w3840.webp",
   "w": 3840,
   "h": 2160,
   "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJQBOgB6SAZBgQAD+7NftWBbIX2FtSHFtz151h2QpV0wFWvQsrkAA",
@@ -433,7 +473,7 @@
   }
  },
  "hero-mobile-ete-coucher": {
-  "src": "/images/hero/mobile-ete-coucher.bb0af0f3.webp",
+  "src": "/images/hero/mobile-ete-coucher.bb0af0f3.w1536.webp",
   "w": 1536,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCdMoADUFPLT8IGa+MxvAAA/u1IWblo1nY92sgtTB/FBilVxSenUpP6O0q1qyCjAywOlHjpk1Wxc9t8FoZLWl0GCnGQjFS2hjUjTuQ7LyBAEvMAAA==",
@@ -444,7 +484,7 @@
   }
  },
  "hero-mobile-ete-jour": {
-  "src": "/images/hero/mobile-ete-jour.f90d6143.webp",
+  "src": "/images/hero/mobile-ete-jour.f90d6143.w1536.webp",
   "w": 1536,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCdAB09HWlG2IC4AQAaAAD+50FDI5ROUPuVgI539FFh9SxUhnW7mxNL1SeNIq4Oa1JGl6UHYjz/vQ2i2iyYPpgfxJbStE8Bbxw8JyYeDVcN/pYZMAAA",
@@ -455,7 +495,7 @@
   }
  },
  "hero-mobile-ete-nuit": {
-  "src": "/images/hero/mobile-ete-nuit.3b3ed90b.webp",
+  "src": "/images/hero/mobile-ete-nuit.3b3ed90b.w1536.webp",
   "w": 1536,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoQABUAPu1iqk2ppaQiMAgBMB2JYgCdAB5KbbQsp37dQAD+6QbA6POh8QxHlmtQKF4MuetxCeKucKPGqqks3GBTydV9dayEH3DnnJc/noDQW+146/Nb+cMnVxhIAAAA",
@@ -466,7 +506,7 @@
   }
  },
  "matiere-cerisier": {
-  "src": "/images/matieres/matiere-cerisier.881dd2e8.webp",
+  "src": "/images/matieres/matiere-cerisier.881dd2e8.w2048.webp",
   "w": 2048,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoQABAAA4BaJZQCdACjQmhAAP63+i1wdxqkSzEC+NqSrrqj9YCvYj0LZRxPLc47+JWpCw56EH0+u4YjTkQ4hAAA",
@@ -476,7 +516,7 @@
   }
  },
  "matiere-fleurs-oranger": {
-  "src": "/images/matieres/matiere-fleurs-oranger.d15cfda1.webp",
+  "src": "/images/matieres/matiere-fleurs-oranger.d15cfda1.w2048.webp",
   "w": 2048,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoQABAAA4BaJQAAYoN6c6Su0fQAAP6VCFayjNRICbQ+9pOED/7pSmPJYFW54JfFottGbXzjIYyGwJsXdJUnOIUJ9vfsYcAA",
@@ -486,7 +526,7 @@
   }
  },
  "matiere-fraises": {
-  "src": "/images/matieres/matiere-fraises.95ab998d.webp",
+  "src": "/images/matieres/matiere-fraises.95ab998d.w2048.webp",
   "w": 2048,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAgCdASoQABAAA4BaJYgCdAEPh+VnTP/4Y0EAAP5kjPkHJq1nIKsLfPMWtUB18oOqHSHbCEgVH67u+LfKA/HMnot8djAGQATJbghap8qoAA==",
@@ -496,7 +536,7 @@
   }
  },
  "matiere-poires": {
-  "src": "/images/matieres/matiere-poires.b71a7832.webp",
+  "src": "/images/matieres/matiere-poires.b71a7832.w2048.webp",
   "w": 2048,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQABAAA4BaJbACdAEDWIXOEwQAAPvHCsIr6v/sAfM2G15nXrMsuQbUPjkIZ8lHhBdnT2jp3EJ4mIrIpGcwi4N59lC9qttuayrzfgHA0AAAAA==",
@@ -506,7 +546,7 @@
   }
  },
  "pack-caramel-beurre-sale": {
-  "src": "/images/products/caramel-beurre-sale.4ecd5a26.webp",
+  "src": "/images/products/caramel-beurre-sale.4ecd5a26.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JQBdgBDvxz/yCqqvTAAD+7VgYSbszfdUdBs2Om9y0SRCbsOzasWvaSev6sPXtaEtUgAAA",
@@ -517,7 +557,7 @@
   }
  },
  "pack-caramel-blond-abricot-confit": {
-  "src": "/images/products/caramel-blond-abricot-confit.5ed71102.webp",
+  "src": "/images/products/caramel-blond-abricot-confit.5ed71102.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBWABDeCpZl/+x5PWewAAP7tWlq9eTVs4Xizq6WF73LRJB2PcFXm7PJTr7Q09wikXRcYrAA=",
@@ -528,7 +568,7 @@
   }
  },
  "pack-chai-epice-classique": {
-  "src": "/images/products/chai-epice-classique.654d60e0.webp",
+  "src": "/images/products/chai-epice-classique.654d60e0.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwCw7CHfjn/luRqZgAD+7VgYSbszfdUdBs2OmkOFj7se4NY1J2ySJWmCUyku1JKd2AAA",
@@ -539,7 +579,7 @@
   }
  },
  "pack-chocolat-au-lait-onctueux": {
-  "src": "/images/products/chocolat-au-lait-onctueux.1c533268.webp",
+  "src": "/images/products/chocolat-au-lait-onctueux.1c533268.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwAAW+vQdHUaE3+AAAD+7VgYSbrTOCBmjto3f9B9GbXnY9KZe8T8mIraUUykwsp4NAAA",
@@ -550,7 +590,7 @@
   }
  },
  "pack-chocolat-blanc": {
-  "src": "/images/products/chocolat-blanc.b78673a5.webp",
+  "src": "/images/products/chocolat-blanc.b78673a5.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACHf+NJUNpMuUAAA/u1YGEm60zggZo7aN3EYaM5LhEoFEsk347GyYsFgTW0AAA==",
@@ -561,7 +601,7 @@
   }
  },
  "pack-chocolat-noir-intense": {
-  "src": "/images/products/chocolat-noir-intense.794fa375.webp",
+  "src": "/images/products/chocolat-noir-intense.794fa375.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwAAW+vQdHUaE3+AAAD+7VgYSbrTOCBmjto3f9B9GbXnY9KZe8T8mIraUUykwsp4NAAA",
@@ -572,7 +612,7 @@
   }
  },
  "pack-chocolat-noir-orange-confite": {
-  "src": "/images/products/chocolat-noir-orange-confite.703fa053.webp",
+  "src": "/images/products/chocolat-noir-orange-confite.703fa053.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JQBYdhDwBS0w4CJsbvAAA/u1aW8Y7vq2wS+FCwUpvdWerbXxhMd12TvSgDnRYFvCR7C9f1UOpMQMFWucAAA==",
@@ -583,7 +623,7 @@
   }
  },
  "pack-datte-fondante-creme-brulee": {
-  "src": "/images/products/datte-fondante-creme-brulee.ded5ab02.webp",
+  "src": "/images/products/datte-fondante-creme-brulee.ded5ab02.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwC7ACG8FON+xw9tghwA/u1aWr15Q4pCLHENVhf0U6aS2xCwnY9J7Rl+E/MNJbTct21KRW9twAAA",
@@ -594,7 +634,7 @@
   }
  },
  "pack-fraise-des-bois-creme-de-madeleine": {
-  "src": "/images/products/fraise-des-bois-creme-de-madeleine.b8230e4c.webp",
+  "src": "/images/products/fraise-des-bois-creme-de-madeleine.b8230e4c.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwCw7CHf/ZLvZH9yNKAA/u1aWrujiBjumv4wNgDFSpZuNEYaNHY9wVjTQ4+JGaAzDiybu4bNc0YAAAA=",
@@ -605,7 +645,7 @@
   }
  },
  "pack-noisette-grillee": {
-  "src": "/images/products/noisette-grillee.8eb50a09.webp",
+  "src": "/images/products/noisette-grillee.8eb50a09.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwC7ACHfjn/kFVVagAD+7VgYSbszfdUdBs2Om9aLIdk7YAwxoUqwf65xwWdFcAEAAA==",
@@ -616,7 +656,7 @@
   }
  },
  "pack-peche-blanche-fleur-oranger": {
-  "src": "/images/products/peche-blanche-fleur-oranger.80e03f74.webp",
+  "src": "/images/products/peche-blanche-fleur-oranger.80e03f74.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwCw7CG7V5dE4D/clMAA/u1aWr15GzOO6ROsVtX4uE5cibsOmkZ/SY5YmCt0M8Wkp2sAAAA=",
@@ -627,7 +667,7 @@
   }
  },
  "pack-pistache-classique": {
-  "src": "/images/products/pistache-classique.25d3d111.webp",
+  "src": "/images/products/pistache-classique.25d3d111.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADQAwCdASoQABQAPu1kqU2ppaOiMAgBMB2JYwC7ACHf+NJURgf5SAAA/u1YGEm60zggZo7aN3iMUOO3Z7un5P9W6sg2eOpI7V2QAA==",
@@ -638,7 +678,7 @@
   }
  },
  "pack-pistache-grillee-biscuit-au-beurre": {
-  "src": "/images/products/pistache-grillee-biscuit-au-beurre.ba50285c.webp",
+  "src": "/images/products/pistache-grillee-biscuit-au-beurre.ba50285c.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADQAwCdASoQABQAPu1iqU2ppaQiMAgBMB2JYwCdACG8FSzJ6hTSZOAA/u1aWr15NWx99cCpEfY0hwjn+mbb2Kn731YPPJY7eqs6MAAA",
@@ -649,7 +689,7 @@
   }
  },
  "pack-poire-rotie-sable-noisette": {
-  "src": "/images/products/poire-rotie-sable-noisette.39f994ee.webp",
+  "src": "/images/products/poire-rotie-sable-noisette.39f994ee.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JQBWABDeCpZBX1OkHqagAAP7tWlq9eTVs4Xi0luuzjSXS3jibsOmwn93sA1Vp2A7wvPUiX4AAAA==",
@@ -660,7 +700,7 @@
   }
  },
  "pack-poudre-chai-doux-fleur-oranger": {
-  "src": "/images/products/poudre-chai-doux-fleur-oranger.cac14620.webp",
+  "src": "/images/products/poudre-chai-doux-fleur-oranger.cac14620.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACHfhi7OEtZhogAA/u1YGErfjtprzeYZh2/YcOcNIg+xZFrQFfFwmqBN1aZS4vs4FxDlW+D+mAGSHQd5LZXxxYgA",
@@ -671,7 +711,7 @@
   }
  },
  "pack-poudre-chocolat-noir-orange-confite": {
-  "src": "/images/products/poudre-chocolat-noir-orange-confite.2f953d1a.webp",
+  "src": "/images/products/poudre-chocolat-noir-orange-confite.2f953d1a.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCw7CHh5e0r6ACVHYAA/u1YGErfjtprzeYaGI3+B39IINiyMWbP2ClCuJuw6XmG5rqGS59SKXxIYlmAxm3a7bMRSSAA",
@@ -682,7 +722,7 @@
   }
  },
  "pack-poudre-datte-fondante-creme-brulee": {
-  "src": "/images/products/poudre-datte-fondante-creme-brulee.c651761c.webp",
+  "src": "/images/products/poudre-datte-fondante-creme-brulee.c651761c.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwC7ACHfhi7KNPnLQAD+7VgYSt+O2mvN5hmFkEl17e3z1IqimKe4bQfFywm6tBLQWBlIsFEvraZIWZqK6lnl6AAAAA==",
@@ -693,7 +733,7 @@
   }
  },
  "pack-poudre-fraise-des-bois-creme-de-madeleine": {
-  "src": "/images/products/poudre-fraise-des-bois-creme-de-madeleine.e753d41a.webp",
+  "src": "/images/products/poudre-fraise-des-bois-creme-de-madeleine.e753d41a.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoQABQAPu1kqk4ppaQiMAgBMB2JZQC7LwAB0bVCPrjI6kOqQAD+7Uf/m58p2VfTZzvV3y0h16dZKFaLRp9s9nZ75A4R5ztBNzGKt9kM4HHT5GG1muUAAA==",
@@ -704,7 +744,7 @@
   }
  },
  "pack-poudre-peche-blanche-fleur-oranger": {
-  "src": "/images/products/poudre-peche-blanche-fleur-oranger.54257f3b.webp",
+  "src": "/images/products/poudre-peche-blanche-fleur-oranger.54257f3b.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwCdACHfhi7OEgMKAAD+7VgYSt+O2mvN5hmFkEl17e3z1IqimKe4ag+LlCbq0Eta5Oo+80ypPCFUzf1E38TVgEe1wAAA",
@@ -715,7 +755,7 @@
   }
  },
  "pack-poudre-pistache-grillee-biscuit-au-beurre": {
-  "src": "/images/products/poudre-pistache-grillee-biscuit-au-beurre.680a77b2.webp",
+  "src": "/images/products/poudre-pistache-grillee-biscuit-au-beurre.680a77b2.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JYwCw7CHfhyPgjwsgkgAA/u1YGErfjtprzd+J5VFvy1nyalYqF6VWKg+LVwZwOVp6/yVrxgR68xFonam7HKB2AAA=",
@@ -726,7 +766,7 @@
   }
  },
  "pack-poudre-poire-rotie-sable-noisette": {
-  "src": "/images/products/poudre-poire-rotie-sable-noisette.49780f27.webp",
+  "src": "/images/products/poudre-poire-rotie-sable-noisette.49780f27.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABQAPu1iqk4ppaQiMAgBMB2JYwCdACHfhi7OEgMKAAD+7VgYSt+O2mvN5hmHb9hw5w0iD7FkWtAV8XCaoE3VplEvGkwcwkS+tpkhZmowrUjHbD2RGYAA",
@@ -737,7 +777,7 @@
   }
  },
  "pack-poudre-vanille-torrefiee-praline-blanc": {
-  "src": "/images/products/poudre-vanille-torrefiee-praline-blanc.b665b02b.webp",
+  "src": "/images/products/poudre-vanille-torrefiee-praline-blanc.b665b02b.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwCw7CHfhi7QHAO4AAD+7VgYSt+O2mvN34nckUROQjJ8/+8Owkc8n6Xgm6tBLYw/DqD+I/PvKEYsxFe9lD2xpQjAAA==",
@@ -748,7 +788,7 @@
   }
  },
  "pack-vanille-bourbon": {
-  "src": "/images/products/vanille-bourbon.1dbdc991.webp",
+  "src": "/images/products/vanille-bourbon.1dbdc991.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAACwAwCdASoQABQAPu1iqk2ppaQiMAgBMB2JYwC7ACHfjn/luRsB5AD+7VgYSbszfdUdBs2Om9aLwQTdWfAuoMJ4pfZxwjAxqUVAAA==",
@@ -759,7 +799,7 @@
   }
  },
  "pack-vanille-torrefiee-praline-blanc": {
-  "src": "/images/products/vanille-torrefiee-praline-blanc.f5dde01f.webp",
+  "src": "/images/products/vanille-torrefiee-praline-blanc.f5dde01f.w1400.webp",
   "w": 1400,
   "h": 1750,
   "blur": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwC7AC0a3W4p5AD+7cb0tSuPuNr1AcH8xASqlg2LhOXLsekQW5fXgfYI5w4RtFQAAA==",
@@ -770,7 +810,7 @@
   }
  },
  "paysage-automne": {
-  "src": "/images/seasons/paysage-automne.92b0b651.webp",
+  "src": "/images/seasons/paysage-automne.92b0b651.w3072.webp",
   "w": 3072,
   "h": 1728,
   "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoQAAkAA4BaJYgCdAEUnZ0oAAD+4AlHxOzzg26H55m9M7SIw7ytGkf6oLW6Bdj+86QyBgAA",
@@ -780,7 +820,7 @@
   }
  },
  "paysage-ete": {
-  "src": "/images/seasons/paysage-ete.8a6a0ae5.webp",
+  "src": "/images/seasons/paysage-ete.8a6a0ae5.w3072.webp",
   "w": 3072,
   "h": 1728,
   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACQAQCdASoQAAkAA4BaJQBdgBWVpsAA/uswEw23evvZrU2Zb2lyXUTTiN1rvIH31f7kOWACawWJa7UTAAA=",
@@ -790,7 +830,7 @@
   }
  },
  "paysage-hiver": {
-  "src": "/images/seasons/paysage-hiver.6fbd285c.webp",
+  "src": "/images/seasons/paysage-hiver.6fbd285c.w3072.webp",
   "w": 3072,
   "h": 1728,
   "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJYwCw7D6KLE5MAD+749clJq3j2b7vAxoA1GV1EHtgnF0R+LHEaAA",
@@ -800,7 +840,7 @@
   }
  },
  "paysage-printemps": {
-  "src": "/images/seasons/paysage-printemps.160eda62.webp",
+  "src": "/images/seasons/paysage-printemps.160eda62.w3072.webp",
   "w": 3072,
   "h": 1728,
   "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADwAQCdASoQAAkAA4BaJYgCdAEOlb7GZ4AA/rYRgaumSz2QE6FLabJjvwkPwR07VRLyYAAA",
@@ -810,7 +850,7 @@
   }
  },
  "story-automne": {
-  "src": "/images/story/automne.6472abc2.webp",
+  "src": "/images/story/automne.6472abc2.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQAAkAA4BaJagCdADFGRfoAP6t3A9UceQpLlX3tyvg4MQCdiPRs5QL3n/m68jbGlP5V5H1R26rD5ZVri3gLaiFwAA=",
@@ -820,7 +860,7 @@
   }
  },
  "story-ete": {
-  "src": "/images/story/ete.afeddcd4.webp",
+  "src": "/images/story/ete.afeddcd4.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoQAAkAA4BaJbACdAEfUrwTmnjAAPzYylTShwJ6GGs56lya2T1RvoqHhVns79TEw8kY09lWAAA=",
@@ -830,7 +870,7 @@
   }
  },
  "story-hiver": {
-  "src": "/images/story/hiver.e01ccb48.webp",
+  "src": "/images/story/hiver.e01ccb48.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA4BaJQBdgCHerUaaYAD9421R2XXbsmoQ6ZfGVhoHlN1otl04Axllw0ISDKQzB0gQAAA=",
@@ -840,7 +880,7 @@
   }
  },
  "story-printemps": {
-  "src": "/images/story/printemps.2de516bb.webp",
+  "src": "/images/story/printemps.2de516bb.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJYgCdAELMk0fwAD+3bt87fcwxKpKBFIo7X+MC50K7HFlzd5vmCcxVD6FOlwY4lAAAA==",
@@ -850,7 +890,7 @@
   }
  },
  "univers-abricot": {
-  "src": "/images/univers/univers-abricot.65678142.webp",
+  "src": "/images/univers/univers-abricot.65678142.w1571.webp",
   "w": 1571,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAwCdASoQABgAPu1iqU2ppaQiMAgBMB2JbACsABKgPLEgzkrd+IUAAP7ISsMXJ8DB69TbgCv1VTfKegI+t/IwiQtRNJLqu64W24xEGW7AEQbqePRatOMSyvMBbicQPql1BraSIAAAAA==",
@@ -861,7 +901,7 @@
   }
  },
  "univers-cacao": {
-  "src": "/images/univers/univers-cacao.6a88c4c3.webp",
+  "src": "/images/univers/univers-cacao.6a88c4c3.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoQABgAPu1iqk2ppaQiMAgBMB2JYwCsABTUK6PFB7AbAAD9YNN3RB7ewPLHWQtDtvN3Ke+bSD0H95fQtzMiiewZxvlCUvjz9TN4SRUQ+8vEAAAA",
@@ -872,7 +912,7 @@
   }
  },
  "univers-cannelle": {
-  "src": "/images/univers/univers-cannelle.ce44e024.webp",
+  "src": "/images/univers/univers-cannelle.ce44e024.w1833.webp",
   "w": 1833,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoQABUAPu1iqk4ppaQiMAgBMB2JZgCdMoADTrpVjKKw2YpXowAA/uMnmvie/hEhe5wAgdH0gb16BrQdSTbRJ/Vy1A4Mulck1i2OYOOKQH9aFdmpoHkOpMNYAAA=",
@@ -883,7 +923,7 @@
   }
  },
  "univers-caramel": {
-  "src": "/images/univers/univers-caramel.a740b87a.webp",
+  "src": "/images/univers/univers-caramel.a740b87a.w1800.webp",
   "w": 1800,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBdgBDfmq5SrAp/sLUqAAP7qhXfGGL4f9zdtBJgI0EDaI3wuWZcQTvGAHjrdWSohZhwQyXD/jlZlK2REoBuuBXZgAA==",
@@ -894,7 +934,7 @@
   }
  },
  "univers-chai": {
-  "src": "/images/univers/univers-chai.f69f9fb2.webp",
+  "src": "/images/univers/univers-chai.f69f9fb2.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAwCdASoQABgAPu1iqk2ppaQiMAgBMB2JbACw7CHgDB9asmoGgAD+9Bv7itbkQyBdebR4HOghxMbVaDNoxinmRxEm9PSLNkPZI/AA",
@@ -905,7 +945,7 @@
   }
  },
  "univers-choco-blanc": {
-  "src": "/images/univers/univers-choco-blanc.7ee8e47f.webp",
+  "src": "/images/univers/univers-choco-blanc.7ee8e47f.w1800.webp",
   "w": 1800,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwBACdASoQABUAPu1orU6ppiSiMAgBMB2JQBYdjSwMJimFHHwAHaJi8iAA/u/AQdu2UbHHyPv3536ELQTGydSHUgpPzPOMKNbYrn2uDT2MZfVNP6J/KUlldOBVL0AA",
@@ -916,7 +956,7 @@
   }
  },
  "univers-choco-lait": {
-  "src": "/images/univers/univers-choco-lait.0dd5804b.webp",
+  "src": "/images/univers/univers-choco-lait.0dd5804b.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JYwCdABmTQBnHSdjc7bf4AAD0S+XqjEFMaT6ivk1PSJFcxUdNBVaEX+LPxlVWio4e6Iuf9ggPgG4sQxXvsjsiAbAAAA==",
@@ -927,7 +967,7 @@
   }
  },
  "univers-choco-orange": {
-  "src": "/images/univers/univers-choco-orange.3605be66.webp",
+  "src": "/images/univers/univers-choco-orange.3605be66.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JagCdMoMYJmjAdqKgDrdW8s3nl0BNAAD+3/Bi3D6bmCiViejnHiamKEpVTypymJ/6fDeNBqet4BXEDrUWcoQlcrY26CEVM7B/QNlN2s1hYCaXilnU2uQHaMlC3YkX+rHh9HMXjBfpYjq2/yVhIdMES+VhdzDPj+43eiJbjiNBV4Ai6qLhDKUzsjEWEeQAAAA=",
@@ -938,7 +978,7 @@
   }
  },
  "univers-choco-orange-2": {
-  "src": "/images/univers/univers-choco-orange-2.01b0badc.webp",
+  "src": "/images/univers/univers-choco-orange-2.01b0badc.w1920.webp",
   "w": 1920,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAwCdASoQABQAPu1kqk4ppaQiMAgBMB2JQBhmhDwsAhS+BAo14AD+9CiJQ6vXrvLDsI5EqKbuNM/A6R12JQIekYAAAA==",
@@ -949,7 +989,7 @@
   }
  },
  "univers-chocolat-noir": {
-  "src": "/images/univers/univers-chocolat-noir.a00de646.webp",
+  "src": "/images/univers/univers-chocolat-noir.a00de646.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADwAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JZQDE2BCM5kx857icZ3LyAP7y3Nol7jaF3Q82SllUIEs0MTa9A0Drg9ajBS2OpftEf4EekxZvhNMItOjQcdu02AA=",
@@ -960,7 +1000,7 @@
   }
  },
  "univers-dattes": {
-  "src": "/images/univers/univers-dattes.27d4063a.webp",
+  "src": "/images/univers/univers-dattes.27d4063a.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoQABgAPu1iqk4ppaQiMAgBMB2JQBYdgvc9DsLtTLCsYHQAAP7sRCUsKUcokMMIsug2u3mrIXOP5ib+PPiJTKmESbnkBgG9jwsRf5z53hOyrwsfJYZ7LFJEdJcyR3vAAAA=",
@@ -971,7 +1011,7 @@
   }
  },
  "univers-fleur-oranger": {
-  "src": "/images/univers/univers-fleur-oranger.34ecb89f.webp",
+  "src": "/images/univers/univers-fleur-oranger.34ecb89f.w1800.webp",
   "w": 1800,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZgCsABuH+fNdAOaMp6fvQADyQdMCDOfTO1u9pnUK7JjE/pZkwcEnX56qOxu2gPeAr+hUOc18pxh6gte8fbPL6/mL65ia83g/qdMd87ugvgwA",
@@ -982,7 +1022,7 @@
   }
  },
  "univers-noisette": {
-  "src": "/images/univers/univers-noisette.e2c83ef6.webp",
+  "src": "/images/univers/univers-noisette.e2c83ef6.w1702.webp",
   "w": 1702,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAACwAwCdASoQABcAPu1kqU2ppaQiMAgBMB2JaACdMoRwAAPu6XBoWAD54yLBrTVqnP4R0L89/0JcOxDP1x6bF9VAVttqJYyEntxwlfV+6gZkyHYnWaDUJBiK8D/elgAA",
@@ -993,7 +1033,7 @@
   }
  },
  "univers-pistache": {
-  "src": "/images/univers/univers-pistache.17cef325.webp",
+  "src": "/images/univers/univers-pistache.17cef325.w1600.webp",
   "w": 1600,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoQABgALrV2u12jqampiYC0SgC06EOUMlPlYil61God1AAA/lknXTNTh3J2D/G72Z7xbwYNt/6lcAwWXIwn2GgydT6pFIVH5T5t5dfMDa9bXJZTgAA=",
@@ -1004,7 +1044,7 @@
   }
  },
  "univers-praline": {
-  "src": "/images/univers/univers-praline.527d81d1.webp",
+  "src": "/images/univers/univers-praline.527d81d1.w1920.webp",
   "w": 1920,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoQABQAPu1iqU2ppaOiMAgBMB2JYgCdMoACfFcgzAw9zBrHKAD6PYHUIKUmOI0C3zzp1vCr6ZCCjwVp6Ccl+OH3ehOiSBcvsNaGKR/6hI0sCAVAAAA=",
@@ -1015,7 +1055,7 @@
   }
  },
  "univers-vanille": {
-  "src": "/images/univers/univers-vanille.d2835c28.webp",
+  "src": "/images/univers/univers-vanille.d2835c28.w1920.webp",
   "w": 1920,
   "h": 2400,
   "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAABwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JYwCdACHgAGODxoAA/t5ZV6kXX1pEOuBHcfpBeGAAAA==",

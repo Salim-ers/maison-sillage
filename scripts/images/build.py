@@ -13,9 +13,10 @@ Sources publiées :
 Aucune image générée montrant un emballage n'est publiée telle quelle : ses étiquettes
 (texte et logo inventés) ont été remplacées par relabel.py, ou elle est écartée.
 
-Écrit dans public/images/ des masters WebP (next/image en dérive les tailles AVIF/WebP),
+Écrit dans public/images/ chaque image en plusieurs largeurs WebP, prêtes à servir telles quelles
+(lib/image-loader.ts choisit la bonne pour chaque écran : aucun calcul à la première visite),
 data/images.generated.json (dimensions, aperçu flou, crédit) et l'image de partage.
-Aucune image n'est agrandie : chaque master garde au plus la définition de sa source.
+Aucune image n'est agrandie : la plus grande largeur est celle de la source.
 """
 
 from __future__ import annotations
@@ -38,6 +39,8 @@ MANIFEST = ROOT / "data" / "images.generated.json"
 STOCK_META = json.loads((ROOT / "scripts" / "images" / "stock.json").read_text(encoding="utf-8"))
 
 SEASONS = ["printemps", "ete", "automne", "hiver"]
+# largeurs publiées : les mêmes que images.deviceSizes + images.imageSizes (next.config.ts) et lib/image-loader.ts
+WIDTHS = [64, 96, 160, 256, 384, 480, 640, 960, 1280, 1920, 2560, 3840]
 LIGHTS = ["jour", "coucher", "nuit"]
 
 # photographies Unsplash qui ne sont pas publiées telles quelles
@@ -101,6 +104,9 @@ def plan() -> list[dict]:
         P.append({"key": f.stem, "src": f, "rel": f"products/{f.stem}.webp", "max": 3200, "q": 86, "credit": studio})
     for f in sorted(COMPOSED.glob("acc-*.png")):
         P.append({"key": f.stem, "src": f, "rel": f"products/{f.stem}.webp", "max": 1600, "q": 86, "credit": credit_of(MOCKUP_BASE[f.stem], "visuel d'intention, logo appliqué")})
+    brand = {"name": "Maison Sillage", "source": "Logo d'origine"}
+    for n in ["logo-light", "logo-dark", "emblem-light", "emblem-dark"]:
+        P.append({"key": f"brand-{n}", "src": ROOT / "public" / "brand" / f"{n}.png", "rel": f"brand/{n}.webp", "max": 1200, "q": 90, "credit": brand, "alpha": True})
     for k in STOCK_META:
         if k.startswith(("fond-", "acc-")) or k in STOCK_SKIP:
             continue
@@ -109,18 +115,28 @@ def plan() -> list[dict]:
     return P
 
 
-def publish(im: Image.Image, rel: str, q: int) -> dict:
-    """Écrit le master WebP sous un nom à empreinte (hero/ete-coucher.3fa9c1d2.webp) :
-    une photographie modifiée change d'adresse et n'est jamais servie depuis un cache périmé."""
+def encode(im: Image.Image, q: int, method: int) -> bytes:
     buf = io.BytesIO()
-    im.save(buf, "WEBP", quality=q, method=6)
-    data = buf.getvalue()
-    stem = rel[: -len(".webp")]
-    hashed = f"{stem}.{hashlib.sha1(data).hexdigest()[:8]}.webp"
-    path = OUT / hashed
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_bytes(data)
-    return {"src": "/images/" + hashed, "w": im.size[0], "h": im.size[1], "blur": blur_data(im)}
+    im.save(buf, "WEBP", quality=q, method=method, alpha_quality=95)
+    return buf.getvalue()
+
+
+def publish(im: Image.Image, rel: str, q: int) -> tuple[dict, list[Path]]:
+    """Écrit l'image en plusieurs largeurs sous un nom à empreinte (hero/ete-coucher.3fa9c1d2.w1920.webp) :
+    une photographie modifiée change d'adresse et n'est jamais servie depuis un cache périmé.
+    L'adresse de référence (src) est la plus grande largeur, celle de la source."""
+    W, H = im.size
+    full = encode(im, q, 6)
+    stem = f"{rel[: -len('.webp')]}.{hashlib.sha1(full).hexdigest()[:8]}"
+    files = []
+    for w in [x for x in WIDTHS if x < W] + [W]:
+        data = full if w == W else encode(im.resize((w, max(1, round(H * w / W))), Image.LANCZOS), q, 5)
+        path = OUT / f"{stem}.w{w}.webp"
+        path.parent.mkdir(parents=True, exist_ok=True)
+        if not path.exists() or path.read_bytes() != data:
+            path.write_bytes(data)
+        files.append(path)
+    return {"src": f"/images/{stem}.w{W}.webp", "w": W, "h": H, "blur": blur_data(im.convert("RGB"))}, files
 
 
 def blur_data(im: Image.Image) -> str:
@@ -157,19 +173,23 @@ def main() -> None:
     sys.stdout.reconfigure(encoding="utf-8")
     manifest: dict[str, dict] = {}
     missing = []
+    published: set[Path] = set()
     for item in plan():
         if not item["src"].exists():
             missing.append(item["key"])
             continue
-        im = Image.open(item["src"]).convert("RGB")
+        im = Image.open(item["src"])
+        im = im.convert("RGBA") if item.get("alpha") else im.convert("RGB")
+        if item.get("alpha"):
+            im = im.crop(im.getbbox())
         if im.size[0] > item["max"]:
             im = im.resize((item["max"], round(im.size[1] * item["max"] / im.size[0])), Image.LANCZOS)
-        entry = publish(im, item["rel"], item["q"])
+        entry, files = publish(im, item["rel"], item["q"])
+        published.update(files)
         entry["credit"] = item["credit"]
         manifest[item["key"]] = entry
-        print(f"  {entry['src'][len('/images/'):]:<58} {im.size[0]}×{im.size[1]}")
+        print(f"  {entry['src'][len('/images/'):]:<62} {im.size[0]}×{im.size[1]} · {len(files)} largeurs")
     # nettoyage : tout fichier publié qui n'appartient plus au manifeste est retiré
-    published = {OUT / m["src"][len("/images/"):] for m in manifest.values()}
     for f in OUT.rglob("*.webp"):
         if f not in published:
             f.unlink()
