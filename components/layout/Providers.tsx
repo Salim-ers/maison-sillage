@@ -4,6 +4,7 @@ import { MotionConfig } from "motion/react";
 import { StoreProvider } from "@/lib/store";
 import { AmbianceProvider } from "@/lib/ambiance";
 import { FlyToCart } from "@/components/cart/FlyToCart";
+import { PageTransition } from "./PageTransition";
 
 export function Providers({ children }: { children: React.ReactNode }) {
   return (
@@ -12,6 +13,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
         <StoreProvider>
           {children}
           <FlyToCart />
+          <PageTransition />
         </StoreProvider>
       </AmbianceProvider>
     </MotionConfig>

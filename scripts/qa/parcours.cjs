@@ -216,6 +216,40 @@ async function redirections(b) {
   await p.close();
 }
 
+async function passage(b) {
+  console.log("TRANSITION DE PAGE");
+  const ctx = await b.newContext({ viewport: { width: 1440, height: 900 } });
+  const p = await ctx.newPage();
+  const errs = [];
+  p.on("pageerror", (e) => errs.push(String(e)));
+  await p.goto(BASE + "/sirops", { waitUntil: "networkidle" });
+  await p.waitForTimeout(4000); // écran d'ouverture levé
+  const overlay = p.locator("[data-houle]");
+  await p.getByRole("navigation", { name: /première partie/ }).getByRole("link", { name: "Boutique" }).click();
+  await p.waitForTimeout(900);
+  check(await overlay.getByText("Cap sur", { exact: true }).isVisible(), "la houle couvre la page : « Cap sur »");
+  check(await overlay.getByText("La Boutique", { exact: true }).isVisible(), "destination annoncée : La Boutique");
+  await p.waitForURL("**/boutique");
+  const gone = await overlay.waitFor({ state: "detached", timeout: 5000 }).then(() => true, () => false);
+  check(gone, "la vague passe et découvre la page");
+  await p.goBack();
+  await p.waitForURL("**/sirops");
+  check((await overlay.count()) === 0, "retour arrière : pas de houle");
+  await p.getByRole("link", { name: /Découvrir aussi les poudres/ }).click();
+  await p.waitForTimeout(900);
+  check(await overlay.getByText("Les Poudres", { exact: true }).isVisible(), "lien de contenu : « Les Poudres »");
+  await p.waitForURL("**/poudres");
+  check(errs.length === 0, `aucune erreur JavaScript ${errs.length ? JSON.stringify(errs) : ""}`);
+  await ctx.close();
+  const rctx = await b.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: "reduce" });
+  const r = await rctx.newPage();
+  await r.goto(BASE + "/sirops", { waitUntil: "networkidle" });
+  await r.getByRole("navigation", { name: /première partie/ }).getByRole("link", { name: "Boutique" }).click();
+  await r.waitForTimeout(200);
+  check((await r.locator("[data-houle]").count()) === 0, "mouvement réduit : navigation directe, sans houle");
+  await rctx.close();
+}
+
 async function mobile(b) {
   console.log("MOBILE");
   const ctx = await b.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
@@ -271,6 +305,7 @@ async function reduced(b) {
   for (const vp of [{ n: "bureau", w: 1440, h: 900 }, { n: "mobile", w: 390, h: 844 }]) await ambiances(b, vp);
   await boutique(b);
   await redirections(b);
+  await passage(b);
   await mobile(b);
   await reduced(b);
   await b.close();

@@ -88,6 +88,7 @@ export function Creations() {
       const dx = e.clientX - startX;
       if (Math.abs(dx) > 4 && !moved) {
         moved = true;
+        el.dataset.glisse = ""; // la transition de page ignore le clic qui termine un glisser
         el.style.scrollSnapType = "none";
         el.style.cursor = "grabbing";
       }
@@ -111,6 +112,7 @@ export function Creations() {
         e.stopPropagation();
         moved = false;
       }
+      delete el.dataset.glisse;
     };
     el.addEventListener("pointerdown", onDown);
     window.addEventListener("pointermove", onMove);
