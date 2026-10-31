@@ -230,7 +230,7 @@ for season, flavor in SEASON_FLAVOR.items():
 MATIERES = {
     "printemps-fraises": "wild strawberries and strawberry flowers on a linen cloth",
     "printemps-fleurs": "a branch of pale pink cherry blossom in soft spring light",
-    "ete-peches": "ripe white peaches, one halved, in a wooden crate in an orchard",
+    "ete-peches": "ripe white peaches, one halved, in a plain unmarked wooden crate in an orchard, no lettering, no logo, no brand name anywhere",
     "ete-fleurs-oranger": "orange blossom flowers and glossy orange-tree leaves",
     "automne-poires": "ripe pears hanging on a branch in an orchard",
     "automne-epices": "Bourbon vanilla pods, cinnamon sticks and star anise on an old wooden board",

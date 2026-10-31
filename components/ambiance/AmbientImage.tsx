@@ -77,7 +77,7 @@ export function AmbientImage({
   const top = layers[layers.length - 1];
 
   // ambiance mémorisée ≠ ambiance par défaut : le calque serveur est masqué en CSS (data-amb-custom)
-  // en attendant la bonne photographie. Si c'est déjà la bonne (le hero ne change qu'avec la lumière),
+  // en attendant la bonne photographie. Si c'est déjà la bonne (photographie qui ne suit pas l'ambiance),
   // aucun calque ne viendra la remplacer : elle redevient visible.
   useEffect(() => {
     if (!ready || !document.documentElement.hasAttribute("data-amb-custom")) return;

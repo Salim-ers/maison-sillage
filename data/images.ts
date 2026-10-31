@@ -80,6 +80,9 @@ const ALT: Record<string, string> = {
   "matiere-cerisier": "Branche de cerisier en fleurs dans la lumière du printemps",
   "matiere-poires": "Poires mûres sur la branche, au verger",
   "matiere-fleurs-oranger": "Fleurs et feuilles d'oranger",
+  "matiere-peches": "Pêches blanches mûres dans une cagette de bois, l'une coupée en deux, au verger",
+  "matiere-epices": "Gousses de vanille, bâtons de cannelle et badiane sur une vieille planche de bois",
+  "matiere-dattes": "Dattes Medjool brillantes dans une coupe de laiton ciselé",
   "paysage-printemps": "Jardin en terrasses d'un village méditerranéen au printemps, cerisiers et amandiers en fleurs, la mer au loin",
   "paysage-ete": "Terrasse sous la vigne au-dessus d'une baie méditerranéenne à l'heure dorée, cyprès et village perché",
   "paysage-automne": "Verger de poiriers et vignes d'automne sur des collines dominant un lac, ferme de pierre",
@@ -122,20 +125,30 @@ export function photo(key: string, alt?: string, position?: string): Photo {
   return { src: g.src, width: g.w, height: g.h, alt: text ?? "", blurDataURL: g.blur, position, credit: g.credit };
 }
 
-/* ─────────────── Hero : la scène d'été, trois lumières, bureau + mobile ─────────────── */
+/* ─────────────── Hero : une scène par saison, trois lumières, bureau + mobile ─────────────── */
 
 /** Point focal du hero bureau (fractions de l'image) : il reste visible quel que soit le format d'écran */
 export const HERO_FOCUS = { x: 0.58, y: 0.55 };
-export const HERO_PRODUCTS = { sirop: "peche-blanche-fleur-oranger", poudre: "poudre-peche-blanche-fleur-oranger" };
 
-export function heroPhotos(light: Light): { desktop: Photo; mobile: Photo } {
-  const alt = `Sur une balustrade de pierre au-dessus de la Méditerranée, ${LIGHT_ALT[light]} : le flacon et le sachet Pêche blanche & Fleur d'oranger, un verre glacé, des pêches blanches, et un trois-mâts au large.`;
-  return { desktop: photo(`hero-ete-${light}`, alt, "58% 55%"), mobile: photo(`hero-mobile-ete-${light}`, alt) };
+/** ce que montre le hero de chaque saison ; {light} reçoit la lumière */
+const HERO_ALT: Record<SeasonId, string> = {
+  printemps:
+    "Sur une balustrade de pierre au-dessus d'une baie méditerranéenne, {light}, sous une branche de cerisier en fleurs : le flacon et le sachet Fraise des bois & Crème de madeleine, un milkshake à la fraise, une coupe de fraises, une madeleine, et un trois-mâts au large.",
+  ete: "Sur une balustrade de pierre au-dessus de la Méditerranée, {light} : le flacon et le sachet Pêche blanche & Fleur d'oranger, un verre glacé, des pêches blanches, et un trois-mâts au large.",
+  automne:
+    "Sur un rocher face à la mer, {light} : le flacon et le sachet Poire rôtie & Sablé noisette, un latte glacé coiffé de crème et d'une tranche de poire, des poires mûres, des gousses de vanille et des feuilles d'automne, et un trois-mâts au large.",
+  hiver:
+    "Sur un muret de pierre poudré de neige au-dessus d'une baie, {light} : le flacon et le sachet Datte fondante & Crème brûlée, un latte aux éclats de caramel, une coupe de dattes, un village enneigé, et un trois-mâts au large.",
+};
+
+export function heroPhotos(season: SeasonId, light: Light): { desktop: Photo; mobile: Photo } {
+  const alt = HERO_ALT[season].replace("{light}", LIGHT_ALT[light]);
+  return { desktop: photo(`hero-${season}-${light}`, alt, "58% 55%"), mobile: photo(`hero-mobile-${season}-${light}`, alt) };
 }
 
 /* ─────────────── Histoire et saisons ─────────────── */
 
-export const storyPhoto = (season: SeasonId): Photo => photo(`story-${season}`);
+export const storyPhoto = (season: SeasonId, light: Light): Photo => photo(`story-${season}-${light}`, `${ALT[`story-${season}`]}, ${LIGHT_ALT[light]}`);
 export const storyDetail = (season: SeasonId): Photo => photo(`detail-${season}`);
 
 /** Paysage et matière de chaque saison (photographies sans emballage) */
@@ -143,7 +156,7 @@ export const seasonImages: Record<SeasonId, { paysage: Photo; matiere: Photo }> 
   printemps: { paysage: photo("paysage-printemps"), matiere: photo("matiere-fraises") },
   ete: { paysage: photo("paysage-ete"), matiere: photo("matiere-fleurs-oranger") },
   automne: { paysage: photo("paysage-automne"), matiere: photo("matiere-poires") },
-  hiver: { paysage: photo("paysage-hiver"), matiere: photo("univers-dattes") },
+  hiver: { paysage: photo("paysage-hiver"), matiere: photo("matiere-dattes") },
 };
 export const seasonAlt = (s: SeasonId) => `Paysage de ${SEASON_NAME[s]}`;
 
@@ -179,7 +192,7 @@ export const pages = {
   atelier: photo("boisson-espresso-2"),
   recettes: photo("boisson-chocolat-3"),
   professionnels: photo("barista"),
-  maison: { carnet: photo("detail-printemps"), matieres: photo("univers-vanille") },
+  maison: { carnet: photo("detail-printemps"), matieres: photo("matiere-epices") },
   /** une photographie par étape de la démarche */
   savoirFaire: [photo("matiere-cerisier"), photo("univers-choco-orange"), photo("univers-cacao"), photo("boisson-latte-1"), photo("univers-praline"), photo("gamme-maison")],
 };
@@ -190,7 +203,7 @@ export const articlePhotos: Record<string, Photo> = {
   "l-art-du-latte": photo("boisson-latte-1"),
   "boissons-gourmandes-de-saison": photo("paysage-automne"),
   "imaginer-une-carte-de-boissons": photo("barista"),
-  "l-inspiration-des-routes-maritimes": photo("story-automne"),
+  "l-inspiration-des-routes-maritimes": storyPhoto("automne", "coucher"),
 };
 
 /** Crédits : toutes les sources publiées, regroupées par auteur */

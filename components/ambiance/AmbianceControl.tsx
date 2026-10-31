@@ -103,7 +103,7 @@ export function AmbianceControl({ tone }: { tone: "photo" | "page" }) {
               <div className="grid grid-cols-3 gap-2">
                 {lights.map((l) => {
                   const on = target.light === l.id;
-                  const p = heroPhotos(l.id).desktop;
+                  const p = heroPhotos(target.season, l.id).desktop;
                   return (
                     <label key={l.id} className={cn("group/opt relative block cursor-pointer overflow-hidden rounded-[2px] border transition", on ? "border-ink" : "border-line hover:border-ink/40")}>
                       <input

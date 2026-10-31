@@ -5,8 +5,8 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "motion/react";
 import { useReducedMotion } from "@/lib/useReduced";
 import { useAmbiance, useAmbianceAssets } from "@/lib/ambiance";
-import { HERO_FOCUS, HERO_PRODUCTS, heroPhotos } from "@/data/images";
-import { lights } from "@/data/collections";
+import { HERO_FOCUS, heroPhotos } from "@/data/images";
+import { lights, seasons } from "@/data/collections";
 import { getProduct } from "@/data/products";
 import { AmbientImage } from "@/components/ambiance/AmbientImage";
 import { SeasonDrift } from "@/components/ambiance/Atmosphere";
@@ -17,6 +17,7 @@ const MOBILE_SIZES = "100vw";
 const LINES = ["Des saveurs", "qui traversent", "le temps."];
 /** composition grand écran (photographie 16:9) ; en dessous ou en portrait : photographie verticale */
 const WIDE = "(min-width: 1024px) and (orientation: landscape)";
+const ESCALE = { printemps: "de printemps", ete: "d'été", automne: "d'automne", hiver: "d'hiver" };
 
 /**
  * Hero cinématographique : un grand voilier au large et, au premier plan,
@@ -29,11 +30,11 @@ export function Hero() {
   const amb = useAmbiance();
   const reduce = useReducedMotion();
   const ref = useRef<HTMLElement>(null);
-  // une seule scène, celle d'été, dans les trois lumières : les particules suivent la saison choisie
-  const { desktop, mobile } = heroPhotos(amb.light);
+  // une scène par saison, dans les trois lumières
+  const { desktop, mobile } = heroPhotos(amb.season, amb.light);
   const focus = HERO_FOCUS;
   useAmbianceAssets((a) => {
-    const p = heroPhotos(a.light);
+    const p = heroPhotos(a.season, a.light);
     const small = typeof window !== "undefined" && !window.matchMedia(WIDE).matches;
     return [small && p.mobile ? { photo: p.mobile, sizes: MOBILE_SIZES, quality: 85 } : { photo: p.desktop, sizes: SIZES, quality: 85 }];
   });
@@ -57,7 +58,7 @@ export function Hero() {
 
   const light = lights.find((l) => l.id === amb.light)!;
   // la création nommée est celle qui figure sur la photographie
-  const product = getProduct(HERO_PRODUCTS.sirop)!;
+  const product = getProduct(seasons.find((s) => s.id === amb.season)!.sirop)!;
 
   return (
     <section ref={ref} className="sticky top-0 isolate h-[100svh] min-h-[600px] overflow-hidden bg-[rgb(var(--a-veil))] text-creme" aria-labelledby="hero-titre">
@@ -130,7 +131,7 @@ export function Hero() {
             aria-live="polite"
           >
             <span className="mention block text-creme/80">
-              Escale d&apos;été · {light.name.toLowerCase()}
+              Escale {ESCALE[amb.season]} · {light.name.toLowerCase()}
             </span>
             <span className="lien mt-1 inline-block font-serif text-[1.15rem] italic">{product.name}</span>
           </Link>

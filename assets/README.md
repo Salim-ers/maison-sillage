@@ -36,6 +36,10 @@ maritime pour la section « Histoire ». La version **coucher de soleil** est g�
 (ciel bleu de midi, ou clair de lune, étoiles, fenêtres et lanternes allumées). Le hero existe aussi en **version
 verticale 3:4** pour les téléphones, recomposée à partir de la même scène.
 
+Les étiquettes générées sur les scènes du hero sont approximatives (anciens noms, texte inventé) : `scripts/images/relabel.py`
+pose la véritable étiquette de chaque produit visible, à partir de zones relevées scène par scène, et écrit le résultat
+dans `assets/composed/`, que publie `build.py`.
+
 Sur le site, seules des particules de saison (pétales, lueurs dorées, feuilles, neige) sont superposées en animation.
 
 ## Inventaire (81 prises)
@@ -54,6 +58,10 @@ Sur le site, seules des particules de saison (pétales, lueurs dorées, feuilles
 | `matiere-*` | 9 | Matières de saison, gros plan de la poudre |
 | `boisson-*` | 8 | Galerie « Usages », recettes |
 | `comptoir-professionnel` | 1 | Section et page professionnels, journal |
+
+Ne sont pas publiées : les prises générées qui montrent un emballage, hors hero (packshots, duos, gammes, coffret, scènes,
+boissons, gros plan de la poudre, comptoir), remplacées par les packshots composés et des photographies Unsplash ;
+et `matiere-hiver-chocolat`, sans emplacement sur le site.
 
 `assets/originals/` conserve les fichiers transmis au départ (non modifiés) : les photographies d'emballage servent de
 références à la génération ; les anciennes vues maritimes et saisonnières ne sont plus utilisées par le site.

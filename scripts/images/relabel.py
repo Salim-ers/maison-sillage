@@ -64,6 +64,103 @@ SCENES: dict[str, list[dict]] = {
         {"kind": "bottle", "slug": FRONT_SIROP, "box": (305, 870, 585, 1630)},
         {"kind": "flat", "slug": FRONT_POUDRE, "box": (730, 780, 1115, 1520)},
     ],
+    # autres saisons : la création de la saison au premier plan, deux flacons Signatures flous au second plan
+    "hero-printemps-coucher": [
+        {"kind": "bottle", "slug": "fraise-des-bois-creme-de-madeleine", "box": (1925, 940, 2290, 1800)},
+        {"kind": "flat", "slug": "poudre-fraise-des-bois-creme-de-madeleine", "box": (2530, 1000, 3020, 1820)},
+        {"kind": "bottle", "slug": "pistache-grillee-biscuit-au-beurre", "bb": (3205, 985, 3390, 1378), "R": 160, "fit": "height", "wide": 1.15, "soft": 3.4},
+        {"kind": "bottle", "slug": "caramel-blond-abricot-confit", "bb": (3398, 985, 3580, 1378), "R": 155, "fit": "height", "wide": 1.14, "soft": 3.4},
+    ],
+    "hero-printemps-jour": [
+        {"kind": "bottle", "slug": "fraise-des-bois-creme-de-madeleine", "box": (1925, 940, 2290, 1800)},
+        {"kind": "flat", "slug": "poudre-fraise-des-bois-creme-de-madeleine", "box": (2530, 1000, 3020, 1820)},
+        {"kind": "bottle", "slug": "pistache-grillee-biscuit-au-beurre", "bb": (3204, 978, 3392, 1385), "R": 160, "fit": "height", "wide": 1.15, "soft": 3.4},
+        {"kind": "bottle", "slug": "caramel-blond-abricot-confit", "bb": (3402, 978, 3575, 1385), "R": 155, "fit": "height", "wide": 1.14, "soft": 3.4},
+    ],
+    "hero-printemps-nuit": [
+        # de nuit, l'étiquette se détache mal du flacon : zone relevée sur la photographie
+        {"kind": "bottle", "slug": "fraise-des-bois-creme-de-madeleine", "bb": (1956, 962, 2270, 1702)},
+        {"kind": "flat", "slug": "poudre-fraise-des-bois-creme-de-madeleine", "box": (2530, 950, 3020, 1760)},
+        {"kind": "bottle", "slug": "pistache-grillee-biscuit-au-beurre", "bb": (3194, 919, 3372, 1312), "R": 155, "fit": "height", "wide": 1.15, "soft": 3.4},
+        {"kind": "bottle", "slug": "caramel-blond-abricot-confit", "bb": (3379, 919, 3550, 1300), "R": 150, "fit": "height", "wide": 1.14, "soft": 3.4},
+    ],
+    "hero-automne-coucher": [
+        {"kind": "bottle", "slug": "poire-rotie-sable-noisette", "box": (2015, 760, 2385, 1600), "keep": [("disk", 1935, 1640, 140)]},
+        {"kind": "flat", "slug": "poudre-poire-rotie-sable-noisette", "box": (2490, 690, 2920, 1500)},
+        {"kind": "bottle", "slug": "vanille-torrefiee-praline-blanc", "bb": (3426, 825, 3546, 1150), "R": 67, "fit": "height", "soft": 2.6},
+        {"kind": "bottle", "slug": "caramel-blond-abricot-confit", "bb": (3552, 825, 3690, 1160), "R": 80, "fit": "height", "soft": 2.6},
+    ],
+    "hero-automne-jour": [
+        {"kind": "bottle", "slug": "poire-rotie-sable-noisette", "box": (2015, 740, 2385, 1620), "keep": [("disk", 1937, 1640, 140)]},
+        {"kind": "flat", "slug": "poudre-poire-rotie-sable-noisette", "box": (2480, 700, 2930, 1520)},
+        {"kind": "bottle", "slug": "vanille-torrefiee-praline-blanc", "bb": (3426, 846, 3550, 1160), "R": 67, "fit": "height", "soft": 2.6},
+        {"kind": "bottle", "slug": "caramel-blond-abricot-confit", "bb": (3558, 850, 3692, 1162), "R": 78, "fit": "height", "soft": 2.6},
+    ],
+    "hero-automne-nuit": [
+        {"kind": "bottle", "slug": "poire-rotie-sable-noisette", "box": (1975, 740, 2345, 1620), "keep": [("disk", 1900, 1650, 140)]},
+        {"kind": "flat", "slug": "poudre-poire-rotie-sable-noisette", "box": (2450, 700, 2900, 1520)},
+        # lanterne posée devant les deux flacons du fond
+        {"kind": "bottle", "slug": "vanille-torrefiee-praline-blanc", "bb": (3398, 846, 3525, 1160), "R": 68, "fit": "height", "soft": 2.6, "keep": [("disk", 3519, 1094, 78), ("rect", 3400, 1140, 3650, 1300)]},
+        {"kind": "bottle", "slug": "caramel-blond-abricot-confit", "bb": (3531, 850, 3668, 1162), "R": 80, "fit": "height", "soft": 2.6, "keep": [("disk", 3519, 1094, 78), ("rect", 3400, 1140, 3650, 1300)]},
+    ],
+    "hero-hiver-jour": [
+        {"kind": "bottle", "slug": "datte-fondante-creme-brulee", "box": (1895, 790, 2300, 1800)},
+        {"kind": "flat", "slug": "poudre-datte-fondante-creme-brulee", "box": (2420, 850, 2960, 1830)},
+        {"kind": "bottle", "slug": "chocolat-noir-orange-confite", "bb": (3205, 990, 3436, 1470), "R": 195, "fit": "height", "wide": 1.07, "soft": 3.4},
+        {"kind": "bottle", "slug": "vanille-torrefiee-praline-blanc", "bb": (3458, 1002, 3676, 1470), "R": 190, "fit": "height", "wide": 1.12, "soft": 3.4},
+    ],
+    "hero-hiver-coucher": [
+        {"kind": "bottle", "slug": "datte-fondante-creme-brulee", "box": (1900, 800, 2300, 1800)},
+        {"kind": "flat", "slug": "poudre-datte-fondante-creme-brulee", "box": (2420, 860, 2960, 1820)},
+        {"kind": "bottle", "slug": "chocolat-noir-orange-confite", "bb": (3208, 990, 3436, 1460), "R": 195, "fit": "height", "wide": 1.07, "soft": 3.4},
+        {"kind": "bottle", "slug": "vanille-torrefiee-praline-blanc", "bb": (3456, 1005, 3680, 1440), "R": 190, "fit": "height", "wide": 1.14, "soft": 3.4},
+    ],
+    "hero-hiver-nuit": [
+        {"kind": "bottle", "slug": "datte-fondante-creme-brulee", "bb": (1958, 830, 2312, 1745)},
+        {"kind": "flat", "slug": "poudre-datte-fondante-creme-brulee", "box": (2440, 860, 2960, 1800)},
+        {"kind": "bottle", "slug": "chocolat-noir-orange-confite", "bb": (3220, 990, 3444, 1462), "R": 195, "fit": "height", "wide": 1.07, "soft": 3.4},
+        # toit de la lanterne devant le flacon de droite
+        {"kind": "bottle", "slug": "vanille-torrefiee-praline-blanc", "bb": (3458, 1008, 3675, 1462), "R": 190, "fit": "height", "wide": 1.12, "soft": 3.4,
+         "keep": [("rect", 3648, 1240, 3680, 1320), ("rect", 3610, 1310, 3720, 1360), ("rect", 3570, 1355, 3760, 1405), ("rect", 3515, 1400, 3800, 1700)]},
+    ],
+    "hero-mobile-printemps-coucher": [
+        {"kind": "bottle", "slug": "fraise-des-bois-creme-de-madeleine", "box": (585, 860, 880, 1580)},
+        {"kind": "flat", "slug": "poudre-fraise-des-bois-creme-de-madeleine", "box": (1030, 910, 1370, 1520)},
+    ],
+    "hero-mobile-printemps-jour": [
+        {"kind": "bottle", "slug": "fraise-des-bois-creme-de-madeleine", "box": (592, 860, 885, 1580)},
+        {"kind": "flat", "slug": "poudre-fraise-des-bois-creme-de-madeleine", "box": (1030, 900, 1400, 1520)},
+    ],
+    "hero-mobile-printemps-nuit": [
+        {"kind": "bottle", "slug": "fraise-des-bois-creme-de-madeleine", "bb": (600, 902, 852, 1540)},
+        {"kind": "flat", "slug": "poudre-fraise-des-bois-creme-de-madeleine", "box": (1020, 900, 1390, 1520)},
+    ],
+    "hero-mobile-automne-coucher": [
+        {"kind": "bottle", "slug": "poire-rotie-sable-noisette", "box": (420, 820, 724, 1560)},
+        {"kind": "flat", "slug": "poudre-poire-rotie-sable-noisette", "box": (810, 760, 1160, 1450)},
+    ],
+    "hero-mobile-automne-jour": [
+        {"kind": "bottle", "slug": "poire-rotie-sable-noisette", "box": (420, 830, 725, 1560)},
+        {"kind": "flat", "slug": "poudre-poire-rotie-sable-noisette", "box": (810, 760, 1160, 1450)},
+    ],
+    # lanterne posée entre le flacon et le sachet
+    "hero-mobile-automne-nuit": [
+        {"kind": "bottle", "slug": "poire-rotie-sable-noisette", "bb": (422, 852, 690, 1505), "keep": [("rect", 678, 1415, 900, 1800)]},
+        {"kind": "flat", "slug": "poudre-poire-rotie-sable-noisette", "box": (810, 760, 1160, 1440)},
+    ],
+    "hero-mobile-hiver-coucher": [
+        {"kind": "bottle", "slug": "datte-fondante-creme-brulee", "box": (520, 850, 835, 1670)},
+        # dattes posées devant le bas du sachet
+        {"kind": "flat", "slug": "poudre-datte-fondante-creme-brulee", "box": (920, 900, 1350, 1680), "keep": [("disk", 1382, 1664, 120), ("disk", 1184, 1700, 100), ("rect", 1050, 1700, 1536, 2048)]},
+    ],
+    "hero-mobile-hiver-jour": [
+        {"kind": "bottle", "slug": "datte-fondante-creme-brulee", "box": (520, 850, 835, 1670)},
+        {"kind": "flat", "slug": "poudre-datte-fondante-creme-brulee", "box": (920, 900, 1350, 1680), "keep": [("disk", 1378, 1668, 118), ("disk", 1195, 1700, 100), ("rect", 1050, 1700, 1536, 2048)]},
+    ],
+    "hero-mobile-hiver-nuit": [
+        {"kind": "bottle", "slug": "datte-fondante-creme-brulee", "bb": (552, 897, 828, 1618)},
+        {"kind": "flat", "slug": "poudre-datte-fondante-creme-brulee", "box": (935, 900, 1360, 1680), "keep": [("disk", 1380, 1670, 118), ("disk", 1197, 1700, 100), ("rect", 1050, 1700, 1536, 2048)]},
+    ],
 }
 
 LABEL_RATIO = 360 / 750  # largeur / hauteur de la maquette d'étiquette
@@ -143,7 +240,8 @@ def place(a: np.ndarray, spec: dict, label: np.ndarray, paper: np.ndarray) -> np
         R = spec.get("R", (old_w / 2) / 0.89)
         if spec.get("fit") == "height":
             new_h = old_h * 1.04
-            flat_w = new_h * LABEL_RATIO
+            # flacon flou dont l'étiquette d'origine est plus large que la maquette : légèrement élargie
+            flat_w = new_h * LABEL_RATIO * spec.get("wide", 1.0)
         else:
             flat_w = max(new_h * LABEL_RATIO, 2 * np.arcsin(0.89) * R * 1.04)
             new_h = flat_w / LABEL_RATIO

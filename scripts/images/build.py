@@ -76,12 +76,12 @@ def plan() -> list[dict]:
     """clé logique → source, chemin publié, largeur max, qualité, crédit"""
     P: list[dict] = []
     gen_note = {"name": "Maison Sillage", "source": "Image générée (gpt-image-2)"}
-    for l in LIGHTS:
-        relab = {**gen_note, "note": "étiquettes remplacées par l'étiquette de la gamme"}
-        P.append({"key": f"hero-ete-{l}", "src": COMPOSED / f"hero-ete-{l}.png", "rel": f"hero/ete-{l}.webp", "max": 3840, "q": 82, "credit": relab})
-        P.append({"key": f"hero-mobile-ete-{l}", "src": COMPOSED / f"hero-mobile-ete-{l}.png", "rel": f"hero/mobile-ete-{l}.webp", "max": 1536, "q": 84, "credit": relab})
+    relab = {**gen_note, "note": "étiquettes remplacées par l'étiquette de la gamme"}
     for s in SEASONS:
-        P.append({"key": f"story-{s}", "src": GEN / f"story-{s}-coucher.png", "rel": f"story/{s}.webp", "max": 2560, "q": 84, "credit": gen_note})
+        for l in LIGHTS:
+            P.append({"key": f"hero-{s}-{l}", "src": COMPOSED / f"hero-{s}-{l}.png", "rel": f"hero/{s}-{l}.webp", "max": 3840, "q": 82, "credit": relab})
+            P.append({"key": f"hero-mobile-{s}-{l}", "src": COMPOSED / f"hero-mobile-{s}-{l}.png", "rel": f"hero/mobile-{s}-{l}.webp", "max": 1536, "q": 84, "credit": relab})
+            P.append({"key": f"story-{s}-{l}", "src": GEN / f"story-{s}-{l}.png", "rel": f"story/{s}-{l}.webp", "max": 2560, "q": 84, "credit": gen_note})
         P.append({"key": f"detail-{s}", "src": GEN / f"detail-{s}.png", "rel": f"story/detail-{s}.webp", "max": 1024, "q": 86, "credit": gen_note})
         P.append({"key": f"paysage-{s}", "src": GEN / f"paysage-{s}.png", "rel": f"seasons/paysage-{s}.webp", "max": 3072, "q": 84, "credit": gen_note})
     for key, src in {
@@ -89,6 +89,9 @@ def plan() -> list[dict]:
         "matiere-cerisier": "matiere-printemps-fleurs",
         "matiere-poires": "matiere-automne-poires",
         "matiere-fleurs-oranger": "matiere-ete-fleurs-oranger",
+        "matiere-peches": "matiere-ete-peches",
+        "matiere-epices": "matiere-automne-epices",
+        "matiere-dattes": "matiere-hiver-dattes",
     }.items():
         P.append({"key": key, "src": GEN / f"{src}.png", "rel": f"matieres/{key}.webp", "max": 2048, "q": 84, "credit": gen_note})
     studio = {

@@ -439,6 +439,39 @@
    "note": "flacon et sachet de référence générés (gpt-image-2), étiquette et logo d'origine posés en haute définition ; fonds de studio et papier : Pawel Czerwinski, Pixelbuddha Studio, Olga Thelavart (Unsplash)"
   }
  },
+ "hero-automne-coucher": {
+  "src": "/images/hero/automne-coucher.fa51b04d.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAkAA4BaJZgCdAEfog4wD2AA/vHxDjj77PNEh50C/4QAgXSq0/0h2X1gNX6DXd+eAAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-automne-jour": {
+  "src": "/images/hero/automne-jour.28a81bc0.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA4BaJaACdAEI7TO2AAD+5+HVC4pwPYmrA+YkUWdrDF7sCX1DWZMmsc14cf2Rm/OuAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-automne-nuit": {
+  "src": "/images/hero/automne-nuit.5fc37c29.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoQAAkAA4BaJYwCdADG8XvI6gAA/vGmPvtC9woJ6q7lDYe8TbF6GuRvLWnqK+ZQWuAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
  "hero-ete-coucher": {
   "src": "/images/hero/ete-coucher.d8916284.w3840.webp",
   "w": 3840,
@@ -466,6 +499,72 @@
   "w": 3840,
   "h": 2160,
   "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJQBOgB6SAZBgQAD+7NftWBbIX2FtSHFtz151h2QpV0wFWvQsrkAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-hiver-coucher": {
+  "src": "/images/hero/hiver-coucher.32ef915b.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAACwAQCdASoQAAkAA4BaJYgCdAEF02AAAP7zmr7kBYAkr1WiLOy/pZV0DUZcXmhhW3jKDZ1XrKkWywLgAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-hiver-jour": {
+  "src": "/images/hero/hiver-jour.075654b9.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoQAAkAA4BaJYgCdACs6XGGwAD+4V9qHODND64Id5AZy46Sh275RGNQat7pLV/I9vIyQkV5/m0YvvxAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-hiver-nuit": {
+  "src": "/images/hero/hiver-nuit.45d15a60.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoQAAkAA4BaJQBOgCIj3qQmgAD+9HyPOEQg4vgLd5gjMJbu1NMdT8hphJ8XmygAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-automne-coucher": {
+  "src": "/images/hero/mobile-automne-coucher.36b928b1.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABwBACdASoQABUAPu1iqk2ppaQiMAgBMB2JZgCdMoRwACnyDTQ2BvW9kzBzoAD+7VgdlmdrH4A/v3475KiXfcxOarcK90Yr9Y76uo1Psmhl5wRk1Z0ae6pjJO+WOS15CB15ld7QdHZi/4zgAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-automne-jour": {
+  "src": "/images/hero/mobile-automne-jour.ac2f17d9.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQBACdASoQABUAPu1iqU2ppaQiMAgBMB2JZACdMoADS2yMjXc4Ed4xLvRAAP7UqXdbKv71VLZCVmxQCPp525Fv5ZnpwERFABU8BXruJVw5C1pewXIGwt2dmExUumB+hCKC7Zzuj9ndCZ/mLwAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-automne-nuit": {
+  "src": "/images/hero/mobile-automne-nuit.c85f99f3.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoQABUAPu1kqU2ppaOiMAgBMB2JQBOkGxBXH+zdfAzrOwxJAAD+7NjQYPccXt33I07w1MfICMNfzqy3WsE15TGnZzRsJ8SWJMTTL3h/1t/v1WRAAAA=",
   "credit": {
    "name": "Maison Sillage",
    "source": "Image générée (gpt-image-2)",
@@ -505,11 +604,130 @@
    "note": "étiquettes remplacées par l'étiquette de la gamme"
   }
  },
+ "hero-mobile-hiver-coucher": {
+  "src": "/images/hero/mobile-hiver-coucher.412a2d74.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAADwAwCdASoQABUAPu1iqU2ppaQiMAgBMB2JZACdMoADSzm6ngeHJ4kAAP7tR2zctslWmjvHbbdhy3RexrYOZNbGTR4UCoSsUgRTXP3+4fhKU+WEZDlCp/ZK/RQTljND2ENLFVRdQEncWjQtyEbOF+vUHBg35La7iAAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-hiver-jour": {
+  "src": "/images/hero/mobile-hiver-jour.390b1a56.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBACdASoQABUAPu1iqU2ppaOiMAgBMB2JZACdMoMxgEozUG5C1khb3fgA/tSSQz77WvD8Jd/v2jSkhMo6fgjw5kexugN0EO69AdU7nRECrnVkuz3217Ev7A1LjG2WF95EYg2LazhmJiaQlxF7KXdl77I0Ngs5S/F+D/4AAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-hiver-nuit": {
+  "src": "/images/hero/mobile-hiver-nuit.07c117b3.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADwAwCdASoQABUAPu1iqk2ppaQiMAgBMB2JQBOmUABeju+EjviLgV8+AP7pBsDounwIprNUXBrr/xIBO0VRLpoCUoX3982ZaDXzqH//c+0AuKlznISwqVeC9mUItPOuMfqKloUAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-printemps-coucher": {
+  "src": "/images/hero/mobile-printemps-coucher.aa1da79a.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAABwBACdASoQABUAPu1iqU2ppaQiMAgBMB2JYgCdMoR4GCmdhSFL5/Cc4FeOAAD+6ti8DiiFPgvsjSKpryALv5kKApgE99tQriAxS784HRSGZsl5If6vK4NNwmtBNbz+q/CDtVECVm1EgGuzeSbtAIsuqAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-printemps-jour": {
+  "src": "/images/hero/mobile-printemps-jour.bec15e4e.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQBACdASoQABUAPu1iqU2ppaQiMAgBMB2JaACdMoADTfZ5GG1AFDUuAAD+WSmPt8YieuTbFnR3SG8TN3+/Iebbgknlfcz258HIL4f7gQD/J+iv97R+8KtWpn0VzcZ20ll+UZvL5d6fMM/ff7UyHXKcAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-mobile-printemps-nuit": {
+  "src": "/images/hero/mobile-printemps-nuit.90f669f0.w1536.webp",
+  "w": 1536,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoQABUAPu1iqU2ppaOiMAgBMB2JQBOgA8fGO31ePOpHcIgA/u9MKz+YzmPsJhOq8w4kw8ev1hpdM8DDHxGeX9LNfD2ShcJ++vvx3THFdDpaXIFlYq4+51mAAAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-printemps-coucher": {
+  "src": "/images/hero/printemps-coucher.737338f0.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJaACdAELgd12AAD+88k50MrTZ6Pl0kos5fW6pFLzLfZkIzRF/N71CVOcsGW20VoAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-printemps-jour": {
+  "src": "/images/hero/printemps-jour.841c5fe3.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJagCdADRIEk8AAD+55NFKeHddcavUsv75KHb3l5lvs0joucAkNRXtZW4souPpDKwAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
+ "hero-printemps-nuit": {
+  "src": "/images/hero/printemps-nuit.f0cba532.w3840.webp",
+  "w": 3840,
+  "h": 2160,
+  "blur": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAkAA4BaJQBOgB6SA/HErEAA/vW/w5lYOIFUPYeGbS1bUNcmVC8xbFvj+rNrRN5oAAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)",
+   "note": "étiquettes remplacées par l'étiquette de la gamme"
+  }
+ },
  "matiere-cerisier": {
   "src": "/images/matieres/matiere-cerisier.881dd2e8.w2048.webp",
   "w": 2048,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAQCdASoQABAAA4BaJZQCdACjQmhAAP63+i1wdxqkSzEC+NqSrrqj9YCvYj0LZRxPLc47+JWpCw56EH0+u4YjTkQ4hAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "matiere-dattes": {
+  "src": "/images/matieres/matiere-dattes.f9c7a2af.w2048.webp",
+  "w": 2048,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQABAAA4BaJQBOgCG+hr8Ll6YAAP5OnLSWqMKWUCUI3KfypBunLgjlx9vcwFyCZVEceT6sfYNdoWq8Yl99aIIDMAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "matiere-epices": {
+  "src": "/images/matieres/matiere-epices.08b18b2d.w2048.webp",
+  "w": 2048,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoQABAAA4BaJQBOgCP3jTxTzCAA4jI1lhSBx4cKNVz2t0JHtJ7COemCIaerhdSnF4ht/omSGSpAAA==",
   "credit": {
    "name": "Maison Sillage",
    "source": "Image générée (gpt-image-2)"
@@ -530,6 +748,16 @@
   "w": 2048,
   "h": 2048,
   "blur": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAgCdASoQABAAA4BaJYgCdAEPh+VnTP/4Y0EAAP5kjPkHJq1nIKsLfPMWtUB18oOqHSHbCEgVH67u+LfKA/HMnot8djAGQATJbghap8qoAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "matiere-peches": {
+  "src": "/images/matieres/matiere-peches.1d4ef3c7.w2048.webp",
+  "w": 2048,
+  "h": 2048,
+  "blur": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQABAAA4BaJagCdAEOzZjjSqyAAP6+FkY5WHKLcWaR8OTeq79ZD3V1uwq9QzfS5qZQiwHxfQhAIAx/Of/DpjyTvAWHh6wqvykS1wAA",
   "credit": {
    "name": "Maison Sillage",
    "source": "Image générée (gpt-image-2)"
@@ -849,8 +1077,8 @@
    "source": "Image générée (gpt-image-2)"
   }
  },
- "story-automne": {
-  "src": "/images/story/automne.6472abc2.w2560.webp",
+ "story-automne-coucher": {
+  "src": "/images/story/automne-coucher.6472abc2.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAACwAQCdASoQAAkAA4BaJagCdADFGRfoAP6t3A9UceQpLlX3tyvg4MQCdiPRs5QL3n/m68jbGlP5V5H1R26rD5ZVri3gLaiFwAA=",
@@ -859,8 +1087,28 @@
    "source": "Image générée (gpt-image-2)"
   }
  },
- "story-ete": {
-  "src": "/images/story/ete.afeddcd4.w2560.webp",
+ "story-automne-jour": {
+  "src": "/images/story/automne-jour.418aaea6.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoQAAkAA4BaJQBOgB6iOqwDmQAA/ooYj+rLns36feq+nEAo/Ow9gHpMoVgUMWXOsXh6ythEuD1vUAokgAA=",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-automne-nuit": {
+  "src": "/images/story/automne-nuit.ef128aaf.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRkAAAABXRUJQVlA4IDQAAADQAQCdASoQAAkAA4BaJQBOgBu08lMCAAD+9telHWX+Jp3TKOts7vwMAFVlggzw4e9wAAAA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-ete-coucher": {
+  "src": "/images/story/ete-coucher.afeddcd4.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoQAAkAA4BaJbACdAEfUrwTmnjAAPzYylTShwJ6GGs56lya2T1RvoqHhVns79TEw8kY09lWAAA=",
@@ -869,8 +1117,28 @@
    "source": "Image générée (gpt-image-2)"
   }
  },
- "story-hiver": {
-  "src": "/images/story/hiver.e01ccb48.w2560.webp",
+ "story-ete-jour": {
+  "src": "/images/story/ete-jour.134dc235.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoQAAkAA4BaJQBOgBwb0sCgAP7q7c7QLR1EO6sRBH7DG2XlE126KQ6rTo2HUJ978YoVskc7H3sAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-ete-nuit": {
+  "src": "/images/story/ete-nuit.0d279bbf.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAABwAQCdASoQAAkAA4BaJYwCdAFAAAD+8N0VCmSddnPB3j5/iywRU3gA",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-hiver-coucher": {
+  "src": "/images/story/hiver-coucher.e01ccb48.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoQAAkAA4BaJQBdgCHerUaaYAD9421R2XXbsmoQ6ZfGVhoHlN1otl04Axllw0ISDKQzB0gQAAA=",
@@ -879,11 +1147,51 @@
    "source": "Image générée (gpt-image-2)"
   }
  },
- "story-printemps": {
-  "src": "/images/story/printemps.2de516bb.w2560.webp",
+ "story-hiver-jour": {
+  "src": "/images/story/hiver-jour.242cdf63.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAACwAQCdASoQAAkAA4BaJQBOgBsbTj1AAP7nm208o292T952Pa3e5PMFMj7UEVqptB5lql8wu4zSwJYy5HsAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-hiver-nuit": {
+  "src": "/images/story/hiver-nuit.140a0b85.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRjgAAABXRUJQVlA4ICwAAADwAQCdASoQAAkAA4BaJYwCdAEPApg5XOgA/vhOZxuHVO/o3yzisf/+R4AAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-printemps-coucher": {
+  "src": "/images/story/printemps-coucher.2de516bb.w2560.webp",
   "w": 2560,
   "h": 1440,
   "blur": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoQAAkAA4BaJYgCdAELMk0fwAD+3bt87fcwxKpKBFIo7X+MC50K7HFlzd5vmCcxVD6FOlwY4lAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-printemps-jour": {
+  "src": "/images/story/printemps-jour.049de4c6.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAQAgCdASoQAAkAA4BaJQBOgB6JOdVbOdwAAP6qCz3SaikO8cZvvcZXl1rmqp0gLemNlNb8CsNgVBbnG71LXy/cWAAAAA==",
+  "credit": {
+   "name": "Maison Sillage",
+   "source": "Image générée (gpt-image-2)"
+  }
+ },
+ "story-printemps-nuit": {
+  "src": "/images/story/printemps-nuit.da5170a9.w2560.webp",
+  "w": 2560,
+  "h": 1440,
+  "blur": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoQAAkAA4BaJZQCdAEPDVuEIgAA/vhU/rrGL6QHZGEcEiTZeFEvBvsxzhiIAA==",
   "credit": {
    "name": "Maison Sillage",
    "source": "Image générée (gpt-image-2)"
